@@ -1,0 +1,163 @@
+@import "./cores";
+
+.header-principal{
+    background-color: $black;
+    width: 100%;
+    height: 120px;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    .header-container{
+        // background-color: blue;
+        width: 80%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            font-weight: bold;
+            text-transform: uppercase;
+            height: 100%;
+            line-height: 45px;
+            img{
+                width: 70px;
+                // background-color: cyan;
+            }
+        }
+        .header-links{
+            // background-color: green;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            li{
+                a{
+                    color: $white;
+                }
+                cursor: pointer;
+                font-size: 20px;
+                text-transform: uppercase;
+                // border-bottom: 1px solid transparent;
+                hr{
+                    border: none;
+                    height: 1px;
+                    width: 0;
+                    background-color: $red;
+                }
+                &:hover hr{
+                    transition: .2s;
+                    width: 100%;
+                }
+            }
+            .header-btn{
+                background-color: $red;
+                padding: 10px 15px;
+                font-weight: bold;
+                font-size: 18px;
+                text-transform: uppercase;
+                &:hover{
+                    transition: 0.5s;
+                    background-color: $lightred;
+                }
+            }
+        }
+    }
+}
+
+.main-index{
+    height: 100vh;
+    width: 100%;
+    padding-top: 120px;
+    display: flex;
+    justify-content: center;
+    // background-color: wheat;
+}
+
+.footer-principal{
+    background-color: $black;
+    width: 100%;
+    position: static;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    .footer-container{
+        // background-color: grey;
+        height: 100%;
+        width: 80%;
+        color: $white;
+        padding: 35px 0;
+        hr{
+            border: none;
+            background-color: $lightgrey;
+            height: 1px;
+            margin: 45px 0;
+        }
+        .footer-bottom{
+            padding: 0 0 20px;
+            // display: flex;
+            // justify-content: space-between;
+            p{
+                font-size: 24px;
+                font-weight: lighter;
+            }
+            .footer-links{
+                display: flex;
+                gap: 10px;
+                a{
+                    color: $white;
+                    font-size: 20px;
+                    &:hover{
+                        transition: .5s;
+                        color: $red;
+                    }
+                }
+            }
+        }
+        .footer-grid{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 100px;
+            .colunas{
+                // background-color: blue;
+                height: 100%;
+                color: $white;
+                .logo{
+                    font-size: 28px;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 25px;
+                    // background-color: cyan;
+                    img{
+                        width: 40px;
+                    }
+                }
+                .title{
+                    font-size: 28px;
+                    font-weight: 400;
+                    margin-bottom: 25px;
+                }
+                p{
+                    font-size: 16px;
+                    color: $grey;
+                    margin-bottom: 10px;
+                }
+                span{
+                    display: inline-block;
+                    color: $grey;
+                    font-size: 16px;
+                    i{
+                        font-size: 25px;
+                        margin-right: 20px;
+                       
+                    }
+                }
+            }
+        }
+    }
+}
