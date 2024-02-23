@@ -2,18 +2,19 @@
 
 .header-principal{
     background-color: $black;
-    overflow: hidden;
+    // overflow: hidden;
     width: 100%;
     height: 600px;
     color: $white;
     display: flex;
     justify-content: center;
+    align-items: center;
     position: relative;
     &::after{
         content: '';
         width: 100%;
         border-left: 2560px solid transparent;
-        border-bottom: 150px solid $white;
+        border-bottom: 150px solid $lightgrey;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -57,6 +58,23 @@
             span{
                 color: $red;
             }
+        }
+    }
+    .about-btn{
+        background-color: $red;
+        position: absolute;
+        font-size: 24px;
+        bottom: 5px;
+        z-index: 998;
+        box-shadow: inset 0 0 0 0 $lightred;
+        padding: 15px 30px;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+        color: $white;
+        &:hover{
+            transition: ease-in .3s;
+            box-shadow: inset 175px 0 0 0 $lightred;
         }
     }
     .header-container{
@@ -138,10 +156,64 @@
 .main-index{
     height: 100vh;
     width: 100%;
-    padding-top: 120px;
     display: flex;
     justify-content: center;
     // background-color: wheat;
+    .about{
+        // background-color: blue;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .about-container{
+            // background-color: yellow;
+            display: grid;
+            grid-template-columns: repeat(2, 450px);
+            grid-template-rows: 450px;
+            gap: 100px;
+            .about-img{
+                background-color: grey;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    
+                }
+            }
+            .about-text{
+                // background-color: brown;
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                gap: 30px;
+                h2{
+                  font-size: $h2;  
+                  line-height: 95%;
+                  border-left: 5px solid $red;
+                  padding-left: 15px;
+                }
+                .text{
+                    font-size: 18px;
+                }
+                .about-btn{
+                    background-color: $red;
+                    padding: 10px 30px;
+                    color: $white;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    font-size: 16px;
+                    width: 130px;
+                    text-align: center;
+                    box-shadow: inset 0 0 0 0 $lightred;
+                    &:hover{
+                        transition: ease-in .3s;
+                        box-shadow: inset 130px 0 0 0 $lightred;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .footer-principal{
