@@ -14,10 +14,9 @@ body {
 }
 
 .wrapper {
-  width: 1400px;
+  width: 1200px;
   height: 100%;
   margin: auto;
-  background-color: red;
 }
 
 .header-principal {
@@ -43,7 +42,7 @@ body {
 }
 .header-principal .bg-container {
   height: 100%;
-  width: 1400px;
+  width: 1200px;
   position: relative;
   display: flex;
   align-items: center;
@@ -53,11 +52,11 @@ body {
   height: 100%;
   background-image: url("../img/background.png");
   background-size: 700px;
-  background-position: 100% 30%;
+  background-position: 110% 30%;
   background-repeat: no-repeat;
 }
 .header-principal .bg-container .mascara-esquerda {
-  width: 1000px;
+  width: 800px;
   height: 100%;
   position: absolute;
   top: 0;
@@ -81,23 +80,6 @@ body {
 .header-principal .bg-container .bg-title span {
   color: #E73539;
 }
-.header-principal .about-btn {
-  background-color: #E73539;
-  position: absolute;
-  font-size: 24px;
-  bottom: 0px;
-  z-index: 998;
-  box-shadow: inset 0 0 0 0 #ff4f51;
-  padding: 15px 30px;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-align: center;
-  color: #FFF;
-}
-.header-principal .about-btn:hover {
-  transition: ease-in 0.3s;
-  box-shadow: inset 175px 0 0 0 #ff4f51;
-}
 .header-principal .navbar {
   width: 100%;
   height: 100px;
@@ -107,14 +89,15 @@ body {
   position: fixed;
   top: 0;
   z-index: 999;
-  transition: ease-in-out 1s;
+  transition: ease-in 0.5s;
 }
 .header-principal .navbar.sticky {
   box-shadow: inset 0 100px 0 0 #000;
   height: 75px;
 }
 .header-principal .navbar .nav-container {
-  width: 1400px;
+  transition: 1s;
+  width: 1200px;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -177,16 +160,17 @@ body {
 }
 .main-index .about {
   width: 100%;
-  height: calc(100vh - 75px);
+  height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .main-index .about .about-container {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 450px);
-  grid-template-rows: 450px;
-  gap: 100px;
+  grid-template-columns: repeat(2, 500px);
+  grid-template-rows: 500px;
+  justify-content: space-between;
 }
 .main-index .about .about-container .about-img {
   background-color: grey;
@@ -196,20 +180,20 @@ body {
   width: 100%;
 }
 .main-index .about .about-container .about-text {
-  padding: 20px;
   display: flex;
   justify-content: center;
+  align-items: start;
   flex-direction: column;
   gap: 30px;
 }
 .main-index .about .about-container .about-text h2 {
-  font-size: 50px;
+  font-size: 56px;
   line-height: 95%;
   border-left: 5px solid #E73539;
   padding-left: 15px;
 }
 .main-index .about .about-container .about-text .text {
-  font-size: 18px;
+  font-size: 20px;
 }
 .main-index .about .about-container .about-text .about-btn {
   background-color: #E73539;
@@ -217,21 +201,55 @@ body {
   color: #FFF;
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 16px;
-  width: 130px;
+  font-size: 20px;
   text-align: center;
   box-shadow: inset 0 0 0 0 #ff4f51;
 }
 .main-index .about .about-container .about-text .about-btn:hover {
   transition: ease-in 0.1s;
-  box-shadow: inset 130px 0 0 0 #ff4f51;
+  box-shadow: inset 150px 0 0 0 #ff4f51;
+}
+.main-index .infos {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1019607843);
+  background-color: #FFF;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-index .infos .wrapper {
+  display: flex;
+  align-items: center;
+}
+.main-index .infos .wrapper .infos-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 350px);
+  justify-content: space-between;
+}
+.main-index .infos .wrapper .infos-container .colunas .info-header {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  margin-bottom: 5px;
+}
+.main-index .infos .wrapper .infos-container .colunas .info-header i {
+  font-size: 45px;
+  align-self: center;
+}
+.main-index .infos .wrapper .infos-container .colunas .info-header h3 {
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-left: 15px;
+  border-left: 5px solid #E73539;
+}
+.main-index .infos .wrapper .infos-container .colunas p {
+  font-size: 20px;
 }
 .main-index .division {
-  background-color: #FFF;
-  height: 250px;
-}
-.main-index .section2 {
-  height: calc(100vh - 75px);
+  height: 85vh;
+  width: 100%;
 }
 
 .footer-principal {
@@ -244,7 +262,7 @@ body {
 }
 .footer-principal .footer-container {
   height: 100%;
-  width: 1400px;
+  width: 1200px;
   color: #FFF;
   padding: 35px 0;
 }
@@ -315,7 +333,7 @@ body {
   margin-right: 20px;
 }
 
-.navbar {
+.navbar2 {
   background-color: #000;
   color: #FFF;
   width: 100%;
@@ -328,13 +346,13 @@ body {
   z-index: 999;
   transition: ease-in-out 1s;
 }
-.navbar .nav-container {
+.navbar2 .nav-container {
   width: 1400px;
   height: 100%;
   display: flex;
   justify-content: space-between;
 }
-.navbar .nav-container .logo {
+.navbar2 .nav-container .logo {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -345,36 +363,36 @@ body {
   line-height: 45px;
   gap: 10px;
 }
-.navbar .nav-container .logo img {
+.navbar2 .nav-container .logo img {
   width: 60px;
   padding-bottom: 6px;
   fill: #E73539;
 }
-.navbar .nav-container .nav-links {
+.navbar2 .nav-container .nav-links {
   display: flex;
   gap: 30px;
   align-items: center;
 }
-.navbar .nav-container .nav-links li {
+.navbar2 .nav-container .nav-links li {
   cursor: pointer;
   font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
 }
-.navbar .nav-container .nav-links li a {
+.navbar2 .nav-container .nav-links li a {
   color: #FFF;
 }
-.navbar .nav-container .nav-links li hr {
+.navbar2 .nav-container .nav-links li hr {
   border: none;
   height: 2px;
   width: 0;
   background-color: #E73539;
 }
-.navbar .nav-container .nav-links li:hover hr {
+.navbar2 .nav-container .nav-links li:hover hr {
   transition: 0.2s;
   width: 100%;
 }
-.navbar .nav-container .nav-links .nav-btn {
+.navbar2 .nav-container .nav-links .nav-btn {
   background-color: #E73539;
   padding: 10px 30px;
   font-weight: bold;
@@ -382,7 +400,7 @@ body {
   text-transform: uppercase;
   box-shadow: inset 0 0 0 0 #ff4f51;
 }
-.navbar .nav-container .nav-links .nav-btn:hover {
+.navbar2 .nav-container .nav-links .nav-btn:hover {
   transition: ease-in 0.15s;
   box-shadow: inset 250px 0 0 0 #ff4f51;
 }

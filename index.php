@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/fc1c840fda.js" crossorigin="anonymous"></script>
     <title>FlexFit</title>
 </head>
+
 <body>
     <header class="header-principal" id="inicio">
         <div class="bg-container">
@@ -20,15 +23,21 @@
             <div class="nav-container">
                 <div class="logo">
                     <img src="img/logo.png">
-                    
+
                     <span class="logo-text">
                         FlexFit
                     </span>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="#inicio">Início</a> <hr></li>
-                    <li><a href="">Trabalhe conosco</a> <hr></li>
-                    <li><a href="">Seja nosso aluno</a> <hr></li>
+                    <li><a href="#inicio">Início</a>
+                        <hr>
+                    </li>
+                    <li><a href="">Trabalhe conosco</a>
+                        <hr>
+                    </li>
+                    <li><a href="">Seja nosso aluno</a>
+                        <hr>
+                    </li>
                     <li class="nav-btn"><a href="cadastra.php">entrar | Cadastrar-se</a></li>
                 </ul>
             </div>
@@ -46,21 +55,49 @@
                             Conheça a FlexFit
                         </h2>
                         <div class="text">
-                            <p>Na FlexFit, estamos comprometidos em proporcionar uma experiência de academia que vai além do comum. Nossa academia é mais do que um local para levantar pesos; é um ambiente onde você é capacitado a alcançar seus objetivos de saúde e fitness de maneira personalizada.</p>
+                            <p>Na FlexFit, estamos comprometidos em proporcionar uma experiência de academia que vai
+                                além do comum. Nossa academia é mais do que um local para levantar pesos; é um ambiente
+                                onde você é capacitado a alcançar seus objetivos de saúde e fitness de maneira
+                                personalizada.</p>
                             <br>
-                            <p>Nossa plataforma oferece acesso a treinos personalizados, interação com instrutores e muito mais. Junte-se a nós para uma experiência de fitness única e eficaz!</p>
+                            <p>Nossa plataforma oferece acesso a treinos personalizados, interação com instrutores e
+                                muito mais. Junte-se a nós para uma experiência de fitness única e eficaz!</p>
                         </div>
                         <a href="cadastrocliente.php" class="about-btn">Faça Parte</a>
                     </div>
                 </div>
             </section>
         </div>
-        <section class="division">
-            
+        <section class="infos">
+            <div class="wrapper">
+                <div class="infos-container">
+                    <div class="colunas">
+                        <header class="info-header">
+                            <i class="fa-solid fa-dumbbell"></i>
+                            <h3>Treinos</h3>
+                        </header>
+                        <p>Acesse com facilidade sua programação de treinos, permitindo que você ajuste sua rotina de acordo com sua disponibilidade e objetivos pessoais de forma conveniente e eficiente.</p>
+                    </div>
+                    <div class="colunas">
+                        <div class="info-header">
+                            <i class="fa-solid fa-video"></i>
+                            <h3>Videos</h3>
+                        </div>
+                        <p>Aprimore seu conhecimento e técnica de exercícios com nossos vídeos instrutivos detalhados, garantindo que você execute cada movimento corretamente e otimize seus resultados dentro e fora da academia.</p>
+                    </div>
+                    <div class="colunas">
+                        <div class="info-header">
+                            <i class="fa-solid fa-medal"></i>
+                            <h3>Objetivos</h3>
+                        </div>
+                        <p>Estabeleça objetivos e acompanhe seu desenvolvimento ao longo do tempo, mantendo o foco em sua jornada de fitness com determinação e motivação.</p>
+                    </div>
+                </div>
+            </div>
         </section>
         <div class="wrapper">
-            <section class="section2">
-
+            <section class="division">
+                
             </section>
         </div>
     </main>
@@ -68,5 +105,6 @@
     include("footer.php")
     ?>
 </body>
+
 </html>
 <script src="script.js"></script>
