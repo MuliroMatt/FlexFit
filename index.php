@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -17,28 +15,28 @@
             <div class="mascara-direita"></div>
             <h1 class="bg-title">Treine como <br> um <span>campeão</span></h1>
         </div>
-        <a class="about-btn" href="#about">
-            saiba mais
-        </a>
-        <div class="header-container" id="navbar">
-            <div class="logo">
-                <img src="img/logo.png">
-                
-                <span class="logo-text">
-                    FlexFit
-                </span>
+        <!-- <a class="about-btn" href="#about">saiba mais</a> -->
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="img/logo.png">
+                    
+                    <span class="logo-text">
+                        FlexFit
+                    </span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Início</a> <hr></li>
+                    <li><a href="">Trabalhe conosco</a> <hr></li>
+                    <li><a href="">Seja nosso aluno</a> <hr></li>
+                    <li class="nav-btn"><a href="cadastra.php">entrar | Cadastrar-se</a></li>
+                </ul>
             </div>
-            <ul class="header-links">
-                <li><a href="#inicio">Início</a> <hr></li>
-                <li><a href="">Trabalhe conosco</a> <hr></li>
-                <li><a href="">Seja nosso aluno</a> <hr></li>
-                <li class="header-btn"><a href="cadastra.php">Cadastre-se</a></li>
-            </ul>
-        </div>
+        </nav>
     </header>
     <main class="main-index">
         <div class="wrapper">
-            <section class="about" id="about">
+            <section class="about">
                 <div class="about-container">
                     <div class="about-img">
                         <img src="./img/background2.5.jpg">
@@ -55,6 +53,14 @@
                         <a href="cadastrocliente.php" class="about-btn">Faça Parte</a>
                     </div>
                 </div>
+            </section>
+        </div>
+        <section class="division">
+            
+        </section>
+        <div class="wrapper">
+            <section class="section2">
+
             </section>
         </div>
     </main>

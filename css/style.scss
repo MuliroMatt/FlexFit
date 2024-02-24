@@ -19,8 +19,10 @@ body{
 .wrapper{
     width: 1400px;
     height: 100%;
-    // background-color: red;
+    margin: auto;
+    background-color: red;
 }
 
 @import './index';
 @import './cabecalho';
+@import './cadastra';

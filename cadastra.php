@@ -9,7 +9,16 @@
     <title>FlexFit|Cadastro</title>
 </head>
 <body>
-
+<?php include("cabecalho.php") ?>
+    <main class="main-cadastra">
+        <div class="wrapper">
+            <section class="cadastra-container">
+                <form action="cadastra.php" method="post">
+                    
+                </form>
+            </section>
+        </div>
+    </main>
 <?php include("footer.php") ?>
 </body>
 </html>

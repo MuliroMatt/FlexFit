@@ -1,0 +1,14 @@
+@import './variaveis';
+
+.main-cadastra{
+    background-color: blue;
+    height: 100vh;
+    padding-top: 75px;
+    display: flex;
+    justify-content: center;
+    .cadastra-container{
+        background-color: green;
+        height: 100%;
+        width: 100%;
+    }
+}   

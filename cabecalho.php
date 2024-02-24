@@ -1,5 +1,5 @@
-<div class="header-secundario">
-    <div class="header-container" id="navbar">
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
         <div class="logo">
             <img src="img/logo.png">
             
@@ -7,11 +7,11 @@
                 FlexFit
             </span>
         </div>
-        <ul class="header-links">
+        <ul class="nav-links">
             <li><a href="index.php">Início</a> <hr></li>
-            <li><a href="">Contato</a> <hr></li>
-            <li><a href="">Área do aluno</a> <hr></li>
-            <li class="header-btn"><a href="cadastrocliente.php">Matricule-se</a></li>
+            <li><a href="">Trabalhe conosco</a> <hr></li>
+            <li><a href="">Seja nosso aluno</a> <hr></li>
+            <li class="nav-btn"><a href="cadastra.php">entrar | Cadastrar-se</a></li>
         </ul>
     </div>
-</div>
+</nav>

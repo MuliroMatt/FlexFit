@@ -16,10 +16,13 @@ body {
 .wrapper {
   width: 1400px;
   height: 100%;
+  margin: auto;
+  background-color: red;
 }
 
 .header-principal {
   background-color: #000;
+  overflow: hidden;
   width: 100%;
   height: 600px;
   color: #FFF;
@@ -82,7 +85,7 @@ body {
   background-color: #E73539;
   position: absolute;
   font-size: 24px;
-  bottom: 5px;
+  bottom: 0px;
   z-index: 998;
   box-shadow: inset 0 0 0 0 #ff4f51;
   padding: 15px 30px;
@@ -95,23 +98,28 @@ body {
   transition: ease-in 0.3s;
   box-shadow: inset 175px 0 0 0 #ff4f51;
 }
-.header-principal .header-container {
-  width: 1400px;
+.header-principal .navbar {
+  width: 100%;
   height: 100px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   position: fixed;
   top: 0;
   z-index: 999;
-  transition: ease-in-out 0.8s;
+  transition: ease-in-out 1s;
 }
-.header-principal .header-container.sticky {
-  width: 100%;
-  background-color: #000;
-  padding: 0 20px;
+.header-principal .navbar.sticky {
+  box-shadow: inset 0 100px 0 0 #000;
+  height: 75px;
 }
-.header-principal .header-container .logo {
+.header-principal .navbar .nav-container {
+  width: 1400px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.header-principal .navbar .nav-container .logo {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -122,36 +130,36 @@ body {
   line-height: 45px;
   gap: 10px;
 }
-.header-principal .header-container .logo img {
+.header-principal .navbar .nav-container .logo img {
   width: 60px;
   padding-bottom: 6px;
   fill: #E73539;
 }
-.header-principal .header-container .header-links {
+.header-principal .navbar .nav-container .nav-links {
   display: flex;
   gap: 30px;
   align-items: center;
 }
-.header-principal .header-container .header-links li {
+.header-principal .navbar .nav-container .nav-links li {
   cursor: pointer;
   font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
 }
-.header-principal .header-container .header-links li a {
+.header-principal .navbar .nav-container .nav-links li a {
   color: #FFF;
 }
-.header-principal .header-container .header-links li hr {
+.header-principal .navbar .nav-container .nav-links li hr {
   border: none;
   height: 2px;
   width: 0;
   background-color: #E73539;
 }
-.header-principal .header-container .header-links li:hover hr {
+.header-principal .navbar .nav-container .nav-links li:hover hr {
   transition: 0.2s;
   width: 100%;
 }
-.header-principal .header-container .header-links .header-btn {
+.header-principal .navbar .nav-container .nav-links .nav-btn {
   background-color: #E73539;
   padding: 10px 30px;
   font-weight: bold;
@@ -159,20 +167,17 @@ body {
   text-transform: uppercase;
   box-shadow: inset 0 0 0 0 #ff4f51;
 }
-.header-principal .header-container .header-links .header-btn:hover {
-  transition: ease-in 0.3s;
-  box-shadow: inset 210px 0 0 0 #ff4f51;
+.header-principal .navbar .nav-container .nav-links .nav-btn:hover {
+  transition: ease-in 0.15s;
+  box-shadow: inset 250px 0 0 0 #ff4f51;
 }
 
 .main-index {
-  height: 100vh;
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 .main-index .about {
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 75px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -218,8 +223,15 @@ body {
   box-shadow: inset 0 0 0 0 #ff4f51;
 }
 .main-index .about .about-container .about-text .about-btn:hover {
-  transition: ease-in 0.3s;
+  transition: ease-in 0.1s;
   box-shadow: inset 130px 0 0 0 #ff4f51;
+}
+.main-index .division {
+  background-color: #FFF;
+  height: 250px;
+}
+.main-index .section2 {
+  height: calc(100vh - 75px);
 }
 
 .footer-principal {
@@ -303,28 +315,26 @@ body {
   margin-right: 20px;
 }
 
-.header-secundario {
+.navbar {
   background-color: #000;
-  overflow: hidden;
-  width: 100%;
-  height: 100px;
   color: #FFF;
+  width: 100%;
+  height: 75px;
   display: flex;
   justify-content: center;
-  position: relative;
-}
-.header-secundario .header-container {
-  width: 1400px;
-  height: 100px;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   position: fixed;
   top: 0;
   z-index: 999;
-  transition: ease-in-out 0.8s;
+  transition: ease-in-out 1s;
 }
-.header-secundario .header-container .logo {
+.navbar .nav-container {
+  width: 1400px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar .nav-container .logo {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -335,36 +345,36 @@ body {
   line-height: 45px;
   gap: 10px;
 }
-.header-secundario .header-container .logo img {
+.navbar .nav-container .logo img {
   width: 60px;
   padding-bottom: 6px;
   fill: #E73539;
 }
-.header-secundario .header-container .header-links {
+.navbar .nav-container .nav-links {
   display: flex;
   gap: 30px;
   align-items: center;
 }
-.header-secundario .header-container .header-links li {
+.navbar .nav-container .nav-links li {
   cursor: pointer;
   font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
 }
-.header-secundario .header-container .header-links li a {
+.navbar .nav-container .nav-links li a {
   color: #FFF;
 }
-.header-secundario .header-container .header-links li hr {
+.navbar .nav-container .nav-links li hr {
   border: none;
   height: 2px;
   width: 0;
   background-color: #E73539;
 }
-.header-secundario .header-container .header-links li:hover hr {
+.navbar .nav-container .nav-links li:hover hr {
   transition: 0.2s;
   width: 100%;
 }
-.header-secundario .header-container .header-links .header-btn {
+.navbar .nav-container .nav-links .nav-btn {
   background-color: #E73539;
   padding: 10px 30px;
   font-weight: bold;
@@ -372,7 +382,20 @@ body {
   text-transform: uppercase;
   box-shadow: inset 0 0 0 0 #ff4f51;
 }
-.header-secundario .header-container .header-links .header-btn:hover {
-  transition: ease-in 0.3s;
-  box-shadow: inset 210px 0 0 0 #ff4f51;
+.navbar .nav-container .nav-links .nav-btn:hover {
+  transition: ease-in 0.15s;
+  box-shadow: inset 250px 0 0 0 #ff4f51;
+}
+
+.main-cadastra {
+  background-color: blue;
+  height: 100vh;
+  padding-top: 75px;
+  display: flex;
+  justify-content: center;
+}
+.main-cadastra .cadastra-container {
+  background-color: green;
+  height: 100%;
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
