@@ -2,7 +2,7 @@
 #CONECTAR COM O XAMPP (SERVIDOR)
 $servidor = "localhost";
 #NOME DO BANCO
-$banco = "FlexFit";
+$banco = "flexfit";
 #ADMINISTRADOR
 $admin = "root";
 #SENHA

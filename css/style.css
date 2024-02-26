@@ -248,7 +248,7 @@ body {
   font-size: 20px;
 }
 .main-index .division {
-  height: 85vh;
+  height: 200px;
   width: 100%;
 }
 
@@ -406,14 +406,105 @@ body {
 }
 
 .main-cadastra {
-  background-color: blue;
   height: 100vh;
   padding-top: 75px;
   display: flex;
   justify-content: center;
 }
 .main-cadastra .cadastra-container {
-  background-color: green;
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-cadastra .cadastra-container .cadastra-form {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.main-cadastra .cadastra-container .cadastra-form .input-box {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.main-cadastra .cadastra-container .cadastra-form .input-box input {
+  border: none;
+  background-color: #FFF;
+  border: 1px solid #000;
+  border-radius: 0;
+  height: 45px;
+  padding: 10px;
+  outline: none;
+}
+.main-cadastra .cadastra-container .cadastra-form p {
+  font-size: 20px;
+}
+.main-cadastra .cadastra-container .cadastra-form p a {
+  color: #E73539;
+  font-weight: 600;
+  cursor: pointer;
+}
+.main-cadastra .cadastra-container .cadastra-form .cadastrar-btn {
+  background-color: #E73539;
+  border: none;
+  font-size: 20px;
+  width: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  color: #FFF;
+  cursor: pointer;
+}
+.main-cadastra .cadastra-container .cadastra-form .cadastrar-btn:hover {
+  transition: 0.3s;
+  box-shadow: inset 500px 0 0 0 #ff4f51;
+}
+.main-cadastra .cadastra-container .login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.main-cadastra .cadastra-container .login-form .input-box {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.main-cadastra .cadastra-container .login-form .input-box input {
+  border: none;
+  background-color: #FFF;
+  border: 1px solid #000;
+  border-radius: 0;
+  height: 45px;
+  padding: 10px;
+  outline: none;
+}
+.main-cadastra .cadastra-container .login-form p {
+  font-size: 20px;
+}
+.main-cadastra .cadastra-container .login-form p a {
+  color: #E73539;
+  font-weight: 600;
+  cursor: pointer;
+}
+.main-cadastra .cadastra-container .login-form .login-btn {
+  background-color: #E73539;
+  border: none;
+  font-size: 20px;
+  width: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  color: #FFF;
+  cursor: pointer;
+}
+.main-cadastra .cadastra-container .login-form .login-btn:hover {
+  transition: 0.3s;
+  box-shadow: inset 500px 0 0 0 #ff4f51;
 }/*# sourceMappingURL=style.css.map */

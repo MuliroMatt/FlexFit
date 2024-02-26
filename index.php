@@ -1,3 +1,15 @@
+<?php 
+include("conectaDB.php");
+
+session_start();
+
+if(isset($_SESSION['idusuario'])){
+    $id = $_SESSION['idusuario'];
+    $nome = $_SESSION['nomeusuario'];
+    $sobrenome = $_SESSION['sobrenomeusuario'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -38,7 +50,17 @@
                     <li><a href="">Seja nosso aluno</a>
                         <hr>
                     </li>
+                    <?php 
+                    if(!isset($nome)){
+                    ?>
                     <li class="nav-btn"><a href="cadastra.php">entrar | Cadastrar-se</a></li>
+                    <?php 
+                    }else{
+                    ?>
+                    <li><?=$nome?></li>
+                    <?php 
+                    }
+                    ?>
                 </ul>
             </div>
         </nav>
@@ -63,7 +85,7 @@
                             <p>Nossa plataforma oferece acesso a treinos personalizados, interação com instrutores e
                                 muito mais. Junte-se a nós para uma experiência de fitness única e eficaz!</p>
                         </div>
-                        <a href="cadastrocliente.php" class="about-btn">Faça Parte</a>
+                        <a href="cadastra.php" class="about-btn">Faça Parte</a>
                     </div>
                 </div>
             </section>
