@@ -1,0 +1,55 @@
+@import './variaveis';
+
+.main-user{
+    background-color: $lightgrey;
+    height: 100vh;
+    padding: 75px 0 0 0 ;
+    position: relative;
+    .user-nav{
+        background-color: $white;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 250px;
+        height: calc(100vh - 75px);
+        padding: 35px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .nav-options{
+            .title{
+                font-size: 16px;
+                padding: 0 25px;
+                color: $red;
+                // background-color: gold;
+            }
+            .nav-list{
+                // background-color: hotpink;
+                li{
+                    a{
+                        font-size: 20px;
+                        padding: 5px 25px;
+                        display: flex;
+                        gap: 15px;
+                        align-items: center;
+                        color: $black;
+                        &:hover{
+                            background-color: #d8d8d8;
+                            border-right: 3px solid $red;
+                        }
+                    }
+                }
+            }
+        }
+        .nav-bottom{
+            // background-color: orangered;
+            padding: 0 25px;
+            hr{
+                border: none;
+                background-color: $black;
+                height: 1px;
+            }
+
+        }
+    }
+}

@@ -4,9 +4,8 @@ include("conectaDB.php");
 session_start();
 
 if(isset($_SESSION['idusuario'])){
-    $id = $_SESSION['idusuario'];
+    // echo "<script>window.location.href='usuario.php';</script>";
     $nome = $_SESSION['nomeusuario'];
-    $sobrenome = $_SESSION['sobrenomeusuario'];
 }
 ?>
 
@@ -30,16 +29,15 @@ if(isset($_SESSION['idusuario'])){
             <div class="mascara-direita"></div>
             <h1 class="bg-title">Treine como <br> um <span>campeão</span></h1>
         </div>
-        <!-- <a class="about-btn" href="#about">saiba mais</a> -->
         <nav class="navbar" id="navbar">
             <div class="nav-container">
-                <div class="logo">
+                <a href="#inicio" class="logo">
                     <img src="img/logo.png">
 
                     <span class="logo-text">
                         FlexFit
                     </span>
-                </div>
+                </a>
                 <ul class="nav-links">
                     <li><a href="#inicio">Início</a>
                         <hr>
@@ -47,20 +45,17 @@ if(isset($_SESSION['idusuario'])){
                     <li><a href="">Trabalhe conosco</a>
                         <hr>
                     </li>
-                    <li><a href="">Seja nosso aluno</a>
+                    <li><a href="cadastro_aluno.php">Seja nosso aluno</a>
                         <hr>
                     </li>
-                    <?php 
-                    if(!isset($nome)){
-                    ?>
-                    <li class="nav-btn"><a href="cadastra.php">entrar | Cadastrar-se</a></li>
-                    <?php 
-                    }else{
-                    ?>
-                    <li><?=$nome?></li>
-                    <?php 
-                    }
-                    ?>
+                    <?php if(!isset($nome)){?>
+                    <li><a class="nav-btn" href="cadastra.php">entrar | Cadastrar-se</a></li>
+                    <?php }else{?>
+                    <li><a href="usuario.php">meu perfil</a>
+                        <hr>
+                    </li>
+                    <li><a class="nav-btn" href="logout.php">sair</a></li>
+                    <?php }?>
                 </ul>
             </div>
         </nav>
@@ -105,7 +100,7 @@ if(isset($_SESSION['idusuario'])){
                             <i class="fa-solid fa-video"></i>
                             <h3>Videos</h3>
                         </div>
-                        <p>Aprimore seu conhecimento e técnica de exercícios com nossos vídeos instrutivos detalhados, garantindo que você execute cada movimento corretamente e otimize seus resultados dentro e fora da academia.</p>
+                        <p>Aprimore seu conhecimento e técnica de exercícios com nossos vídeos instrutivos detalhados, garantindo que você execute cada movimento corretamente e otimize seus resultados dentro e fora da academia. <br>Cadastre-se e já tenha acesso.</p>
                     </div>
                     <div class="colunas">
                         <div class="info-header">

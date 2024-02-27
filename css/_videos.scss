@@ -1,0 +1,44 @@
+@import './variaveis';
+
+.main-videos{
+    height: 100vh;
+    padding-top: 75px;
+    // background-color: blue;
+    .wrapper{
+        // background-color: green;
+    }
+    .videos-container{
+        // background-color: red;
+        height: 100%;
+        padding: 35px 0 ;
+        h1{
+            font-size: 32px;
+            text-transform: uppercase;      
+        }
+        hr{
+            border: none;
+            background-color: $black;
+            height: 1px;
+            margin: 10px 0 20px;
+        }
+        .videos-grid{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            .video-frame{
+                // background-color: grey;
+                .video{
+                    border-radius: 5px;
+                    height: 210px;
+                    width: 380px;
+                    // background-color: green;
+                    overflow: hidden;
+                }
+                h3{
+                    font-size: 24px;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+}

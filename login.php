@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_SESSION['sobrenomeusuario'] = $tbl[2];
             $_SESSION['emailusuario'] = $tbl[3];
         }
-        echo "<script>window.location.href='index.php';</script>";
+        echo "<script>window.location.href='usuario.php';</script>";
 
     }
     else {

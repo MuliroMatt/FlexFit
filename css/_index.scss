@@ -92,6 +92,7 @@
         height: 100%;
         line-height: 45px;
         gap: 10px;
+        color: $white;
         img {
           width: 60px;
           // height: 50px;
@@ -123,6 +124,9 @@
           &:hover hr {
             transition: 0.2s;
             width: 100%;
+          }
+          i{
+            font-size: 35px;
           }
         }
         .nav-btn {
@@ -204,10 +208,11 @@
   .infos {
     box-shadow: 0 0 5px 0 $blackshadow;
     background-color: $white;
-    height: 350px; 
+    // height: 350px; 
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 25px 0;
     .wrapper{
       // background-color: green;
       display: flex;
@@ -248,7 +253,7 @@
   }
   .division{
     // background-color: blue;
-    height: 200px;
+    height: 100px;
     width: 100%;
   }
 }

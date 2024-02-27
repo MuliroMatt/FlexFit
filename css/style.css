@@ -112,6 +112,7 @@ body {
   height: 100%;
   line-height: 45px;
   gap: 10px;
+  color: #FFF;
 }
 .header-principal .navbar .nav-container .logo img {
   width: 60px;
@@ -141,6 +142,9 @@ body {
 .header-principal .navbar .nav-container .nav-links li:hover hr {
   transition: 0.2s;
   width: 100%;
+}
+.header-principal .navbar .nav-container .nav-links li i {
+  font-size: 35px;
 }
 .header-principal .navbar .nav-container .nav-links .nav-btn {
   background-color: #E73539;
@@ -212,10 +216,10 @@ body {
 .main-index .infos {
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1019607843);
   background-color: #FFF;
-  height: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 25px 0;
 }
 .main-index .infos .wrapper {
   display: flex;
@@ -248,7 +252,7 @@ body {
   font-size: 20px;
 }
 .main-index .division {
-  height: 200px;
+  height: 100px;
   width: 100%;
 }
 
@@ -344,10 +348,9 @@ body {
   position: fixed;
   top: 0;
   z-index: 999;
-  transition: ease-in-out 1s;
 }
 .navbar2 .nav-container {
-  width: 1400px;
+  width: 1200px;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -362,6 +365,7 @@ body {
   height: 100%;
   line-height: 45px;
   gap: 10px;
+  color: #FFF;
 }
 .navbar2 .nav-container .logo img {
   width: 60px;
@@ -391,6 +395,9 @@ body {
 .navbar2 .nav-container .nav-links li:hover hr {
   transition: 0.2s;
   width: 100%;
+}
+.navbar2 .nav-container .nav-links li i {
+  font-size: 35px;
 }
 .navbar2 .nav-container .nav-links .nav-btn {
   background-color: #E73539;
@@ -507,4 +514,82 @@ body {
 .main-cadastra .cadastra-container .login-form .login-btn:hover {
   transition: 0.3s;
   box-shadow: inset 500px 0 0 0 #ff4f51;
+}
+
+.main-user {
+  background-color: #E8E7E8;
+  height: 100vh;
+  padding: 75px 0 0 0;
+  position: relative;
+}
+.main-user .user-nav {
+  background-color: #FFF;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 250px;
+  height: calc(100vh - 75px);
+  padding: 35px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main-user .user-nav .nav-options .title {
+  font-size: 16px;
+  padding: 0 25px;
+  color: #E73539;
+}
+.main-user .user-nav .nav-options .nav-list li a {
+  font-size: 20px;
+  padding: 5px 25px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  color: #000;
+}
+.main-user .user-nav .nav-options .nav-list li a:hover {
+  background-color: #d8d8d8;
+  border-right: 3px solid #E73539;
+}
+.main-user .user-nav .nav-bottom {
+  padding: 0 25px;
+}
+.main-user .user-nav .nav-bottom hr {
+  border: none;
+  background-color: #000;
+  height: 1px;
+}
+
+.main-videos {
+  height: 100vh;
+  padding-top: 75px;
+}
+.main-videos .videos-container {
+  height: 100%;
+  padding: 35px 0;
+}
+.main-videos .videos-container h1 {
+  font-size: 32px;
+  text-transform: uppercase;
+}
+.main-videos .videos-container hr {
+  border: none;
+  background-color: #000;
+  height: 1px;
+  margin: 10px 0 20px;
+}
+.main-videos .videos-container .videos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.main-videos .videos-container .videos-grid .video-frame .video {
+  border-radius: 5px;
+  height: 210px;
+  width: 380px;
+  overflow: hidden;
+}
+.main-videos .videos-container .videos-grid .video-frame h3 {
+  font-size: 24px;
+  font-weight: normal;
 }/*# sourceMappingURL=style.css.map */
