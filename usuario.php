@@ -1,5 +1,5 @@
 <?php 
-// include('cabecalho.php');
+include('usernav.php');
 ?>
 
 <!DOCTYPE html>
@@ -13,35 +13,71 @@
     <title>FlexFit</title>
 </head>
 <body>
-    <nav class="user-nav">
-        <div class="logo">
-            <img src="img/logo.png" width="50">
-            <span class="logo-text">
-                FlexFit
-            </span>
-        </div>
-        <div class="nav-options">
-            <h3 class="title">Minha conta</h3>
-            <ul class="nav-list">
-                <li><a href=""><i class="bi bi-person-fill"></i> Perfil</a></li>
-            </ul>
-            <h3 class="title">Cronograma e Planos</h3>
-            <ul class="nav-list">
-                <li><a href=""><i class="bi bi-calendar-week"></i> Cronograma</a></li>
-                <li><a href=""><i class="bi bi-bullseye"></i> Objetivos</a></li>
-            </ul>
-            <h3 class="title">Navegação</h3>
-            <ul class="nav-list">
-                <li><a href="index.php"><i class="bi bi-house"></i> Início</a></li>
-            </ul>
-        </div>
-        <div class="nav-bottom">
-            <hr>
-            <a class="exit-btn" href="logout.php"><i class="bi bi-box-arrow-right"></i>Sair</a>
-        </div>
-    </nav>
     <main class="main-user">
-        <header></header>
+        <div class="dashboard">
+            <div class="profile-card">
+                <div class="top">
+                    <div class="user-pic"></div>
+                    <div class="user-info">
+                        <span class="name">
+                            Ramon Dino
+                        </span>
+                        <span class="function">
+                            Aluno
+                        </span>
+                    </div>
+                    <hr>
+                </div>
+                <div class="achievements">
+                    <span class="category"></span>
+                </div>
+            </div>
+            <div class="workout-card">
+                <h1 class="title">Segunda-Feira</h1>
+                <hr>
+                <div class="exercise-card">
+                    <div class="left">
+                        <div class="img"></div>
+                        <span class="exe-name">Supino Reto</span>
+                    </div>
+                    <div class="right">
+                        <p><span class="exe-reps">8-10 Repetições 4x</span></p>
+                    </div>
+                </div>
+                <hr>
+                <div class="exercise-card">
+                    <div class="left">
+                        <div class="img"></div>
+                        <span class="exe-name">Supino inclinado com halteres</span>
+                    </div>
+                    <div class="right">
+                        <p><span class="exe-reps">10-12 Repetições 3x</span></p>
+                    </div>
+                </div>
+                <hr>
+                <div class="exercise-card">
+                    <div class="left">
+                        <div class="img"></div>
+                        <span class="exe-name">Crucifixo na máquina</span>
+                    </div>
+                    <div class="right">
+                        <p><span class="exe-reps">12-15 Repetições 3x</span></p>
+                    </div>
+                </div>
+                <hr>
+                <div class="exercise-card">
+                    <div class="left">
+                        <div class="img"></div>
+                        <span class="exe-name">Pulley tríceps</span>
+                    </div>
+                    <div class="right">
+                        <p><span class="exe-reps">8-10 Repetições 4x</span></p>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="progress-card"></div>
+        </div>
     </main>
 </body>
 </html>

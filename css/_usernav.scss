@@ -1,0 +1,91 @@
+@import "./variaveis";
+
+.user-nav{
+    background: $gradient;
+    box-shadow: 0 0 5px 0px $blackshadow;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    height: calc(100vh);
+    padding: 150px 0 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 999;
+    .logo{
+        position: fixed;
+        top: 0;
+        // background-color: honeydew;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: $logo;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 45px;
+        gap: 10px;
+        color: $white;
+        // align-self: center;
+        margin: 20px 35px;
+        img{
+            width: 60px;
+            // height: 50px;
+            padding-bottom: 6px;
+            // background-color: cyan;
+        }
+    }
+    .nav-options{
+        .title{
+            font-size: 18px;
+            font-weight: bold;
+            padding: 0 40px;
+            color: $red;
+            // background-color: gold;
+        }
+        .nav-list{
+            // background-color: hotpink;
+            li{
+                a{
+                    font-size: 20px;
+                    font-weight: 400;
+                    padding: 8px 50px;
+                    display: flex;
+                    gap: 15px;
+                    align-items: center;
+                    color: #b8b8b8;
+                    &:hover{
+                        background-color:  $grey;
+                        color: $white;
+                        // border-top-right-radius: 10px;
+                        // border-bottom-right-radius: 10px;
+                        border-right: 2px solid $red;
+                    }
+
+                }
+            }
+        }
+    }
+    .nav-bottom{
+        // background-color: orangered;
+        padding: 0 40px;
+        hr{
+            border: none;
+            background-color: #b8b8b8;
+            height: 1px;
+            margin: 10px 0;
+        }
+        a{
+            // background-color: blue;
+            color: #b8b8b8;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            &:hover{
+                color: $white;
+            }
+        }
+
+    }
+}

@@ -6,93 +6,117 @@
     width: calc(100% - 300px);
     float: right;
     position: relative;
-}
-.user-nav{
-    background: $gradient;
-    box-shadow: 0 0 5px 0px $blackshadow;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 300px;
-    height: calc(100vh);
-    padding: 150px 0 60px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 999;
-    .logo{
-        position: fixed;
-        top: 0;
-        // background-color: honeydew;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: $logo;
-        font-weight: bold;
-        text-transform: uppercase;
-        line-height: 45px;
-        gap: 10px;
-        color: $white;
-        // align-self: center;
-        margin: 20px 35px;
-        img{
-            width: 60px;
-            // height: 50px;
-            padding-bottom: 6px;
-            // background-color: cyan;
-        }
-    }
-    .nav-options{
-        .title{
-            font-size: 18px;
-            font-weight: bold;
-            padding: 0 40px;
-            color: $red;
-            // background-color: gold;
-        }
-        .nav-list{
-            // background-color: hotpink;
-            li{
-                a{
-                    font-size: 20px;
-                    font-weight: 400;
-                    padding: 8px 50px;
+    justify-content: center;
+    align-items: center;
+    .dashboard{
+        // background-color: $lightgrey;
+        height: 90%;
+        width: 90%;
+        // padding: 25px 45px;
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        grid-template-rows: 1fr 200px;
+        gap: 35px;
+        .profile-card{
+            background-color: $white; 
+            box-shadow: 0 0 25px 1px $blackshadow;
+            border-radius: 25px;
+            padding: 25px 15px;
+            height: 100%;
+            grid-row: span 2;
+            .top{
+                // background-color: maroon;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 15px;
+                .user-pic{
+                    background-color: #dbdad9;
+                    width: 125px;
+                    height: 125px;
+                    border-radius: 50%;
+                }
+                .user-info{
+                    // background-color: mediumblue;
                     display: flex;
-                    gap: 15px;
+                    flex-direction: column;
+                    justify-content: center;
                     align-items: center;
-                    color: #b8b8b8;
-                    &:hover{
-                        background-color:  $grey;
-                        color: $white;
-                        // border-top-right-radius: 10px;
-                        // border-bottom-right-radius: 10px;
-                        border-right: 2px solid $red;
+                    .name{
+                        // background-color: mediumorchid;
+                        font-size: $h3;
+                        font-weight: 500;
+                        line-height: 90%;
                     }
-
+                    .function{
+                        // background-color: mediumpurple;
+                        font-size: 20px;
+                        font-weight: 400;
+                        color: #dbdad9;
+                    }
+                }
+                hr{
+                    border: none;
+                    width: 100%;
+                    height: 1px;
+                    background-color: #dbdad9;
                 }
             }
         }
-    }
-    .nav-bottom{
-        // background-color: orangered;
-        padding: 0 40px;
-        hr{
-            border: none;
-            background-color: #b8b8b8;
-            height: 1px;
-            margin: 10px 0;
-        }
-        a{
-            // background-color: blue;
-            color: #b8b8b8;
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            &:hover{
-                color: $white;
+        .workout-card{
+            background-color: $white;
+            box-shadow: 0 0 25px 1px $blackshadow;
+            border-radius: 25px;
+            padding: 25px;
+            // position: relative;
+            .title{
+                line-height: 100%;
+                // background-color: blue;
+                margin-bottom: 25px;
+            }
+            .exercise-card{
+                // background-color: mediumvioletred;
+                padding: 10px 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .left{
+                    // background-color: mediumaquamarine;
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    .img{
+                        width: 80px;
+                        height: 50px;
+                        background-color: #dbdad9;
+                        border-radius: 10px;
+                    }
+                    .exe-name{
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+                }
+                .right{
+                    // background-color: darkolivegreen;
+                    color: #b1b1b1;
+                }
+            }
+            hr{
+                // position: ;
+                // width: 100%;
+                // left: 0;
+                border: none;
+                height: 1px;
+                background-color: #dbdad9;
+                // margin: 10px 0;
             }
         }
-
+        .progress-card{
+            background-color: $white;
+            box-shadow: 0 0 25px 1px $blackshadow;
+            border-radius: 25px;
+        }
     }
 }

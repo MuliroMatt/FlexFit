@@ -1,6 +1,6 @@
 <?php
 //Variável de sessão
-// session_start();
+session_start();
 //incluir o cabeçalho ao PHP
 include("cabecalho.php");
 
@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $key = rand(100000, 999999);
 
     //Instruções ao  banco de dados
-    $sql = "SELECT CONT(al_id) FROM alunos WHERE al_nome = '$nome', al_email = '$email', 
+    $sql = "SELECT COUNT(al_id) FROM alunos WHERE al_nome = '$nome', al_email = '$email', 
     al_senha = '$senha', al_cpf = '$cpf', al_idade = '$idade', al_dataNasc = '$dataNascimento', 
     al_sexo = '$sexo', al_endereco = '$endereco', al_telefone = '$telefone', al_peso = '$peso', 
     al_altura = '$altura', al_experiencia = '$experiencia', al_objetivo = '$objetivo'";
@@ -61,7 +61,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <title>Document</title>
 </head>
 <body>
-    <div class="" id="cadastra">
+    <div id="cadastra">
         <form action="cadastro_aluno.php" method="post">
             <label for="">Nome:</label>
             <input type="text" name="nome" id="nome" placeholder="Nome Completo" required>
@@ -76,8 +76,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             <label for="">Data de Nascimento:</label>
             <input type="date" name="dataNascimento" id="dataNascimento" required>
             <label for="">Gênero:</label>
-            <input type="checkbox" name="feminino" id="feminino"  value="Feminino"> Feminino
-            <input type="checkbox" name="masculino" id="masculino" value="Masculino"> Masculino
+            <input type="radio" name="genero" id="feminino"  value="Feminino"> Feminino
+            <input type="radio" name="genero" id="masculino" value="Masculino"> Masculino
             <label for="">Endereço:</label>
             <input type="text" name="endereco" id="endereco">
             <label for="">Telefone:</label>
@@ -87,9 +87,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             <label for="altura">Altura (cm):</label>
             <input type="text" id="altura" name="altura" step="0.01" required>
             <label for="">Experiência</label>
-            <input type="checkbox" name="iniciante" id="iniciante" value="Iniciante"> Iniciante
-            <input type="checkbox" name="intermediario" id="intermediario" value="Intermediário"> Intermediário
-            <input type="checkbox" name="Avançado" id="Avançado" value="Avançado"> Avançado
+            <input type="radio" name="iniciante" id="iniciante" value="Iniciante"> Iniciante
+            <input type="radio" name="intermediario" id="intermediario" value="Intermediário"> Intermediário
+            <input type="radio" name="Avançado" id="Avançado" value="Avançado"> Avançado
             <button type="submit">Cadastrar Aluno</button>
         </form>
     </div>

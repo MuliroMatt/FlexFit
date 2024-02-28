@@ -522,6 +522,138 @@ body {
   width: calc(100% - 300px);
   float: right;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-user .dashboard {
+  height: 90%;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 1fr 200px;
+  gap: 35px;
+}
+.main-user .dashboard .profile-card {
+  background-color: #FFF;
+  box-shadow: 0 0 25px 1px rgba(0, 0, 0, 0.1019607843);
+  border-radius: 25px;
+  padding: 25px 15px;
+  height: 100%;
+  grid-row: span 2;
+}
+.main-user .dashboard .profile-card .top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+.main-user .dashboard .profile-card .top .user-pic {
+  background-color: #dbdad9;
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+}
+.main-user .dashboard .profile-card .top .user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-user .dashboard .profile-card .top .user-info .name {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 90%;
+}
+.main-user .dashboard .profile-card .top .user-info .function {
+  font-size: 20px;
+  font-weight: 400;
+  color: #dbdad9;
+}
+.main-user .dashboard .profile-card .top hr {
+  border: none;
+  width: 100%;
+  height: 1px;
+  background-color: #dbdad9;
+}
+.main-user .dashboard .workout-card {
+  background-color: #FFF;
+  box-shadow: 0 0 25px 1px rgba(0, 0, 0, 0.1019607843);
+  border-radius: 25px;
+  padding: 25px;
+}
+.main-user .dashboard .workout-card .title {
+  line-height: 100%;
+  margin-bottom: 25px;
+}
+.main-user .dashboard .workout-card .exercise-card {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-user .dashboard .workout-card .exercise-card .left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.main-user .dashboard .workout-card .exercise-card .left .img {
+  width: 80px;
+  height: 50px;
+  background-color: #dbdad9;
+  border-radius: 10px;
+}
+.main-user .dashboard .workout-card .exercise-card .left .exe-name {
+  font-size: 18px;
+  font-weight: 500;
+}
+.main-user .dashboard .workout-card .exercise-card .right {
+  color: #b1b1b1;
+}
+.main-user .dashboard .workout-card hr {
+  border: none;
+  height: 1px;
+  background-color: #dbdad9;
+}
+.main-user .dashboard .progress-card {
+  background-color: #FFF;
+  box-shadow: 0 0 25px 1px rgba(0, 0, 0, 0.1019607843);
+  border-radius: 25px;
+}
+
+.main-videos {
+  height: 100vh;
+  padding-top: 75px;
+}
+.main-videos .videos-container {
+  height: 100%;
+  padding: 35px 0;
+}
+.main-videos .videos-container h1 {
+  font-size: 32px;
+  text-transform: uppercase;
+}
+.main-videos .videos-container hr {
+  border: none;
+  background-color: #000;
+  height: 1px;
+  margin: 10px 0 20px;
+}
+.main-videos .videos-container .videos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.main-videos .videos-container .videos-grid .video-frame .video {
+  border-radius: 5px;
+  height: 210px;
+  width: 380px;
+  overflow: hidden;
+}
+.main-videos .videos-container .videos-grid .video-frame h3 {
+  font-size: 24px;
+  font-weight: normal;
 }
 
 .user-nav {
@@ -594,38 +726,4 @@ body {
 }
 .user-nav .nav-bottom a:hover {
   color: #FFF;
-}
-
-.main-videos {
-  height: 100vh;
-  padding-top: 75px;
-}
-.main-videos .videos-container {
-  height: 100%;
-  padding: 35px 0;
-}
-.main-videos .videos-container h1 {
-  font-size: 32px;
-  text-transform: uppercase;
-}
-.main-videos .videos-container hr {
-  border: none;
-  background-color: #000;
-  height: 1px;
-  margin: 10px 0 20px;
-}
-.main-videos .videos-container .videos-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-.main-videos .videos-container .videos-grid .video-frame .video {
-  border-radius: 5px;
-  height: 210px;
-  width: 380px;
-  overflow: hidden;
-}
-.main-videos .videos-container .videos-grid .video-frame h3 {
-  font-size: 24px;
-  font-weight: normal;
 }/*# sourceMappingURL=style.css.map */
