@@ -519,45 +519,81 @@ body {
 .main-user {
   background-color: #E8E7E8;
   height: 100vh;
-  padding: 75px 0 0 0;
+  width: calc(100% - 300px);
+  float: right;
   position: relative;
 }
-.main-user .user-nav {
-  background-color: #FFF;
+
+.user-nav {
+  background: linear-gradient(to bottom right, #1b1b1b, #0f0f0f);
+  box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.1019607843);
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 250px;
-  height: calc(100vh - 75px);
-  padding: 35px 0;
+  width: 300px;
+  height: 100vh;
+  padding: 150px 0 60px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 999;
 }
-.main-user .user-nav .nav-options .title {
-  font-size: 16px;
-  padding: 0 25px;
+.user-nav .logo {
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 45px;
+  gap: 10px;
+  color: #FFF;
+  margin: 20px 35px;
+}
+.user-nav .logo img {
+  width: 60px;
+  padding-bottom: 6px;
+}
+.user-nav .nav-options .title {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0 40px;
   color: #E73539;
 }
-.main-user .user-nav .nav-options .nav-list li a {
+.user-nav .nav-options .nav-list li a {
   font-size: 20px;
-  padding: 5px 25px;
+  font-weight: 400;
+  padding: 8px 50px;
   display: flex;
   gap: 15px;
   align-items: center;
-  color: #000;
+  color: #b8b8b8;
 }
-.main-user .user-nav .nav-options .nav-list li a:hover {
-  background-color: #d8d8d8;
-  border-right: 3px solid #E73539;
+.user-nav .nav-options .nav-list li a:hover {
+  background-color: #434343;
+  color: #FFF;
+  border-right: 2px solid #E73539;
 }
-.main-user .user-nav .nav-bottom {
-  padding: 0 25px;
+.user-nav .nav-bottom {
+  padding: 0 40px;
 }
-.main-user .user-nav .nav-bottom hr {
+.user-nav .nav-bottom hr {
   border: none;
-  background-color: #000;
+  background-color: #b8b8b8;
   height: 1px;
+  margin: 10px 0;
+}
+.user-nav .nav-bottom a {
+  color: #b8b8b8;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.user-nav .nav-bottom a:hover {
+  color: #FFF;
 }
 
 .main-videos {

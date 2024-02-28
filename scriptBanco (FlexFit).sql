@@ -17,6 +17,22 @@ CREATE TABLE administradores(
     adm_status CHAR(1) NOT NULL
 
 );
+
+CREATE TABLE usuarios(
+
+    usu_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+
+    usu_nome VARCHAR(20) NOT NULL,
+
+    usu_sobrenome VARCHAR (60) NOT NULL,
+
+    usu_email VARCHAR(50) NOT NULL,
+
+    usu_senha VARCHAR(30) NOT NULL,
+
+    usu_status CHAR(1) NOT NULL
+
+);
  
 CREATE TABLE instrutores(
 
