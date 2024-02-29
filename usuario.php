@@ -14,6 +14,7 @@ include('usernav.php');
 </head>
 <body>
     <main class="main-user">
+        <!-- <h1 class="page-title">Meu Painel</h1> -->
         <div class="dashboard">
             <div class="profile-card">
                 <div class="top">

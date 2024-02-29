@@ -7,12 +7,25 @@
     float: right;
     position: relative;
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 35px 45px;
+    .page-title{
+        display: block;
+        width: 100%;
+        color: $red;
+        text-transform: uppercase;
+        font-size: 26px;
+        // background-color: blue;
+        // align-self: flex-start;
+        // margin-left:5px;
+    }
     .dashboard{
-        // background-color: $lightgrey;
-        height: 90%;
-        width: 90%;
+        // background-color: $red;
+        height: 100%;
+        width: 100%;
         // padding: 25px 45px;
         display: grid;
         grid-template-columns: 300px 1fr;
@@ -75,6 +88,7 @@
                 line-height: 100%;
                 // background-color: blue;
                 margin-bottom: 25px;
+                font-size: 24px;
             }
             .exercise-card{
                 // background-color: mediumvioletred;

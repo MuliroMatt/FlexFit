@@ -8,8 +8,8 @@
         <div class="nav-options">
             <h3 class="title">Minha conta</h3>
             <ul class="nav-list">
-                <li><a href=""><i class="bi bi-app"></i> Meu Painel</a></li>
-                <li><a href=""><i class="bi bi-person-fill"></i> Perfil</a></li>
+                <li><a href="usuario.php"><i class="bi bi-app"></i> Meu Painel</a></li>
+                <li><a href="perfil.php"><i class="bi bi-person-fill"></i> Perfil</a></li>
             </ul>
             <h3 class="title">Cronograma e Planos</h3>
             <ul class="nav-list">
