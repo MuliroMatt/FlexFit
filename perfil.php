@@ -4,6 +4,9 @@ session_start();
 
 if (isset($_SESSION['idusuario'])){
     $id = $_SESSION['idusuario'];
+    $sql = "SELECT * FROM usuarios WHERE usu_id = '$id';";
+    $return = mysqli_query($link, $sql);
+    
     $sql = "SELECT * FROM usuarios
             JOIN alunos ON usuarios.usu_id = alunos.fk_usu_id
             WHERE usu_id = '$id';";
@@ -18,7 +21,6 @@ if (isset($_SESSION['idusuario'])){
         $sexo = $tbl[10];
         $endereco = $tbl[11];
         $telefone = $tbl[12];
-        
     }
 }
 ?>

@@ -9,13 +9,13 @@ if(isset($_SESSION['idusuario'])){
 ?>
 <nav class="navbar2">
     <div class="nav-container">
-        <div class="logo">
+        <a href="index.php" class="logo">
             <img src="img/logo.png">
 
             <span class="logo-text">
                 FlexFit
             </span>
-        </div>
+        </a>
         <ul class="nav-links">
             <li><a href="index.php">Início</a>
                 <hr>

@@ -3,7 +3,9 @@ include("conectaDB.php");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $nome = mysqli_real_escape_string($link, $_POST['nome']);
+    // $nome = ucwords($nome);
     $sobrenome = mysqli_real_escape_string($link, $_POST['sobrenome']);
+    // $sobrenome = ucwords($sobrenome);
     $email = mysqli_real_escape_string($link, $_POST['email']);
     $senha = mysqli_real_escape_string($link, $_POST['senha']);
 

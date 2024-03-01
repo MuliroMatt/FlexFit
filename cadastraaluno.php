@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $usu_id = $_SESSION['idusuario'];
 
     //Instruções ao  banco de dados
-    $sql = "SELECT COUNT(al_id) FROM alunos WHERE al_cpf = '$cpf'";
+    $sql = "SELECT COUNT(al_id) FROM alunos WHERE al_cpf = '$cpf' OR fk_usu_id = '$usu_id'";
     $resultado = mysqli_query($link, $sql);
     
     $resultado = mysqli_fetch_array($resultado) [0];
@@ -25,6 +25,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     } else {
         $sql = "INSERT INTO alunos (al_cpf, al_dataNasc, al_sexo, al_endereco, al_telefone, fk_usu_id)
                 VALUES ('$cpf', '$dataNascimento', '$sexo', '$endereco', '$telefone', '$usu_id')";
+        $resultado = mysqli_query($link, $sql);
+        $sql = "UPDATE usuarios
+                SET usu_funcao = 'a'
+                WHERE usu_id = $usu_id";
         $resultado = mysqli_query($link, $sql);
         
         echo "<script>window.alert('Bem Vindo a FlexFit!');</script>";
