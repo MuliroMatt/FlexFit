@@ -45,7 +45,7 @@ if(isset($_SESSION['idusuario'])){
                     <li><a href="">Trabalhe conosco</a>
                         <hr>
                     </li>
-                    <li><a href="cadastro_aluno.php">Seja nosso aluno</a>
+                    <li><a href="cadastraaluno.php">Seja nosso aluno</a>
                         <hr>
                     </li>
                     <?php if(!isset($nome)){?>

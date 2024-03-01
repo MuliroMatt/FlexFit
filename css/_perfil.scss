@@ -9,13 +9,13 @@
     justify-content: center;
     align-items: center;
     // gap: 20px;
-    padding: 35px 45px;
+    // padding: 35px 45px;
     .perfil-container{
         background-color: $white;  
         height: 100%;
         width: 100%;
         display: grid;
-        border-radius: 25px;
+        // border-radius: 25px;
         grid-template-columns: 300px 1fr;
         grid-template-rows: 100px 1fr;
         column-gap: 35px;
@@ -25,7 +25,7 @@
             // background-color: green;
             grid-column: span 2;
             border-bottom: 1px solid #dbdad9;
-            padding: 25px;
+            padding: 25px 50px;
             display: flex;
             align-items: center;
             .page-title{
@@ -61,14 +61,15 @@
                     justify-content: center;
                     align-items: center;
                     .name{
-                        // background-color: mediumorchid;
+                        background-color: mediumorchid;
                         font-size: $h3;
                         font-weight: 500;
                         line-height: 90%;
+                        text-align: center;
                     }
                     .function{
                         // background-color: mediumpurple;
-                        font-size: 20px;
+                        font-size: 16px;
                         font-weight: 400;
                         color: $text;
                     }
@@ -84,34 +85,7 @@
                 // background-color: blueviolet;
                 // height: 100px;
             }
-            .form-btns{
-                // background-color: cyan;
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 15px;
-                .btn{
-                    padding: 10px 10px;
-                    border: 1px solid $red;
-                    font-weight: bold;
-                    text-transform: uppercase;
-                    cursor: pointer;
-                    &.discard{
-                        color: $red;
-                        &:hover{
-                            transition: .3s;
-                            box-shadow: inset 130px 0 0 0 $lightgrey;
-                        }
-                    }
-                    &.save{
-                        background-color: $red;
-                        color: $white;
-                        &:hover{
-                            transition: .3s;
-                            box-shadow: inset 130px 0 0 0 $lightred;
-                        }
-                    }
-                }
-            }
+            
         }
         .profile-infos{
             // background-color: blue;
@@ -164,6 +138,37 @@
                 #last-hr{
                     grid-column: span 2;
                     margin: 10px 0;
+                }
+                .form-btns{
+                    // background-color: cyan;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 15px;
+                    grid-column: span 2;
+                    align-self: center;
+                    margin: 20px 0;
+                    .btn{
+                        padding: 10px 10px;
+                        border: 1px solid $red;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                        &.discard{
+                            color: $red;
+                            &:hover{
+                                transition: .3s;
+                                box-shadow: inset 350px 0 0 0 $lightgrey;
+                            }
+                        }
+                        &.save{
+                            background-color: $red;
+                            color: $white;
+                            &:hover{
+                                transition: .3s;
+                                box-shadow: inset 350px 0 0 0 $lightred;
+                            }
+                        }
+                    }
                 }
             }
         }

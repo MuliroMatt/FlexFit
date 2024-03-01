@@ -1,0 +1,65 @@
+@import './variaveis';
+
+.main-cadastraaluno{
+    // background-color: blue;
+    height: 100vh;
+    padding-top: 75px;
+    display: flex;
+    justify-content: center;
+    .cadastra-container{
+        // background-color: green;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .cadastra-form{
+            // background-color: red;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            .input-box{
+                // background-color: cyan;
+                width: 500px;
+                display: flex;
+                flex-direction: column;
+                font-size: 20px;
+                text-transform: uppercase;
+                input{
+                    border: none;
+                    background-color: $white;
+                    border: 1px solid $black;
+                    border-radius: 0;
+                    height: 45px;
+                    padding: 10px;
+                    outline: none;
+                }
+            }
+            p{
+                font-size: 20px;
+                a{
+                    color: $red;
+                    font-weight: 600;
+                    cursor: pointer;
+                }
+            }
+            .cadastrar-btn{
+                background-color: $red;
+                border: none;
+                font-size: 20px;
+                width: 100%;
+                font-weight: bold;
+                text-transform: uppercase;
+                padding: 10px 15px;
+                color: $white;
+                cursor: pointer;
+                &:hover{
+                    transition: .3s;
+                    // background-color: $lightred;
+                    box-shadow: inset 500px 0 0 0 $lightred;
+                }
+            }
+        }
+    }
+}  

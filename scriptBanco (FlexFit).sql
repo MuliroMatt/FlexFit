@@ -12,9 +12,12 @@ CREATE TABLE administradores(
 
 CREATE TABLE usuarios(
     usu_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    usu_nome VARCHAR(40) NOT NULL,
+    usu_sobrenome VARCHAR(60) NOT NULL,
     usu_email VARCHAR(60) NOT NULL,
     usu_senha VARCHAR(32) NOT NULL,
-    usu_funcao CHAR(1)
+    usu_funcao CHAR(1),
+    usu_status CHAR(1)
 );
 
 CREATE TABLE instrutores(
@@ -30,7 +33,6 @@ CREATE TABLE instrutores(
     instr_status CHAR(1) NOT NULL,
     fk_adm_id INT NOT NULL,
     fk_usu_id INT NOT NULL,
-    FOREIGN KEY (fk_adm_id) REFERENCES administradores(adm_id)
     FOREIGN KEY (fk_usu_id) REFERENCES usuarios(usu_id)
 );
 
@@ -42,18 +44,21 @@ CREATE TABLE alunos(
     al_cpf BIGINT(20) NOT NULL,
     -- al_idade VARCHAR(10) NOT NULL,
     al_dataNasc DATE NOT NULL,
-    al_sexo ENUM ('Masculino', 'Feminino') NULL,
+    al_sexo ENUM ('Masculino', 'Feminino', 'Outro') NULL,
     al_endereco VARCHAR(100) NOT NULL,
     al_telefone VARCHAR(14) NOT NULL,
-    al_peso DECIMAL(8,2) NOT NULL,
-    al_altura DECIMAL(7,2) NOT NULL,
-    al_experiencia TEXT NULL,
-    al_objetivo TEXT NULL,
-    al_status CHAR(1) NOT NULL,
-    fk_instr_id INT NOT NULL,
-    fk_adm_id INT NOT NULL,
-    FOREIGN KEY (fk_instr_id) REFERENCES instrutores(instr_id),
-    FOREIGN KEY (fk_adm_id) REFERENCES administradores(adm_id)
+    al_peso DECIMAL(8,2),
+    al_altura DECIMAL(7,2),
+    al_experiencia VARCHAR,
+    al_objetivo VARCHAR,
+    fk_usu_id INT NOT NULL
+
+    FOREIGN KEY (fk_usu_id) REFERENCES usuarios(usu_id)
+    -- al_status CHAR(1) NOT NULL,
+    -- fk_instr_id INT,
+    -- fk_adm_id INT NOT NULL,
+    -- FOREIGN KEY (fk_instr_id) REFERENCES instrutores(instr_id),
+    -- FOREIGN KEY (fk_adm_id) REFERENCES administradores(adm_id)
 );
 
 CREATE TABLE aparelhos(

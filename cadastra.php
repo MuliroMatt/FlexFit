@@ -15,7 +15,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         echo "<script>window.alert('Usuário já cadastrado');</script>";
     }
     else{
-        $sql = "INSERT INTO usuarios(usu_nome, usu_sobrenome, usu_email, usu_senha, usu_status) VALUES('$nome', '$sobrenome', '$email', '$senha', 's')";
+        $sql = "INSERT INTO usuarios(usu_nome, usu_sobrenome, usu_email, usu_senha, usu_status) 
+                VALUES('$nome', '$sobrenome', '$email', '$senha', 's')";
         $resultado = mysqli_query($link, $sql);
 
         echo "<script>window.alert('Usuário cadastrado com sucesso!');</script>";

@@ -1,3 +1,7 @@
+<?php 
+include('conectaDB.php');
+?>
+
 <nav class="user-nav">
         <div class="logo">
             <img src="img/logo.png" width="50">
@@ -13,7 +17,7 @@
             </ul>
             <h3 class="title">Cronograma e Planos</h3>
             <ul class="nav-list">
-                <li><a href=""><i class="bi bi-calendar-week"></i> Cronograma</a></li>
+                <li><a href="treinos.php"><i class="bi bi-calendar-week"></i> Cronograma</a></li>
                 <li><a href=""><i class="bi bi-bullseye"></i> Objetivos</a></li>
             </ul>
             <h3 class="title">Navegação</h3>
