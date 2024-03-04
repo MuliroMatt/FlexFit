@@ -34,6 +34,16 @@
                     height: 45px;
                     padding: 10px;
                     outline: none;
+                    font-size: 20px;
+                }
+                select{
+                   background-color: $white;
+                   border: 1px solid $black;
+                   height: 45px;
+                   padding: 0 10px;
+                   outline: none;
+                   font-size: 20px;
+            
                 }
             }
             p{

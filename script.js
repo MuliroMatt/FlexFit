@@ -30,3 +30,12 @@ function openWorkoutList() {
    sidenav.classList.remove("open");
    document.getElementById('closebtn').style.display = "none"
  }
+
+// function openDropdown() {
+//   var dropdown = document.getElementById('dropdown')
+//   if (dropdown.classList.contains("open")) {
+//     dropdown.classList.remove("open");
+// } else {
+//     dropdown.classList.add("open");
+// }
+// }

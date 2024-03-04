@@ -550,6 +550,15 @@ body {
   height: 45px;
   padding: 10px;
   outline: none;
+  font-size: 20px;
+}
+.main-cadastraaluno .cadastra-container .cadastra-form .input-box select {
+  background-color: #FFF;
+  border: 1px solid #000;
+  height: 45px;
+  padding: 0 10px;
+  outline: none;
+  font-size: 20px;
 }
 .main-cadastraaluno .cadastra-container .cadastra-form p {
   font-size: 20px;
@@ -763,9 +772,16 @@ body {
 }
 .user-header .user-header-list .welcome {
   display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+.user-header .user-header-list .welcome .top {
+  display: flex;
+  align-items: center;
   gap: 10px;
 }
-.user-header .user-header-list .welcome .img {
+.user-header .user-header-list .welcome .top .img {
   height: 30px;
   width: 30px;
   background-color: #434343;
@@ -976,7 +992,7 @@ body {
   outline: none;
   font-size: 18px;
 }
-.main-profile .perfil-container .profile-infos .profile-form .input-box .notallowed {
+.main-profile .perfil-container .profile-infos .profile-form .input-box .readonly {
   color: #888888;
 }
 .main-profile .perfil-container .profile-infos .profile-form #last-hr {

@@ -42,7 +42,7 @@ if(isset($_SESSION['idusuario'])){
                     <li><a href="#inicio">Início</a>
                         <hr>
                     </li>
-                    <li><a href="">Trabalhe conosco</a>
+                    <li><a href="cadastrainstrutor.php">Trabalhe conosco</a>
                         <hr>
                     </li>
                     <li><a href="cadastraaluno.php">Seja nosso aluno</a>

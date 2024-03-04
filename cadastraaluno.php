@@ -1,13 +1,10 @@
 <?php
-//Variável de sessão
-// session_start();
-//incluir o cabeçalho ao PHP
 include("cabecalho.php");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $cpf = mysqli_real_escape_string($link, $_POST['cpf']);
     $dataNascimento = mysqli_real_escape_string($link, $_POST['nasc']);
-    $sexo = mysqli_real_escape_string($link, $_POST['sexo']);
+    $genero = mysqli_real_escape_string($link, $_POST['genero']);
     $endereco = mysqli_real_escape_string($link, $_POST['endereco']);
     $telefone = mysqli_real_escape_string($link, $_POST['telefone']);
     $usu_id = $_SESSION['idusuario'];
@@ -24,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         echo "<script>window.location.href='cadastraaluno.php';</script>";
     } else {
         $sql = "INSERT INTO alunos (al_cpf, al_dataNasc, al_sexo, al_endereco, al_telefone, fk_usu_id)
-                VALUES ('$cpf', '$dataNascimento', '$sexo', '$endereco', '$telefone', '$usu_id')";
+                VALUES ('$cpf', '$dataNascimento', '$genero', '$endereco', '$telefone', '$usu_id')";
         $resultado = mysqli_query($link, $sql);
         $sql = "UPDATE usuarios
                 SET usu_funcao = 'a'
@@ -65,7 +62,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     </div>
                     <div class="input-box">
                         <label>Gênero</label>
-                        <input type="text" name="sexo" required>
+                        <select name="genero" id="genero" required>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                            <option value="Outro">Outro</option>
+                        </select>
                     </div>
                     <div class="input-box">
                         <label>Endereço</label>

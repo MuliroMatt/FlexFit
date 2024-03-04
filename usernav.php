@@ -1,5 +1,11 @@
 <?php 
 include('conectaDB.php');
+session_start();
+
+$nome = $_SESSION['nomeusuario'];
+$sobrenome = $_SESSION['sobrenomeusuario'];
+$funcao = $_SESSION['funcaousuario'];
+// echo $funcao;
 ?>
 
 <header class="user-header">
@@ -11,7 +17,15 @@ include('conectaDB.php');
     </a>
     <ul class="user-header-list">
         <li class="navigation"><a href="index.php"><i class="bi bi-house"></i> Inicio</a></li>
-        <li class="welcome"><div class="img"></div>Murilo Amorim Mattiuzzi<i class="bi bi-chevron-compact-down"></i></li>
+        <li class="welcome">
+            <div class="top" onclick="openDropdown()">
+                <div class="img"></div>
+                <?=$nome?> <?=$sobrenome?><i class="bi bi-chevron-compact-down"></i>
+            </div>
+            <!-- <div class="dropdown" id="dropdown">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum cumque, at nobis, maiores praesentium vel fuga quibusdam fugiat dolores voluptatum labore eius doloribus excepturi magnam sapiente aliquam fugit nam minima.</p>
+            </div> -->
+        </li>
         <li class="close-btn" id="closebtn" onclick="closeWorkoutList()"><button><i class="bi bi-x-lg"></i></button></li>
     </ul>
 </header>
@@ -21,19 +35,22 @@ include('conectaDB.php');
         <ul class="nav-list">
             <li><a href="usuario.php"><i class="bi bi-columns"></i> Meu Painel</a></li>
             <li><a href="perfil.php"><i class="bi bi-person-fill"></i> Perfil</a></li>
-        <!-- </ul>
-        <h3 class="title">Cronograma e Planos</h3>
-        <ul class="nav-list"> -->
+            <?php 
+            if($funcao == 'a'){
+            ?>
             <li><a href="treinos.php"><i class="bi bi-calendar-week"></i> Cronograma</a></li>
             <li><a href=""><i class="bi bi-bullseye"></i> Objetivos</a></li>
+            <?php 
+            }
+            elseif ($funcao == 'i'){
+            ?>
+            <li><a href="alunos.php"><i class="bi bi-people-fill"></i> Alunos</a></li>
+            <?php }?>
         </ul>
-        <!-- <h3 class="title">Navegação</h3>
-        <ul class="nav-list">
-            <li><a href="index.php"><i class="bi bi-house"></i> Início</a></li>
-        </ul> -->
     </div>
     <div class="nav-bottom">
         <hr>
         <a class="exit-btn" href="logout.php"><i class="bi bi-box-arrow-right"></i>Sair</a>
     </div>
 </nav>
+<script src="script.js"></script>
