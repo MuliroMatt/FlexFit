@@ -1,5 +1,28 @@
 <?php 
 include('usernav.php');
+session_start();
+
+if (isset($_SESSION['idusuario'])){
+    $id = $_SESSION['idusuario'];
+    $sql = "SELECT * FROM usuarios WHERE usu_id = '$id';";
+    $return = mysqli_query($link, $sql);
+    
+    $sql = "SELECT * FROM usuarios
+            JOIN alunos ON usuarios.usu_id = alunos.fk_usu_id
+            WHERE usu_id = '$id';";
+    $return = mysqli_query($link, $sql);
+    
+    while($tbl = mysqli_fetch_array($return)){
+        $nome = $tbl[1];
+        $sobrenome = $tbl[2];
+        $email = $tbl[3];
+        $cpf = $tbl[8];
+        $nasc = $tbl[9];
+        $sexo = $tbl[10];
+        $endereco = $tbl[11];
+        $telefone = $tbl[12];
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -16,12 +39,16 @@ include('usernav.php');
     <main class="main-user">
         <!-- <h1 class="page-title">Meu Painel</h1> -->
         <div class="dashboard">
+            <header class="page-header">
+                <span class="page-title">Meu Painel</span>
+            </header>
             <div class="profile-card">
                 <div class="top">
                     <div class="user-pic"></div>
                     <div class="user-info">
                         <span class="name">
-                            Ramon Dino
+                            <?=$nome?> <br>
+                            <?=$sobrenome?>
                         </span>
                         <span class="function">
                             Aluno

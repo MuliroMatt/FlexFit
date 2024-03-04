@@ -2,7 +2,7 @@
 
 .main-user{
     background-color: $lightgrey;
-    height: 100vh;
+    height: calc(100vh - 70px);
     width: calc(100% - 300px);
     float: right;
     position: relative;
@@ -11,30 +11,34 @@
     align-items: center;
     flex-direction: column;
     gap: 20px;
-    padding: 35px 45px;
-    .page-title{
-        display: block;
-        width: 100%;
-        color: $red;
-        text-transform: uppercase;
-        font-size: 26px;
-        // background-color: blue;
-        // align-self: flex-start;
-        // margin-left:5px;
-    }
+    // padding: 35px 45px;
     .dashboard{
-        // background-color: $red;
+        background-color: $white;
         height: 100%;
         width: 100%;
         // padding: 25px 45px;
         display: grid;
-        grid-template-columns: 300px 1fr;
-        grid-template-rows: 1fr 200px;
-        gap: 35px;
+        grid-template-columns: .5fr 1fr;
+        grid-template-rows: 80px 1fr 200px;
+        column-gap: 35px;
+        .page-header{
+            // background-color: green;
+            grid-column: span 2;
+            border-bottom: 1px solid #dbdad9;
+            padding: 25px 50px;
+            display: flex;
+            align-items: center;
+            .page-title{
+                font-size: 32px;
+                font-weight: 600;
+                // text-transform: uppercase;
+                color: $black;
+            }
+        }
         .profile-card{
             background-color: $white; 
-            box-shadow: 0 0 25px 1px $blackshadow;
-            border-radius: 25px;
+            // box-shadow: 0 0 25px 1px $blackshadow;
+            // border-radius: 25px;
             padding: 25px 15px;
             height: 100%;
             grid-row: span 2;
@@ -62,12 +66,13 @@
                         font-size: $h3;
                         font-weight: 500;
                         line-height: 90%;
+                        text-align: center;
                     }
                     .function{
                         // background-color: mediumpurple;
-                        font-size: 20px;
+                        font-size: 16px;
                         font-weight: 400;
-                        color: #dbdad9;
+                        color: $text;
                     }
                 }
                 hr{
@@ -80,8 +85,8 @@
         }
         .workout-card{
             background-color: $white;
-            box-shadow: 0 0 25px 1px $blackshadow;
-            border-radius: 25px;
+            // box-shadow: 0 0 25px 1px $blackshadow;
+            // border-radius: 25px;
             padding: 25px;
             // position: relative;
             .title{
@@ -128,9 +133,9 @@
             }
         }
         .progress-card{
-            background-color: $white;
-            box-shadow: 0 0 25px 1px $blackshadow;
-            border-radius: 25px;
+            background-color: $red;
+            // box-shadow: 0 0 25px 1px $blackshadow;
+            // border-radius: 25px;
         }
     }
 }

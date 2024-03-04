@@ -577,7 +577,7 @@ body {
 
 .main-user {
   background-color: #E8E7E8;
-  height: 100vh;
+  height: calc(100vh - 70px);
   width: calc(100% - 300px);
   float: right;
   position: relative;
@@ -585,27 +585,31 @@ body {
   align-items: center;
   flex-direction: column;
   gap: 20px;
-  padding: 35px 45px;
-}
-.main-user .page-title {
-  display: block;
-  width: 100%;
-  color: #E73539;
-  text-transform: uppercase;
-  font-size: 26px;
 }
 .main-user .dashboard {
+  background-color: #FFF;
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: 300px 1fr;
-  grid-template-rows: 1fr 200px;
-  gap: 35px;
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-rows: 80px 1fr 200px;
+  -moz-column-gap: 35px;
+       column-gap: 35px;
+}
+.main-user .dashboard .page-header {
+  grid-column: span 2;
+  border-bottom: 1px solid #dbdad9;
+  padding: 25px 50px;
+  display: flex;
+  align-items: center;
+}
+.main-user .dashboard .page-header .page-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #000;
 }
 .main-user .dashboard .profile-card {
   background-color: #FFF;
-  box-shadow: 0 0 25px 1px rgba(0, 0, 0, 0.1019607843);
-  border-radius: 25px;
   padding: 25px 15px;
   height: 100%;
   grid-row: span 2;
@@ -633,11 +637,12 @@ body {
   font-size: 28px;
   font-weight: 500;
   line-height: 90%;
+  text-align: center;
 }
 .main-user .dashboard .profile-card .top .user-info .function {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
-  color: #dbdad9;
+  color: #b6b6b6;
 }
 .main-user .dashboard .profile-card .top hr {
   border: none;
@@ -647,8 +652,6 @@ body {
 }
 .main-user .dashboard .workout-card {
   background-color: #FFF;
-  box-shadow: 0 0 25px 1px rgba(0, 0, 0, 0.1019607843);
-  border-radius: 25px;
   padding: 25px;
 }
 .main-user .dashboard .workout-card .title {
@@ -686,9 +689,7 @@ body {
   background-color: #dbdad9;
 }
 .main-user .dashboard .progress-card {
-  background-color: #FFF;
-  box-shadow: 0 0 25px 1px rgba(0, 0, 0, 0.1019607843);
-  border-radius: 25px;
+  background-color: #E73539;
 }
 
 .main-videos {
@@ -725,37 +726,90 @@ body {
   font-weight: normal;
 }
 
-.user-nav {
-  background: linear-gradient(to bottom right, #1b1b1b, #0f0f0f);
-  box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.1019607843);
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 300px;
-  height: 100vh;
-  padding: 150px 0 60px;
+.user-header {
+  background: #181b1b;
+  width: 100%;
+  height: 70px;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  z-index: 999;
+  align-items: center;
+  padding: 0 20px;
 }
-.user-nav .logo {
-  position: fixed;
-  top: 0;
+.user-header .user-header-list {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  transition: 0.3s;
+}
+.user-header .user-header-list li {
+  color: #FFF;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 5px;
+  height: 40px;
+  padding: 10px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user-header .user-header-list .welcome {
+  background-color: #101212;
+  display: flex;
+  gap: 10px;
+}
+.user-header .user-header-list .welcome .img {
+  height: 30px;
+  width: 30px;
+  background-color: #434343;
+  border-radius: 5px;
+}
+.user-header .user-header-list .close-btn {
+  display: none;
+  background-color: #101212;
+  cursor: pointer;
+  padding: 0 15px;
+}
+.user-header .user-header-list .close-btn i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+.user-header .user-header-list .close-btn button {
+  background-color: #080808;
+  border: none;
+  color: #FFF;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.user-header .logo {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 40px;
   font-weight: bold;
   text-transform: uppercase;
-  line-height: 45px;
   gap: 10px;
   color: #FFF;
-  margin: 20px 35px;
 }
-.user-nav .logo img {
+.user-header .logo img {
   width: 60px;
   padding-bottom: 6px;
+}
+
+.user-nav {
+  background: #181b1b;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: calc(100vh - 70px);
+  padding: 30px 0 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 999;
 }
 .user-nav .nav-options .title {
   font-size: 18px;
@@ -799,7 +853,7 @@ body {
 
 .main-profile {
   background-color: #E8E7E8;
-  height: 100vh;
+  height: calc(100vh - 70px);
   width: calc(100% - 300px);
   float: right;
   position: relative;
@@ -813,7 +867,7 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: 300px 1fr;
-  grid-template-rows: 100px 1fr;
+  grid-template-rows: 80px 1fr;
   -moz-column-gap: 35px;
        column-gap: 35px;
   overflow: hidden;
@@ -916,6 +970,9 @@ body {
   outline: none;
   font-size: 18px;
 }
+.main-profile .perfil-container .profile-infos .profile-form .input-box .notallowed {
+  color: #888888;
+}
 .main-profile .perfil-container .profile-infos .profile-form #last-hr {
   grid-column: span 2;
   margin: 10px 0;
@@ -937,23 +994,24 @@ body {
 }
 .main-profile .perfil-container .profile-infos .profile-form .form-btns .btn.discard {
   color: #E73539;
+  background-color: #FFF;
 }
 .main-profile .perfil-container .profile-infos .profile-form .form-btns .btn.discard:hover {
-  transition: 0.3s;
-  box-shadow: inset 350px 0 0 0 #E8E7E8;
+  transition: ease-out 0.3s;
+  box-shadow: inset 700px 0 0 0 #E8E7E8;
 }
 .main-profile .perfil-container .profile-infos .profile-form .form-btns .btn.save {
   background-color: #E73539;
   color: #FFF;
 }
 .main-profile .perfil-container .profile-infos .profile-form .form-btns .btn.save:hover {
-  transition: 0.3s;
-  box-shadow: inset 350px 0 0 0 #ff4f51;
+  transition: ease-out 0.3s;
+  box-shadow: inset 700px 0 0 0 #ff4f51;
 }
 
 .main-treinos {
   background-color: blue;
-  height: 100vh;
+  height: calc(100vh - 70px);
   width: calc(100% - 300px);
   float: right;
   position: relative;
@@ -966,7 +1024,7 @@ body {
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-rows: 100px 1fr;
+  grid-template-rows: 80px 1fr;
 }
 .main-treinos .treinos-container .page-header {
   border-bottom: 1px solid #dbdad9;
@@ -978,4 +1036,72 @@ body {
   font-size: 32px;
   font-weight: 600;
   color: #000;
+}
+.main-treinos .treinos-container .workout-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 45px;
+  padding: 25px 50px;
+}
+.main-treinos .treinos-container .workout-container .workout-card {
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 3px;
+  border: 1px solid #b1b1b1;
+  padding: 15px;
+}
+.main-treinos .treinos-container .workout-container .workout-card .card-infos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.main-treinos .treinos-container .workout-container .workout-card .card-infos .title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 100%;
+}
+.main-treinos .treinos-container .workout-container .workout-card .card-infos .level {
+  color: #b1b1b1;
+}
+.main-treinos .treinos-container .workout-container .workout-card .card-infos .btns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.main-treinos .treinos-container .workout-container .workout-card .card-infos .btns .btn {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.main-treinos .treinos-container .workout-container .workout-card .card-infos .btns .btn.see {
+  border: 1px solid #E73539;
+  color: #E73539;
+}
+.main-treinos .treinos-container .workout-container .workout-card .card-infos .btns .btn.see:hover {
+  transition: ease-out 0.3s;
+  box-shadow: inset 350px 0 0 0 #E8E7E8;
+}
+.main-treinos .treinos-container .workout-container .workout-card .card-infos .btns .btn.complete {
+  background-color: #E73539;
+  color: #FFF;
+}
+.main-treinos .treinos-container .workout-container .workout-card .card-infos .btns .btn.complete:hover {
+  transition: ease-out 0.3s;
+  box-shadow: inset 350px 0 0 0 #ff4f51;
+}
+.main-treinos .treinos-container .workout-list {
+  background-color: #181b1b;
+  position: absolute;
+  right: 0;
+  height: calc(100vh - 70px);
+  width: 0;
+  transition: 0.3s;
+}
+.main-treinos .treinos-container .workout-list.open {
+  width: 500px;
 }/*# sourceMappingURL=style.css.map */

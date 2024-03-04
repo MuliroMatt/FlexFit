@@ -2,7 +2,7 @@
 
 .main-treinos{
     background-color: blue;
-    height: 100vh;
+    height: calc(100vh - 70px);
     width: calc(100% - 300px);
     float: right;
     position: relative;
@@ -14,7 +14,7 @@
         height: 100%;
         width: 100%;
         display: grid;
-        grid-template-rows: 100px 1fr;
+        grid-template-rows: 80px 1fr;
         .page-header{
             // background-color: green;
             // grid-column: span 2;
@@ -27,6 +27,79 @@
                 font-weight: 600;
                 // text-transform: uppercase;
                 color: $black;
+            }
+        }
+        .workout-container{
+            // background-color: blue;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 45px;
+            padding: 25px 50px;
+            .workout-card{
+                // background-color: red;
+                height: fit-content;
+                border-radius: 3px;
+                border: 1px solid #b1b1b1;
+                padding: 15px;
+                .card-infos{
+                    // background-color: red;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    .title{
+                        font-size: 20px;
+                        font-weight: 500;
+                        line-height: 100%;
+                        // background-color: olive;
+                    }
+                    .level{
+                        color: #b1b1b1;
+                    }
+                    .btns{
+                        // background-color: mediumaquamarine;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        .btn{
+                            width: 100%;
+                            background: none;
+                            border: none;
+                            padding: 8px 10px;
+                            font-size: 12px;
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            // border-radius: 5px;
+                            cursor: pointer;
+                            &.see{
+                                border: 1px solid $red;
+                                color: $red;
+                                &:hover{
+                                    transition: ease-out .3s;
+                                    box-shadow: inset 350px 0 0 0 $lightgrey;
+                                }
+                            }
+                            &.complete{
+                                background-color: $red;
+                                color: $white;
+                                &:hover{
+                                    transition: ease-out .3s;
+                                    box-shadow: inset 350px 0 0 0 $lightred;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .workout-list{
+            background-color: $userbg;
+            position: absolute;
+            right: 0;
+            height: calc(100vh - 70px);
+            width: 0;
+            transition: .3s;
+            &.open{
+                width: 500px;
             }
         }
     }

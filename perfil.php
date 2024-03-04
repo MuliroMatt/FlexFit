@@ -85,7 +85,7 @@ if (isset($_SESSION['idusuario'])){
                     </div>
                     <div class="input-box">
                         <label>CPF <hr></label>
-                        <input type="text" name="cpf" placeholder="000-000-000-00" value="<?=$cpf?>" readonly>
+                        <input class="notallowed" type="text" name="cpf" placeholder="000-000-000-00" value="<?=$cpf?>" readonly>
                         <!-- <hr> -->
                     </div>
                     <div class="input-box">

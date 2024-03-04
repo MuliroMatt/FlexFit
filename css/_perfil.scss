@@ -1,7 +1,7 @@
 @import "./variaveis";
 .main-profile{
     background-color: $lightgrey;
-    height: 100vh;
+    height: calc(100vh - 70px);
     width: calc(100% - 300px);
     float: right;
     position: relative;
@@ -17,7 +17,7 @@
         display: grid;
         // border-radius: 25px;
         grid-template-columns: 300px 1fr;
-        grid-template-rows: 100px 1fr;
+        grid-template-rows: 80px 1fr;
         column-gap: 35px;
         overflow: hidden;
         box-shadow: 0 0 25px 1px $blackshadow;
@@ -134,6 +134,10 @@
                         outline: none;
                         font-size: 18px;
                     }
+                    .notallowed{
+                        color: #888888;
+                        // background-color: aquamarine;
+                    }
                 }
                 #last-hr{
                     grid-column: span 2;
@@ -155,17 +159,18 @@
                         cursor: pointer;
                         &.discard{
                             color: $red;
+                            background-color: $white;
                             &:hover{
-                                transition: .3s;
-                                box-shadow: inset 350px 0 0 0 $lightgrey;
+                                transition: ease-out .3s;
+                                box-shadow: inset 700px 0 0 0 $lightgrey;
                             }
                         }
                         &.save{
                             background-color: $red;
                             color: $white;
                             &:hover{
-                                transition: .3s;
-                                box-shadow: inset 350px 0 0 0 $lightred;
+                                transition: ease-out .3s;
+                                box-shadow: inset 700px 0 0 0 $lightred;
                             }
                         }
                     }

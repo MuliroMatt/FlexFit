@@ -9,6 +9,24 @@
 }
 
  function toggleLogin(){
-    document.getElementById("login").style.display = "flex";
+   document.getElementById("login").style.display = "flex";
    document.getElementById("cadastra").style.display = "none";
 }
+
+function openWorkoutList() {
+   var sidenav = document.getElementById("workoutlist");
+   if (sidenav.classList.contains("open")) {
+       sidenav.classList.remove("open");
+       document.getElementById('closebtn').style.display = "none"
+   } else {
+       sidenav.classList.add("open");
+       document.getElementById('closebtn').style.display = "flex"
+   }
+   
+ }
+ 
+ function closeWorkoutList() {
+   var sidenav = document.getElementById("workoutlist");
+   sidenav.classList.remove("open");
+   document.getElementById('closebtn').style.display = "none"
+ }

@@ -15,10 +15,28 @@ include('usernav.php');
 <body>
     <main class="main-treinos">
         <div class="treinos-container">
-        <header class="page-header">
+            <header class="page-header">
                 <span class="page-title">Treinos</span>
             </header>
+            <div class="workout-container">
+                <div class="workout-card">
+                    <div class="card-infos">
+                        <h3 class="title">Segunda-Feira</h3>
+                        <span class="level"><i class="bi bi-1-square"></i> Iniciante</span>
+                        <div class="btns">
+                            <button class="btn see" onclick="openWorkoutList()">Ver Treino</button>
+                            <form action="" method="post">
+                                <button class="btn complete">Concluir Treino</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="workout-list" id="workoutlist">
+                
+            </div>
         </div>
     </main>
 </body>
+<script src="script.js"></script>
 </html>
