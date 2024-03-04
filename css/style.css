@@ -752,9 +752,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #101212;
+}
+.user-header .user-header-list .navigation a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 5px;
+  color: #FFF;
 }
 .user-header .user-header-list .welcome {
-  background-color: #101212;
   display: flex;
   gap: 10px;
 }
@@ -766,7 +773,6 @@ body {
 }
 .user-header .user-header-list .close-btn {
   display: none;
-  background-color: #101212;
   cursor: pointer;
   padding: 0 15px;
 }
@@ -777,7 +783,7 @@ body {
   font-size: 16px;
 }
 .user-header .user-header-list .close-btn button {
-  background-color: #080808;
+  background: none;
   border: none;
   color: #FFF;
   border-radius: 5px;
@@ -1100,8 +1106,34 @@ body {
   right: 0;
   height: calc(100vh - 70px);
   width: 0;
+  overflow: hidden;
   transition: 0.3s;
 }
 .main-treinos .treinos-container .workout-list.open {
-  width: 500px;
+  width: 400px;
+}
+.main-treinos .treinos-container .workout-list .exercise-card {
+  color: #FFF;
+  margin: 25px 35px;
+  border: 1px solid #333333;
+  border-radius: 3px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-treinos .treinos-container .workout-list .exercise-card .left {
+  display: flex;
+  flex-direction: column;
+}
+.main-treinos .treinos-container .workout-list .exercise-card .left .exe-name {
+  font-size: 20px;
+}
+.main-treinos .treinos-container .workout-list .exercise-card .left .exe-reps {
+  font-size: 14px;
+  font-weight: 100;
+  color: #b6b6b6;
+}
+.main-treinos .treinos-container .workout-list .exercise-card .right {
+  font-size: 24px;
 }/*# sourceMappingURL=style.css.map */

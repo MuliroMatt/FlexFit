@@ -33,7 +33,46 @@ include('usernav.php');
                 </div>
             </div>
             <div class="workout-list" id="workoutlist">
-                
+                <div class="exercise-card">
+                    <div class="left">
+                        <!-- <div class="img"></div> -->
+                        <span class="exe-name">Supino Reto</span>
+                        <span class="exe-reps">8-10 Repetições 4x</span>
+                    </div>
+                    <div class="right">
+                        <i class="bi bi-chevron-compact-right"></i>
+                    </div>
+                </div>
+                <div class="exercise-card">
+                    <div class="left">
+                        <!-- <div class="img"></div> -->
+                        <span class="exe-name">Supino inclinado com halteres</span>
+                        <span class="exe-reps">10-12 Repetições 3x</span>
+                    </div>
+                    <div class="right">
+                        <i class="bi bi-chevron-compact-right"></i>
+                    </div>
+                </div>
+                <div class="exercise-card">
+                    <div class="left">
+                        <!-- <div class="img"></div> -->
+                        <span class="exe-name">Crucifixo na máquina</span>
+                        <span class="exe-reps">12-15 Repetições 3x</span>
+                    </div>
+                    <div class="right">
+                        <i class="bi bi-chevron-compact-right"></i>
+                    </div>
+                </div>
+                <div class="exercise-card">
+                    <div class="left">
+                        <!-- <div class="img"></div> -->
+                        <span class="exe-name">Pulley tríceps</span>
+                        <span class="exe-reps">8-10 Repetições 4x</span>
+                    </div>
+                    <div class="right">
+                        <i class="bi bi-chevron-compact-right"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
