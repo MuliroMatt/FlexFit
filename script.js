@@ -31,11 +31,19 @@ function openWorkoutList() {
    document.getElementById('closebtn').style.display = "none"
  }
 
-// function openDropdown() {
-//   var dropdown = document.getElementById('dropdown')
-//   if (dropdown.classList.contains("open")) {
-//     dropdown.classList.remove("open");
-// } else {
-//     dropdown.classList.add("open");
-// }
-// }
+function openDropdown() {
+  var dropdownContent = document.getElementById('dropdown-content')
+  var dropdown = document.getElementById('dropdown')
+  var arrow = document.getElementById('arrow')
+  if (dropdownContent.classList.contains("open")) {
+    dropdownContent.classList.remove("open")
+    dropdown.style.borderBottomLeftRadius = '5px' 
+    dropdown.style.borderBottomRightRadius = '5px' 
+    arrow.style.transform = 'rotate(0deg)' 
+} else {
+    dropdownContent.classList.add("open");
+    dropdown.style.borderBottomLeftRadius = '0px' 
+    dropdown.style.borderBottomRightRadius = '0px'
+    arrow.style.transform = 'rotate(-180deg)' 
+  }
+}

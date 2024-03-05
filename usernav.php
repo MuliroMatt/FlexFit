@@ -17,14 +17,16 @@ $funcao = $_SESSION['funcaousuario'];
     </a>
     <ul class="user-header-list">
         <li class="navigation"><a href="index.php"><i class="bi bi-house"></i> Inicio</a></li>
-        <li class="welcome">
+        <li class="dropdown" id="dropdown">
             <div class="top" onclick="openDropdown()">
                 <div class="img"></div>
-                <?=$nome?> <?=$sobrenome?><i class="bi bi-chevron-compact-down"></i>
+                <?=$nome?> <?=$sobrenome?><i class="bi bi-chevron-compact-down" id="arrow"></i>
             </div>
-            <!-- <div class="dropdown" id="dropdown">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum cumque, at nobis, maiores praesentium vel fuga quibusdam fugiat dolores voluptatum labore eius doloribus excepturi magnam sapiente aliquam fugit nam minima.</p>
-            </div> -->
+            <div class="dropdown-content" id="dropdown-content">
+                <ul>
+                    <li><a href="">Adicionar Conta</a></li>
+                </ul>
+            </div>
         </li>
         <li class="close-btn" id="closebtn" onclick="closeWorkoutList()"><button><i class="bi bi-x-lg"></i></button></li>
     </ul>

@@ -759,8 +759,6 @@ body {
   height: 40px;
   padding: 10px 5px;
   display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: #101212;
 }
 .user-header .user-header-list .navigation a {
@@ -770,22 +768,43 @@ body {
   padding: 0 5px;
   color: #FFF;
 }
-.user-header .user-header-list .welcome {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.user-header .user-header-list .dropdown {
   position: relative;
 }
-.user-header .user-header-list .welcome .top {
+.user-header .user-header-list .dropdown .top {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.user-header .user-header-list .welcome .top .img {
+.user-header .user-header-list .dropdown .top .img {
   height: 30px;
   width: 30px;
   background-color: #434343;
   border-radius: 5px;
+}
+.user-header .user-header-list .dropdown .top i {
+  transition: 0.3s;
+}
+.user-header .user-header-list .dropdown .dropdown-content {
+  background-color: #101212;
+  display: flex;
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  left: 0;
+  top: 40;
+  z-index: 1;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: 0.3s;
+}
+.user-header .user-header-list .dropdown .dropdown-content.open {
+  height: 200px;
+  padding: 10px;
+}
+.user-header .user-header-list .dropdown .dropdown-content a {
+  color: #FFF;
 }
 .user-header .user-header-list .close-btn {
   display: none;
