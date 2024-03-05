@@ -1,26 +1,26 @@
 <?php
 //include ao cabeçalho
-include("cabecalho.php");
+include("backnav.php");
 
 //Instrução ao SQL
-$sql = "SELECT * FROM instrutores WHERE instr_status = 's'";
-$retorno = mysqli_query($link, $sql);
+// $sql = "SELECT * FROM instrutores WHERE instr_status = 's'";
+// $retorno = mysqli_query($link, $sql);
 
-$ativo = 's';
+// $ativo = 's';
 
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $ativo = $_POST ['ativo'];
+// if($_SERVER['REQUEST_METHOD'] == 'POST'){
+//     $ativo = $_POST ['ativo'];
 
-    if($ativo == 's'){
-        $sql = "SELECT * FROM instrutores WHERE instr_status = 's'";
-    } elseif($ativo == 'n'){
-        $sql = "SELECT * FROM instrutores WHERE instr_status = 'n'";
-    } else {
-        $sql = "SELECT * FROM instrutores";
-    }
+//     if($ativo == 's'){
+//         $sql = "SELECT * FROM instrutores WHERE instr_status = 's'";
+//     } elseif($ativo == 'n'){
+//         $sql = "SELECT * FROM instrutores WHERE instr_status = 'n'";
+//     } else {
+//         $sql = "SELECT * FROM instrutores";
+//     }
 
-    $retorno = mysqli_query($link , $sql); 
-}
+//     $retorno = mysqli_query($link , $sql); 
+// }
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +28,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Document</title>
 </head>
 <body>

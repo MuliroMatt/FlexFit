@@ -1,0 +1,8 @@
+@import './variaveis';
+
+.main-lista{
+    background-color: blue;
+    width: calc(100% - 300px);
+    height: calc(100vh - 70px);
+    float: right;
+}

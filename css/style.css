@@ -1171,4 +1171,11 @@ body {
 }
 .main-treinos .treinos-container .workout-list .exercise-card .right {
   font-size: 24px;
+}
+
+.main-lista {
+  background-color: blue;
+  width: calc(100% - 300px);
+  height: calc(100vh - 70px);
+  float: right;
 }/*# sourceMappingURL=style.css.map */

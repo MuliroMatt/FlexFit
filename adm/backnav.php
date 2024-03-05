@@ -1,5 +1,5 @@
 <?php 
-include('conectaDB.php');
+include('../conectaDB.php');
 session_start();
 
 $id = $_SESSION['idadmin'];
@@ -9,7 +9,7 @@ $email = $_SESSION['emailadmin'];
 
 <header class="user-header">
     <a href="index.php" class="logo">
-        <img src="img/logo.png" width="50">
+        <img src="../img/logo.png" width="50">
         <span class="logo-text">
             FlexFit
         </span>
@@ -38,12 +38,12 @@ $email = $_SESSION['emailadmin'];
         </ul>
         <h3 class="title">Alunos</h3>
         <ul class="nav-list">
-            <li><a href=""><i class="bi bi-person-lines-fill"></i> Lista Alunos</a></li>
+            <li><a href="listaaluno.php"><i class="bi bi-person-lines-fill"></i> Lista Alunos</a></li>
             <li><a href=""><i class="bi bi-person-fill-add"></i> Cadastra Alunos</a></li>
         </ul>
         <h3 class="title">Instrutores</h3>
         <ul class="nav-list">
-            <li><a href=""><i class="bi bi-person-lines-fill"></i> Lista Instrutores</a></li>
+            <li><a href="listainstrutor.php"><i class="bi bi-person-lines-fill"></i> Lista Instrutores</a></li>
             <li><a href=""><i class="bi bi-person-fill-add"></i> Cadastra Instrutores</a></li>
         </ul>
         <h3 class="title">Aparelhos</h3>
@@ -57,4 +57,4 @@ $email = $_SESSION['emailadmin'];
         <a class="exit-btn" href="logout.php"><i class="bi bi-box-arrow-right"></i>Sair</a>
     </div>
 </nav>
-<script src="script.js"></script>
+<script src="../script.js"></script>
