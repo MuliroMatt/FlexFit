@@ -1,5 +1,5 @@
 <?php 
-include('conectaDB.php');
+include('../conectaDB.php');
 session_start();
 
 $nome = $_SESSION['nomeusuario'];
@@ -10,7 +10,7 @@ $funcao = $_SESSION['funcaousuario'];
 
 <header class="user-header">
     <a href="index.php" class="logo">
-        <img src="img/logo.png" width="50">
+        <img src="../img/logo.png" width="50">
         <span class="logo-text">
             FlexFit
         </span>
@@ -52,7 +52,7 @@ $funcao = $_SESSION['funcaousuario'];
     </div>
     <div class="nav-bottom">
         <hr>
-        <a class="exit-btn" href="logout.php"><i class="bi bi-box-arrow-right"></i>Sair</a>
+        <a class="exit-btn" href="../logout.php"><i class="bi bi-box-arrow-right"></i>Sair</a>
     </div>
 </nav>
-<script src="script.js"></script>
+<script src="../script.js"></script>

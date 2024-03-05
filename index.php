@@ -42,16 +42,16 @@ if(isset($_SESSION['idusuario'])){
                     <li><a href="#inicio">Início</a>
                         <hr>
                     </li>
-                    <li><a href="cadastrainstrutor.php">Trabalhe conosco</a>
+                    <li><a href="./usuarios/instrutor.php">Trabalhe conosco</a>
                         <hr>
                     </li>
-                    <li><a href="cadastraaluno.php">Seja nosso aluno</a>
+                    <li><a href="./usuarios/aluno.php">Seja nosso aluno</a>
                         <hr>
                     </li>
                     <?php if(!isset($nome)){?>
-                    <li><a class="nav-btn" href="cadastra.php">entrar | Cadastrar-se</a></li>
+                    <li><a class="nav-btn" href="./usuarios/loginusuario.php">entrar | Cadastrar-se</a></li>
                     <?php }else{?>
-                    <li><a href="usuario.php">meu perfil</a>
+                    <li><a href="./usuarios/usuario.php">meu perfil</a>
                         <hr>
                     </li>
                     <li><a class="nav-btn" href="logout.php">sair</a></li>

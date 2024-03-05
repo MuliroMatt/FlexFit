@@ -19,34 +19,6 @@ if (isset($_SESSION['idusuario'])){
         $funcao2 = 'Instrutor';
     }
 }
-// include('usernav.php');
-
-// if (isset($_SESSION['idusuario'])){
-//     $id = $_SESSION['idusuario'];
-//     $sql = "SELECT * FROM usuarios WHERE usu_id = '$id';";
-//     $return = mysqli_query($link, $sql);
-//     while($tbl = mysqli_fetch_array($return)){
-//         $nome = $tbl[1];    
-//         $sobrenome = $tbl[2];
-//         $email = $tbl[3];
-//         $funcao = $tbl[5];
-//     }   
-//     $sql = "SELECT * FROM usuarios
-//             JOIN alunos ON usuarios.usu_id = alunos.fk_usu_id
-//             WHERE usu_id = '$id';";
-//     $return = mysqli_query($link, $sql);
-    
-//     while($tbl = mysqli_fetch_array($return)){
-//         // $nome = $tbl[1];
-//         // $sobrenome = $tbl[2];
-//         // $email = $tbl[3];
-//         $cpf = $tbl[8];
-//         $nasc = $tbl[9];
-//         $sexo = $tbl[10];
-//         $endereco = $tbl[11];
-//         $telefone = $tbl[12];
-//     }
-// }
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +27,7 @@ if (isset($_SESSION['idusuario'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <script src="https://kit.fontawesome.com/fc1c840fda.js" crossorigin="anonymous"></script>
     <title>FlexFit</title>
 </head>

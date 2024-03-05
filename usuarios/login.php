@@ -1,5 +1,5 @@
 <?php 
-include('conectaDB.php');
+include('../conectaDB.php');
 
 session_start();
 
@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_SESSION['emailusuario'] = $tbl[3];
             $_SESSION['funcaousuario'] = $tbl[5];
         }
-        echo "<script>window.location.href='usuario.php';</script>";
+        echo "<script>window.location.href='../index.php';</script>";
 
     }
     else {

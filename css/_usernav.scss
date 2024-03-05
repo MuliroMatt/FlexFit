@@ -42,9 +42,12 @@
         }
         .dropdown{
             position: relative;
+            // min-width: 150px;
             .top{
                 display: flex;
                 align-items: center;
+                // justify-content: space-between;
+                // width: 100%;
                 gap: 10px;
                 .img{
                     height: 30px;

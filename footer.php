@@ -2,7 +2,7 @@
     <div class="footer-container">
         <div class="footer-grid">
             <div class="colunas">
-                <h3 class="logo"><img src="img/logo.png">FlexFit</h3>
+                <h3 class="logo"><img src="../img/logo.png">FlexFit</h3>
                 <p>
                     sua academia personalizada para alcançar seus objetivos de forma eficaz. Com horários flexíveis e suporte especializado, estamos aqui para tornar sua jornada fitness mais conveniente e gratificante. Venha se juntar a nós e descubra como podemos ajudá-lo a atingir seus objetivos de forma personalizada!
                 </p>
