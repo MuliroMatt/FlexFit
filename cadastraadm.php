@@ -22,7 +22,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         echo "<script>window.alert('Usuário cadastrado com sucesso!');</script>";
         echo "<script>window.location.href='login.php';</script>";
     }
-
 }
 
 ?>

@@ -21,8 +21,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         echo "<script>window.alert('Aluno já cadastrado!');</script>";
         echo "<script>window.location.href='aluno.php';</script>";
     } else {
-        $sql = "INSERT INTO alunos (al_cpf, al_dataNasc, al_sexo, al_endereco, al_telefone, fk_usu_id)
-                VALUES ('$cpf', '$dataNascimento', '$genero', '$endereco', '$telefone', '$usu_id')";
+        $sql = "INSERT INTO alunos (al_cpf, al_dataNasc, al_sexo, al_endereco, al_telefone, fk_usu_id, al_status)
+                VALUES ('$cpf', '$dataNascimento', '$genero', '$endereco', '$telefone', '$usu_id', 's')";
         $resultado = mysqli_query($link, $sql);
         $sql = "UPDATE usuarios
                 SET usu_funcao = 'a'

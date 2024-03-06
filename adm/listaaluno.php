@@ -2,9 +2,11 @@
 //include ao cabeçalho
 include("backnav.php");
 
-//Instrução ao SQL
-// $sql = "SELECT * FROM alunos WHERE al_status = 's'";
-// $retorno = mysqli_query($link, $sql);
+// Instrução ao SQL
+$sql = "SELECT * FROM usuarios AS u
+        INNER JOIN alunos AS a ON u.usu_id = a.fk_usu_id
+        WHERE a.al_status = 's' AND u.usu_funcao = 'a';";
+$resultado = mysqli_query($link, $sql);
 
 // if($_SERVER['REQUEST_METHOD'] == 'POST'){
 //     $ativo = $_POST ['ativo'];
@@ -17,7 +19,7 @@ include("backnav.php");
 //         $sql = "SELECT * FROM alunos";
 //     }
 
-//     $retorno = mysqli_query($link , $sql); 
+//     $resultado = mysqli_query($link , $sql); 
 // }
 ?>
 
@@ -32,82 +34,49 @@ include("backnav.php");
 </head>
 <body>
     <main class="main-lista">
+        <header class="lista-header">
+            <div class="right">
+                <h3>Alunos</h3>
+            </div>
+            <div class="left">
+                <a href="novoaluno.php"><i class="bi bi-plus-square-fill"></i></a>
+            </div>
+        </header>
         <div class="lista-container">
             <table>
                 <thead>
                     <tr>
-                        <th>Id</th>
                         <th>Nome</th>
-                        <th>Sobrenome</th>
                         <th>Email</th>
+                        <th>Nascimento</th>
+                        <th>Gênero</th>
+                        <th>Telefone</th>
                         <th>Status</th>
+                        <th class="tools">Ferramentas</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php 
+                    while ($tbl = mysqli_fetch_array($resultado)){
+                    ?>
                     <tr>
-                        <th>1</th>
-                        <th>Murilo</th>
-                        <th>Amorim</th>
-                        <th>murilo@gmail.com</th>
-                        <th>Ativo</th>
+                        <td><?=$tbl[1]?> <?=$tbl[2]?></td>
+                        <td><?=$tbl[3]?></td>
+                        <td><?=$tbl[9]?></td>
+                        <td><?=$tbl[10]?></td>
+                        <td><?=$tbl[12]?></td>
+                        <td><?=$tbl[18]?></td>
+                        <td class="tools">
+                            <a href=""><i class="bi bi-pencil-square"></i></a>
+                            <a href=""><i class="bi bi-trash-fill"></i></a>
+                        </td>
                     </tr>
+                    <?php
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>
-
     </main>
-    <!-- <div class="background">
-        <form action="lista_aluno.php" method="post">
-            <input type="radio" name="ativo" class="radio" value="s" required  <?= $ativo == 's' ? "checked" : "" ?>> ATIVOS
-            <input type="radio" name="ativo" class="radio" value="n"  required  <?= $ativo == 'n' ? "checked" : "" ?>> INATIVOS
-            <input type="radio" name="ativo" class="radio" value="todos" required <?= $ativo == 'todos' ? "checked" : "" ?>> TODOS    
-        </form>
-        <div class="container">
-            <table border="1">
-                <tr>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Senha</th>
-                <th>CPF</th>
-                <th>Idade</th>
-                <th>Nascimento</th>
-                <th>Gênero</th>
-                <th>Endereço</th>
-                <th>Telefone</th>
-                <th>Peso</th>
-                <th>Altura</th>
-                <th>Experiência</th>
-                <th>Objetivo</th>
-                <th>Status</th>
-                </tr>
-                <?php
-                //Preencimento da tabela usando o WHILE
-                while ($tbl = mysqli_fetch_assoc($retorno)){
-                   ?>
-                   <tr>
-                    <td><?= $tbl['al_nome']?></td>
-                    <td><?= $tbl['al_email']?></td>
-                    <td><?= $tbl['al_senha']?></td>
-                    <td><?= $tbl['al_cpf']?></td>
-                    <td><?= $tbl['al_idade']?></td>
-                    <td><?= $tbl['al_dataNasc']?></td>
-                    <td><?= $tbl['al_sexo']?></td>
-                    <td><?= $tbl['al_endereco']?></td>
-                    <td><?= $tbl['al_telefone']?></td>
-                    <td><?= $tbl['al_peso']?></td>
-                    <td><?= $tbl['al_altura']?></td>
-                    <td><?=$tbl['al_experiencia']?></td>
-                    <td><?= $tbl['al_objetivo']?></td>
-                    <td><?= $tbl['al_status']?></td>
-
-                    <td><a href="#?id=<?= $tbl['al_id']?>"> <input type="button" value="Alterar Dados"></a></td>
-                    <td><?= $tbl['al_status'] == "s" ? "SIM" : "NÃO" ?></td>
-                   </tr> 
-                   <?php
-                }
-                ?>
-            </table>
-        </div>
-    </div>     -->
 </body>
 </html>

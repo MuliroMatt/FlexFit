@@ -9,14 +9,14 @@ $funcao = $_SESSION['funcaousuario'];
 ?>
 
 <header class="user-header">
-    <a href="index.php" class="logo">
+    <a href="../index.php" class="logo">
         <img src="../img/logo.png" width="50">
         <span class="logo-text">
             FlexFit
         </span>
     </a>
     <ul class="user-header-list">
-        <li class="navigation"><a href="index.php"><i class="bi bi-house"></i> Inicio</a></li>
+        <li class="navigation"><a href="../index.php"><i class="bi bi-house"></i> Inicio</a></li>
         <li class="dropdown" id="dropdown">
             <div class="top" onclick="openDropdown()">
                 <div class="img"></div>

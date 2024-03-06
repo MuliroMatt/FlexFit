@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $result = mysqli_fetch_array($result) [0];
 
     if ($result == 1){
-        $sql = "SELECT * FROM usuarios WHERE usu_email = '$email' AND usu_senha = '$senha' AND usu_status = 's'";
+        $sql = "SELECT * FROM usuarios WHERE usu_email = '$email' AND usu_senha = '$senha'";
         $result = mysqli_query($link, $sql);
 
         while ($tbl = mysqli_fetch_array($result)) {
@@ -28,6 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     else {
     //* Exibe uma mensagem de alerta se as credenciais do usuário forem inválidas
     echo "<script>window.alert('USUÁRIO OU SENHA INCORRETOS');</script>";
+    echo "<script>window.location.href='loginusuario.php';</script>";
 }
 
 }

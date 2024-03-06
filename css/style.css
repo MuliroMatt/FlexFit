@@ -1174,8 +1174,132 @@ body {
 }
 
 .main-lista {
-  background-color: blue;
+  background-color: #FFF;
   width: calc(100% - 300px);
   height: calc(100vh - 70px);
   float: right;
+  display: grid;
+  grid-template-rows: 70px 1fr;
+}
+.main-lista .lista-header {
+  padding: 0 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #dbdad9;
+}
+.main-lista .lista-header h3 {
+  font-size: 32px;
+  font-weight: 600;
+}
+.main-lista .lista-header a {
+  color: #000;
+}
+.main-lista .lista-header i {
+  font-size: 25px;
+}
+.main-lista .lista-container table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.main-lista .lista-container table thead {
+  background-color: #E8E7E8;
+}
+.main-lista .lista-container table thead tr th {
+  padding: 10px 25px;
+  font-size: 20px;
+  color: #E73539;
+}
+.main-lista .lista-container table thead tr .tools {
+  text-align: center;
+}
+.main-lista .lista-container table tbody tr {
+  border-bottom: 1px solid #dbdad9;
+}
+.main-lista .lista-container table tbody tr td {
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #424242;
+}
+.main-lista .lista-container table tbody tr .tools {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.main-lista .lista-container table tbody tr .tools a {
+  color: #424242;
+}
+
+.main-novo {
+  width: calc(100% - 300px);
+  height: calc(100vh - 70px);
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-novo .cadastra-container .cadastra-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.main-novo .cadastra-container .cadastra-form .input-box {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.main-novo .cadastra-container .cadastra-form .input-box input {
+  border: none;
+  background-color: #FFF;
+  border: 1px solid #000;
+  border-radius: 0;
+  height: 45px;
+  padding: 10px;
+  outline: none;
+}
+.main-novo .cadastra-container .cadastra-form .input-box select {
+  background-color: #FFF;
+  border: 1px solid #000;
+  height: 45px;
+  padding: 0 10px;
+  outline: none;
+  font-size: 20px;
+}
+.main-novo .cadastra-container .cadastra-form p {
+  font-size: 20px;
+}
+.main-novo .cadastra-container .cadastra-form p a {
+  color: #E73539;
+  font-weight: 600;
+  cursor: pointer;
+}
+.main-novo .cadastra-container .cadastra-form .cadastrar-btn {
+  background-color: #E73539;
+  border: none;
+  font-size: 20px;
+  width: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  color: #FFF;
+  cursor: pointer;
+}
+.main-novo .cadastra-container .cadastra-form .cadastrar-btn:hover {
+  transition: 0.3s;
+  box-shadow: inset 500px 0 0 0 #ff4f51;
+}
+.main-novo.aluno .cadastra-container .cadastra-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.main-novo.aluno .cadastra-container .cadastra-form .cadastrar-btn {
+  grid-column: span 2;
+}
+.main-novo.aluno .cadastra-container .cadastra-form .cadastrar-btn:hover {
+  box-shadow: inset 1200px 0 0 0 #ff4f51;
 }/*# sourceMappingURL=style.css.map */

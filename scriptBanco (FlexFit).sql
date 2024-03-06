@@ -16,7 +16,7 @@ CREATE TABLE usuarios(
     usu_email VARCHAR(60) NOT NULL,
     usu_senha VARCHAR(32) NOT NULL,
     usu_funcao CHAR(1),
-    usu_status CHAR(1)
+    -- usu_status CHAR(1)
 );
 
 CREATE TABLE instrutores(
@@ -43,6 +43,7 @@ CREATE TABLE alunos(
     al_experiencia VARCHAR(20),
     fk_usu_id INT NOT NULL,
     fk_instr_id INT,
+    al_status CHAR(1),
 
     FOREIGN KEY (fk_usu_id) REFERENCES usuarios(usu_id),
     FOREIGN KEY (fk_instr_id) REFERENCES instrutores(instr_id)

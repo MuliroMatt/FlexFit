@@ -31,12 +31,15 @@ $email = $_SESSION['emailadmin'];
 </header>
 <nav class="user-nav">
     <div class="nav-options">
-        <h3 class="title">Administradores</h3>
+        <h3 class="title">Gerenciar</h3>
         <ul class="nav-list">
-            <li><a href=""><i class="bi bi-person-lines-fill"></i> Lista Admins</a></li>
-            <li><a href=""><i class="bi bi-person-fill-add"></i> Cadastra Admins</a></li>
+            <li><a href="listaadm.php"><i class="bi bi-person-lines-fill"></i>Administradores</a></li>
+            <li><a href="listaaluno.php"><i class="bi bi-person-lines-fill"></i>Alunos</a></li>
+            <li><a href="listainstrutor.php"><i class="bi bi-person-lines-fill"></i>Instrutores</a></li>
+            <li><a href="listaaparelhos.php"><i class="bi bi-person-lines-fill"></i>Aparelhos</a></li>
+            <!-- <li><a href=""><i class="bi bi-person-fill-add"></i> Cadastra Admins</a></li> -->
         </ul>
-        <h3 class="title">Alunos</h3>
+        <!-- <h3 class="title">Alunos</h3>
         <ul class="nav-list">
             <li><a href="listaaluno.php"><i class="bi bi-person-lines-fill"></i> Lista Alunos</a></li>
             <li><a href=""><i class="bi bi-person-fill-add"></i> Cadastra Alunos</a></li>
@@ -50,7 +53,7 @@ $email = $_SESSION['emailadmin'];
         <ul class="nav-list">
             <li><a href=""><i class="bi bi-person-lines-fill"></i> Lista Aparelhos</a></li>
             <li><a href=""><i class="bi bi-person-fill-add"></i> Cadastra Aparelhos</a></li>
-        </ul>
+        </ul> -->
     </div>
     <div class="nav-bottom">
         <hr>

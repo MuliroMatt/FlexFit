@@ -1,18 +1,15 @@
 @import './variaveis';
 
-.main-cadastraaluno{
+.main-novo{
     // background-color: blue;
-    height: 100vh;
-    padding-top: 75px;
+    width: calc(100% - 300px);
+    height: calc(100vh - 70px);
+    float: right;
     display: flex;
+    align-items: center;
     justify-content: center;
     .cadastra-container{
-        // background-color: green;
-        height: 100%;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        // background-color: blue;
         .cadastra-form{
             // background-color: red;
             display: flex;
@@ -34,16 +31,15 @@
                     height: 45px;
                     padding: 10px;
                     outline: none;
-                    font-size: 20px;
                 }
                 select{
-                   background-color: $white;
-                   border: 1px solid $black;
-                   height: 45px;
-                   padding: 0 10px;
-                   outline: none;
-                   font-size: 20px;
-                }
+                    background-color: $white;
+                    border: 1px solid $black;
+                    height: 45px;
+                    padding: 0 10px;
+                    outline: none;
+                    font-size: 20px;
+                 }
             }
             p{
                 font-size: 20px;
@@ -71,4 +67,18 @@
             }
         }
     }
-}  
+    &.aluno{
+        .cadastra-container{
+            .cadastra-form{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                .cadastrar-btn{
+                    grid-column: span 2;
+                    &:hover{
+                        box-shadow: inset 1200px 0 0 0 $lightred;
+                    }
+                }
+            }
+        }
+    }
+}
