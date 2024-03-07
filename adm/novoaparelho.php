@@ -1,5 +1,5 @@
 <?php 
-include ('backnav.php');
+include('backnav.php');
 ?>
 
 <!DOCTYPE html>
@@ -15,29 +15,38 @@ include ('backnav.php');
     <main class="main-novo">
         <header class="lista-header">
             <div class="right">
-                <h3>Administradores</h3>
+                <h3>Aparelhos</h3>
             </div>
             <div class="left">
-                <a href="novoadm.php"><i class="bi bi-plus-square-fill"></i></a>
+                <a href="novoaparelho.php"><i class="bi bi-plus-square-fill"></i></a>
             </div>
         </header>
         <div class="cadastra-container">
-            <form action="../cadastraadm.php" method="post" class="cadastra-form">
+            <form action="../cadastraaparelho.php" method="post" class="cadastra-form">
                 <div class="input-box">
                     <label>Nome</label>
                     <input type="text" name="nome" required>
                 </div>
                 <div class="input-box">
-                    <label>Sobrenome</label>
-                    <input type="text" name="sobrenome" required>
+                    <label>Categoria</label>
+                    <select name="categoria">
+                        <option value="Cardio">Cardio</option>
+                        <option value="Abdômen e Lombar">Abdômen e Lombar</option>
+                        <option value="Superiores">Superiores</option>
+                        <option value="Inferiores">Inferiores</option>
+                    </select>
                 </div>
                 <div class="input-box">
-                    <label>E-mail</label>
-                    <input type="email" name="email" required>
+                    <label>Nível</label>
+                    <select name="nivel">
+                        <option value="Básico">Básico</option>
+                        <option value="Intermediário">Intermediário</option>
+                        <option value="Avançado">Avançado</option>
+                    </select>
                 </div>
                 <div class="input-box">
-                    <label>Senha</label>
-                    <input type="password" name="senha" required>
+                    <label>Quantidade</label>
+                    <input type="number" name="qtd" required>
                 </div>
                 <button class="cadastrar-btn" type="submit" name="submit">Cadastrar</button>
             </form>

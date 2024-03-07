@@ -44,7 +44,7 @@ $sql = "SELECT * FROM administradores WHERE adm_status = 's'";
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <!-- <th>Sobrenome</th> -->
+                        <th>Sobrenome</th>  
                         <th>Email</th>
                         <th>Status</th>
                         <th class="tools">Ferramentas</th>
@@ -57,7 +57,8 @@ $sql = "SELECT * FROM administradores WHERE adm_status = 's'";
                     <tr>
                         <td><?=$tbl[1]?></td>
                         <td><?=$tbl[2]?></td>
-                        <td><?=$tbl[4]?></td>
+                        <td><?=$tbl[3]?></td>
+                        <td><?= $check = ($tbl[5] == "s") ? "Ativo" : "Inativo" ?></td>
                         <td class="tools">
                             <a href=""><i class="bi bi-pencil-square"></i></a>
                             <a href=""><i class="bi bi-trash-fill"></i></a>

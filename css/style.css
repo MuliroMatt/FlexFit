@@ -1236,9 +1236,31 @@ body {
   width: calc(100% - 300px);
   height: calc(100vh - 70px);
   float: right;
+  display: grid;
+  grid-template-rows: 70px 1fr;
+}
+.main-novo .lista-header {
+  background-color: #FFF;
+  padding: 0 25px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #dbdad9;
+}
+.main-novo .lista-header h3 {
+  font-size: 32px;
+  font-weight: 600;
+}
+.main-novo .lista-header a {
+  color: #000;
+}
+.main-novo .lista-header i {
+  font-size: 25px;
+}
+.main-novo .cadastra-container {
+  display: flex;
   justify-content: center;
+  align-items: center;
 }
 .main-novo .cadastra-container .cadastra-form {
   display: flex;

@@ -37,23 +37,7 @@ $email = $_SESSION['emailadmin'];
             <li><a href="listaaluno.php"><i class="bi bi-person-lines-fill"></i>Alunos</a></li>
             <li><a href="listainstrutor.php"><i class="bi bi-person-lines-fill"></i>Instrutores</a></li>
             <li><a href="listaaparelhos.php"><i class="bi bi-person-lines-fill"></i>Aparelhos</a></li>
-            <!-- <li><a href=""><i class="bi bi-person-fill-add"></i> Cadastra Admins</a></li> -->
         </ul>
-        <!-- <h3 class="title">Alunos</h3>
-        <ul class="nav-list">
-            <li><a href="listaaluno.php"><i class="bi bi-person-lines-fill"></i> Lista Alunos</a></li>
-            <li><a href=""><i class="bi bi-person-fill-add"></i> Cadastra Alunos</a></li>
-        </ul>
-        <h3 class="title">Instrutores</h3>
-        <ul class="nav-list">
-            <li><a href="listainstrutor.php"><i class="bi bi-person-lines-fill"></i> Lista Instrutores</a></li>
-            <li><a href=""><i class="bi bi-person-fill-add"></i> Cadastra Instrutores</a></li>
-        </ul>
-        <h3 class="title">Aparelhos</h3>
-        <ul class="nav-list">
-            <li><a href=""><i class="bi bi-person-lines-fill"></i> Lista Aparelhos</a></li>
-            <li><a href=""><i class="bi bi-person-fill-add"></i> Cadastra Aparelhos</a></li>
-        </ul> -->
     </div>
     <div class="nav-bottom">
         <hr>

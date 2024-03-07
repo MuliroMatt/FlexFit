@@ -41,7 +41,7 @@ $resultado = mysqli_query($link, $sql);
                 <h3>Instrutores</h3>
             </div>
             <div class="left">
-                <a href=""><i class="bi bi-plus-square-fill"></i></a>
+                <a href="novoinstrutor.php"><i class="bi bi-plus-square-fill"></i></a>
             </div>
         </header>
         <div class="lista-container">
@@ -67,7 +67,7 @@ $resultado = mysqli_query($link, $sql);
                         <td><?=$tbl[10]?></td>
                         <td><?=$tbl[11]?></td>
                         <td><?=$tbl[9]?></td>
-                        <td><?=$tbl[12]?></td>
+                        <td><?= $check = ($tbl[12] == "s") ? "Ativo" : "Inativo" ?></td>
                         <td class="tools">
                             <a href=""><i class="bi bi-pencil-square"></i></a>
                             <a href=""><i class="bi bi-trash-fill"></i></a>

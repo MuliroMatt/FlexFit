@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $cpf = $_POST['cpf']; 
     $nasc = $_POST['nasc']; 
     $endereco = $_POST['endereco']; 
-    $genero = $_POST['genero']; 
+    $genero = $_POST['genero'];  
 
     $sql = "UPDATE usuarios 
             SET usu_nome = '$nome', usu_sobrenome = '$sobrenome', usu_email = '$email'

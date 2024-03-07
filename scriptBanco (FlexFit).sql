@@ -3,7 +3,8 @@ USE FlexFit;
 
 CREATE TABLE administradores(
     adm_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    adm_nome VARCHAR(50) NOT NULL,
+    adm_nome VARCHAR(20) NOT NULL,
+    adm_sobrenome VARCHAR(50) NOT NULL,
     adm_email VARCHAR(50) NOT NULL,
     adm_senha VARCHAR(30) NOT NULL,
     adm_status CHAR(1) NOT NULL
@@ -11,17 +12,17 @@ CREATE TABLE administradores(
 
 CREATE TABLE usuarios(
     usu_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    usu_nome VARCHAR(40) NOT NULL,
-    usu_sobrenome VARCHAR(60) NOT NULL,
+    usu_nome VARCHAR(20) NOT NULL,
+    usu_sobrenome VARCHAR(50) NOT NULL,
     usu_email VARCHAR(60) NOT NULL,
-    usu_senha VARCHAR(32) NOT NULL,
+    usu_senha VARCHAR(30) NOT NULL,
     usu_funcao CHAR(1),
-    -- usu_status CHAR(1)
+    usu_img LONGBLOB
 );
 
 CREATE TABLE instrutores(
     instr_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    instr_cpf BIGINT(20) NOT NULL,
+    instr_cpf VARCHAR(20) NOT NULL,
     instr_telefone VARCHAR(14) NOT NULL,
     instr_turno ENUM('Manhã', 'Tarde', 'Noite') NOT NULL,
     instr_sexo ENUM('Masculino','Feminino') NULL,
@@ -33,7 +34,7 @@ CREATE TABLE instrutores(
 
 CREATE TABLE alunos(
     al_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,  
-    al_cpf BIGINT(20) NOT NULL,
+    al_cpf VARCHAR(20) NOT NULL,
     al_dataNasc DATE NOT NULL,
     al_sexo ENUM ('Masculino', 'Feminino', 'Outro') NULL,
     al_endereco VARCHAR(100) NOT NULL,
@@ -61,9 +62,9 @@ CREATE TABLE aparelhos(
 CREATE TABLE treinos(
     treino_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     treino_dia ENUM('Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo'),
-    treino_tempo TIME,
-    treino_series INT,
-    treino_repeticao INT,
+    -- treino_tempo TIME,
+    -- treino_series INT,
+    -- treino_repeticao INT,
     fk_instr_id INT,
     fk_al_id INT NOT NULL,
     fk_apa_id INT NOT NULL,

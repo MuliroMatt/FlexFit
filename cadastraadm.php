@@ -4,6 +4,8 @@ include("conectaDB.php");
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $nome = mysqli_real_escape_string($link, $_POST['nome']);
     $nome = ucwords(strtolower($nome));
+    $sobrenome = mysqli_real_escape_string($link, $_POST['sobrenome']);
+    $sobrenome = ucwords(strtolower($sobrenome));
     $email = mysqli_real_escape_string($link, $_POST['email']);
     $senha = mysqli_real_escape_string($link, $_POST['senha']);
 
@@ -13,14 +15,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if($result >= 1){
         echo "<script>window.alert('Usuário já cadastrado');</script>";
+        echo "<script>window.location.href='adm /loginadm.php';</script>";
     }
     else{
-        $sql = "INSERT INTO administradores(adm_nome, adm_email, adm_senha, adm_status) 
-                VALUES('$nome', '$email', '$senha', 's')";
+        $sql = "INSERT INTO administradores(adm_nome, adm_sobrenome, adm_email, adm_senha, adm_status) 
+                VALUES('$nome', '$sobrenome','$email', '$senha', 's')";
         $resultado = mysqli_query($link, $sql);
 
         echo "<script>window.alert('Usuário cadastrado com sucesso!');</script>";
-        echo "<script>window.location.href='login.php';</script>";
+        echo "<script>window.location.href='adm/loginadm.php';</script>";
     }
 }
 

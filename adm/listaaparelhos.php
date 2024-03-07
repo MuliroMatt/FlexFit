@@ -2,8 +2,8 @@
 //include ao cabeçalho
 include("backnav.php");
 
-// $sql = "SELECT * FROM aparelhos WHERE apa_status = 's'";
-// $resultdo = mysqli_query($link, $sql);
+$sql = "SELECT * FROM aparelhos WHERE apa_status = 's'";
+$resultado = mysqli_query($link, $sql);
  
 // if($_SERVER['REQUEST_METHOD'] == 'POST'){
 //     $ativo = $_POST['ativo'];
@@ -33,7 +33,7 @@ include("backnav.php");
                 <h3>Aparelhos</h3>
             </div>
             <div class="left">
-                <a href=""><i class="bi bi-plus-square-fill"></i></a>
+                <a href="novoaparelho.php"><i class="bi bi-plus-square-fill"></i></a>
             </div>
         </header>
         <div class="lista-container">
@@ -49,17 +49,23 @@ include("backnav.php");
                     </tr>
                 </thead>
                 <tbody>
+                <?php 
+                    while ($tbl = mysqli_fetch_array($resultado)){
+                    ?>
                     <tr>
-                        <th>Esteira Elétrica</th>
-                        <th>Cardio</th>
-                        <th>Avançado</th>
-                        <th>5</th>
-                        <th>Ativo</th>
-                        <th class="tools">
+                        <td><?=$tbl[1]?></td>
+                        <td><?=$tbl[2]?></td>
+                        <td><?=$tbl[3]?></td>
+                        <td><?=$tbl[4]?></td>
+                        <td><?= $check = ($tbl[5] == "s") ? "Ativo" : "Inativo" ?></td>
+                        <td class="tools">
                             <a href=""><i class="bi bi-pencil-square"></i></a>
                             <a href=""><i class="bi bi-trash-fill"></i></a>
-                        </th>
+                        </td>
                     </tr>
+                    <?php
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>

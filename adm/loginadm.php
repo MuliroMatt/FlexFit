@@ -21,6 +21,10 @@ include ('../conectaDB.php')
                         <input type="text" name="nome" required>
                     </div>
                     <div class="input-box">
+                        <label>Sobrenome</label>
+                        <input type="text" name="sobrenome" required>
+                    </div>
+                    <div class="input-box">
                         <label>E-mail</label>
                         <input type="email" name="email" required>
                     </div>

@@ -51,6 +51,7 @@ $resultado = mysqli_query($link, $sql);
                         <th>Nascimento</th>
                         <th>Gênero</th>
                         <th>Telefone</th>
+                        <th>Instrutor</th>
                         <th>Status</th>
                         <th class="tools">Ferramentas</th>
                     </tr>
@@ -65,7 +66,27 @@ $resultado = mysqli_query($link, $sql);
                         <td><?=$tbl[9]?></td>
                         <td><?=$tbl[10]?></td>
                         <td><?=$tbl[12]?></td>
-                        <td><?=$tbl[18]?></td>
+                        <td>
+                            <?php 
+                            if(isset($tbl[17])){
+                                $instr_id = $tbl[17];
+                                $sql = "SELECT usuarios.usu_nome
+                                        FROM usuarios
+                                        INNER JOIN instrutores ON usuarios.usu_id = instrutores.fk_usu_id
+                                        INNER JOIN alunos ON instrutores.instr_id = alunos.fk_instr_id
+                                        WHERE alunos.fk_instr_id = '" . $instr_id . "'";
+                                $retorno = mysqli_query($link, $sql);
+                                while ($tbl2 = mysqli_fetch_array($retorno)){
+                                    $instr = $tbl2[0];
+                                }
+                                echo $instr;
+                            }
+                            else{
+                                echo'A definir';
+                            }
+                            ?>
+                        </td>
+                        <td><?= $check = ($tbl[18] == "s") ? "Ativo" : "Inativo" ?></td>
                         <td class="tools">
                             <a href=""><i class="bi bi-pencil-square"></i></a>
                             <a href=""><i class="bi bi-trash-fill"></i></a>
