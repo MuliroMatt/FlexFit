@@ -27,7 +27,6 @@ CREATE TABLE instrutores(
     instr_turno ENUM('Manhã', 'Tarde', 'Noite') NOT NULL,
     instr_sexo ENUM('Masculino','Feminino') NULL,
     instr_status CHAR(1) NOT NULL,
-    fk_adm_id INT NOT NULL,
     fk_usu_id INT NOT NULL,
     FOREIGN KEY (fk_usu_id) REFERENCES usuarios(usu_id)
 );

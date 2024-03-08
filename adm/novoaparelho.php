@@ -18,7 +18,7 @@ include('backnav.php');
                 <h3>Aparelhos</h3>
             </div>
             <div class="left">
-                <a href="novoaparelho.php"><i class="bi bi-plus-square-fill"></i></a>
+                <a href="listaaparelhos.php"><i class="bi bi-chevron-left"></i></a>
             </div>
         </header>
         <div class="cadastra-container">

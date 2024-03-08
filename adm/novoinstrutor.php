@@ -64,7 +64,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 <h3>Instrutores</h3>
             </div>
             <div class="left">
-                <a href="novoaluno.php"><i class="bi bi-plus-square-fill"></i></a>
+                <a href="listainstrutor.php"><i class="bi bi-chevron-left"></i></a>
             </div>
         </header>
         <div class="cadastra-container">

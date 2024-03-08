@@ -5,18 +5,26 @@ include("backnav.php");
 // Instrução ao SQL
 $sql = "SELECT * FROM usuarios AS u
         INNER JOIN alunos AS a ON u.usu_id = a.fk_usu_id
-        WHERE a.al_status = 's' AND u.usu_funcao = 'a';";
+        WHERE u.usu_funcao = 'a';";
 $resultado = mysqli_query($link, $sql);
+
+// $ativo = "s";
 
 // if($_SERVER['REQUEST_METHOD'] == 'POST'){
 //     $ativo = $_POST ['ativo'];
 
 //     if($ativo == 's'){
-//         $sql = "SELECT * FROM alunos WHERE al_status = 's'";
+//         $sql = "SELECT * FROM usuarios AS u
+//                 INNER JOIN alunos AS a ON u.usu_id = a.fk_usu_id
+//                 WHERE a.al_status = 's' AND u.usu_funcao = 'a';";
 //     } elseif($ativo == 'n'){
-//         $sql = "SELECT * FROM alunos WHERE al_status = 'n'";
+//         $sql = "SELECT * FROM usuarios AS u
+//                 INNER JOIN alunos AS a ON u.usu_id = a.fk_usu_id
+//                 WHERE a.al_status = 'n' AND u.usu_funcao = 'a';";
 //     } else {
-//         $sql = "SELECT * FROM alunos";
+//         $sql = "SELECT * FROM usuarios AS u
+//                 INNER JOIN alunos AS a ON u.usu_id = a.fk_usu_id
+//                 WHERE u.usu_funcao = 'a';";
 //     }
 
 //     $resultado = mysqli_query($link , $sql); 
@@ -38,6 +46,17 @@ $resultado = mysqli_query($link, $sql);
             <div class="right">
                 <h3>Alunos</h3>
             </div>
+            <!-- <form action="listaaluno.php" method="post">
+                <input type="radio" name="ativo" class="radio" value="s" id="radioativo"
+                required onclick="submit()" <?= $ativo == 's' ? "checked" : "" ?>>
+                <label class="radio-label" for="radioativo">Ativo</label>
+                <input type="radio" name="ativo" class="radio" value="n" id="radioinativo"
+                required onclick="submit()" <?= $ativo == 'n' ? "checked" : "" ?>>
+                <label class="radio-label" for="radioinativo">Inativo</label>
+                <input type="radio" name="ativo" class="radio" value="todos" id="radiotodos"
+                required onclick="submit()" <?= $ativo == 'todos' ? "checked" : "" ?>>
+                <label class="radio-label" for="radiotodos">Todos</label>
+            </form> -->
             <div class="left">
                 <a href="novoaluno.php"><i class="bi bi-plus-square-fill"></i></a>
             </div>
@@ -88,8 +107,9 @@ $resultado = mysqli_query($link, $sql);
                         </td>
                         <td><?= $check = ($tbl[18] == "s") ? "Ativo" : "Inativo" ?></td>
                         <td class="tools">
-                            <a href=""><i class="bi bi-pencil-square"></i></a>
+                            <a href="alteraaluno.php?id=<?=$tbl[0]?>"><i class="bi bi-pencil-square"></i></a>
                             <a href=""><i class="bi bi-trash-fill"></i></a>
+                            <!-- <a href="alterausuario.php?id=<?=$tbl[0]?>"><button class="btn-alterar"><p class="text">Alterar</p></button></a> -->
                         </td>
                     </tr>
                     <?php

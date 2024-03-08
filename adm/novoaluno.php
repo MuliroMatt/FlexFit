@@ -66,11 +66,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 <h3>Alunos</h3>
             </div>
             <div class="left">
-                <a href="novoaluno.php"><i class="bi bi-plus-square-fill"></i></a>
+                <a href="listaaluno.php"><i class="bi bi-chevron-left"></i></a>
             </div>
         </header>
         <div class="cadastra-container">
-            <form action="novoaluno.php" method="post" class="cadastra-form">
+            <form action="alteraaluno.php" method="post" class="cadastra-form">
                 <div class="input-box">
                     <label>Nome</label>
                     <input type="text" name="nome" required>
@@ -110,6 +110,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <div class="input-box">
                         <label>Instrutor</label>
                         <select name="instrutor" id="instrutor" required>
+                            <option value="A definir">A definir</option>
                         <?php
                             //* Consulta SQL para obter os registros da tabela 'fornecedores'
                             $sql = "SELECT usuarios.usu_nome, instrutores.instr_id

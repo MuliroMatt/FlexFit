@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+    <?php include('cabecalho.php'); ?>  
     <main class="main-cadastraaluno">
         <div class="wrapper">
             <section class="cadastra-container">

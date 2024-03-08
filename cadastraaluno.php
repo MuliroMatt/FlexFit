@@ -9,6 +9,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $endereco = mysqli_real_escape_string($link, $_POST['endereco']);
     $telefone = mysqli_real_escape_string($link, $_POST['telefone']);
     $usu_id = $_SESSION['idusuario'];
+    $_SESSION['funcaousuario'] = 'a';
 
     //Instruções ao  banco de dados
     $sql = "SELECT COUNT(al_id) FROM alunos WHERE al_cpf = '$cpf' OR fk_usu_id = '$usu_id'";

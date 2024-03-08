@@ -69,7 +69,7 @@ $resultado = mysqli_query($link, $sql);
                         <td><?=$tbl[9]?></td>
                         <td><?= $check = ($tbl[12] == "s") ? "Ativo" : "Inativo" ?></td>
                         <td class="tools">
-                            <a href=""><i class="bi bi-pencil-square"></i></a>
+                            <a href="alterainstrutor.php?id=<?=$tbl[0]?>"><i class="bi bi-pencil-square"></i></a>
                             <a href=""><i class="bi bi-trash-fill"></i></a>
                         </td>
                     </tr>

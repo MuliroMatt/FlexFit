@@ -1283,6 +1283,7 @@ body {
   height: 45px;
   padding: 10px;
   outline: none;
+  font-size: 20px;
 }
 .main-novo .cadastra-container .cadastra-form .input-box select {
   background-color: #FFF;

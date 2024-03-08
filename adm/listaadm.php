@@ -3,7 +3,7 @@
 include("backnav.php");
 
 $sql = "SELECT * FROM administradores WHERE adm_status = 's'";
-    $resultado = mysqli_query($link, $sql);
+$resultado = mysqli_query($link, $sql);
  
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $ativo = $_POST['ativo'];
@@ -60,7 +60,7 @@ $sql = "SELECT * FROM administradores WHERE adm_status = 's'";
                         <td><?=$tbl[3]?></td>
                         <td><?= $check = ($tbl[5] == "s") ? "Ativo" : "Inativo" ?></td>
                         <td class="tools">
-                            <a href=""><i class="bi bi-pencil-square"></i></a>
+                            <a href="alteraadm.php?id=<?=$tbl[0]?>"><i class="bi bi-pencil-square"></i></a>
                             <a href=""><i class="bi bi-trash-fill"></i></a>
                         </td>
                     </tr>

@@ -8,6 +8,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $turno = mysqli_real_escape_string($link, $_POST['turno']);
     $sexo = mysqli_real_escape_string($link, $_POST['genero']);
     $usu_id = $_SESSION['idusuario'];
+    $_SESSION['funcaousuario'] = 'i';
 
 
     //Instruções para o sql
