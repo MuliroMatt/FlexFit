@@ -73,7 +73,7 @@ elseif ($funcao == 'i'){
             }
             elseif ($funcao == 'i'){
             ?>
-            <li><a href="alunos.php"><i class="bi bi-people-fill"></i> Alunos</a></li>
+            <li><a href="meusalunos.php"><i class="bi bi-people-fill"></i> Alunos</a></li>
             <?php }?>
         </ul>
     </div>

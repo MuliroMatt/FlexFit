@@ -1051,7 +1051,6 @@ body {
 }
 
 .main-treinos {
-  background-color: blue;
   height: calc(100vh - 70px);
   width: calc(100% - 300px);
   float: right;
@@ -1348,4 +1347,32 @@ body {
 }
 .main-novo.aluno .cadastra-container .cadastra-form .cadastrar-btn:hover {
   box-shadow: inset 1200px 0 0 0 #ff4f51;
+}
+
+.main-meusalunos {
+  height: calc(100vh - 70px);
+  width: calc(100% - 300px);
+  float: right;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-meusalunos .alunos-container {
+  background-color: #FFF;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 80px 1fr;
+}
+.main-meusalunos .alunos-container .page-header {
+  border-bottom: 1px solid #dbdad9;
+  padding: 25px 50px;
+  display: flex;
+  align-items: center;
+}
+.main-meusalunos .alunos-container .page-header .page-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #000;
 }/*# sourceMappingURL=style.css.map */
