@@ -1,24 +1,29 @@
 <?php 
 include('usernav.php');
 
-if (isset($_SESSION['idusuario'])){
-    $id = $_SESSION['idusuario'];
-    $sql = "SELECT * FROM usuarios WHERE usu_id = '$id';";
-    $return = mysqli_query($link, $sql);
-    while($tbl = mysqli_fetch_array($return)){
-        $nome = $tbl[1];    
-        $sobrenome = $tbl[2];
-        $email = $tbl[3];
-        $funcao = $tbl[5];
-    } 
+// if (isset($_SESSION['idusuario'])){
+    // $id = $_SESSION['idusuario'];
+    // $nome = $_SESSION['nomeusuario'];
+    // $sobrenome = $_SESSION['sobrenomeusuario'];
+    // $email = $_SESSION['emailusuario'];
+    // $funcao = $_SESSION['funcaousuario'];
 
-    if ($funcao == 'a'){
-        $funcao2 = 'Aluno';
-    }
-    elseif ($funcao == 'i'){
-        $funcao2 = 'Instrutor';
-    }
-}
+    // $sql = "SELECT * FROM usuarios WHERE usu_id = '$id';";
+    // $return = mysqli_query($link, $sql);
+    // while($tbl = mysqli_fetch_array($return)){
+    //     $nome = $tbl[1];    
+    //     $sobrenome = $tbl[2];
+    //     $email = $tbl[3];
+    //     $funcao = $tbl[5];
+    // } 
+
+    // if ($funcao == 'a'){
+    //     $funcao2 = 'Aluno';
+    // }
+    // elseif ($funcao == 'i'){
+    //     $funcao2 = 'Instrutor';
+    // }
+// }
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +33,7 @@ if (isset($_SESSION['idusuario'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../img/logo.png">
     <script src="https://kit.fontawesome.com/fc1c840fda.js" crossorigin="anonymous"></script>
     <title>FlexFit</title>
 </head>
@@ -35,16 +41,6 @@ if (isset($_SESSION['idusuario'])){
     <main class="main-profile">
         <?php 
         if ($funcao == 'a'){
-            $sql = "SELECT * FROM alunos WHERE fk_usu_id = '$id';";
-            $return = mysqli_query($link, $sql);
-            
-            while($tbl = mysqli_fetch_array($return)){
-                $cpf = $tbl[1];
-                $nasc = $tbl[2];
-                $genero = $tbl[3];
-                $endereco = $tbl[4];
-                $telefone = $tbl[5];
-            }
         ?>
         <div class="perfil-container">
             <header class="page-header">
@@ -59,7 +55,7 @@ if (isset($_SESSION['idusuario'])){
                             <?=$sobrenome?>
                         </span>
                         <span class="function">
-                            Aluno
+                            <?=$funcao2?>
                         </span>
                     </div>
                     <hr>
@@ -123,15 +119,6 @@ if (isset($_SESSION['idusuario'])){
         <?php
         }
         elseif ($funcao == 'i'){
-            $sql = "SELECT * FROM instrutores WHERE fk_usu_id = '$id';";
-            $return = mysqli_query($link, $sql);
-    
-            while($tbl = mysqli_fetch_array($return)){
-                $cpf = $tbl[1];
-                $telefone = $tbl[2];
-                $turno = $tbl[3];
-                $genero = $tbl[4];
-            }
         ?>
         <div class="perfil-container">
             <header class="page-header">
@@ -201,9 +188,7 @@ if (isset($_SESSION['idusuario'])){
                 </form>
             </div>
         </div>
-        <?php 
-        }
-        ?>
+        <?php } ?>
     </main>
 </body>
 </html>

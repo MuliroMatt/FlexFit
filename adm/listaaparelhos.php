@@ -69,11 +69,11 @@ if(isset($_POST['searchbtn'])){
                     while ($tbl = mysqli_fetch_array($resultado)){
                     ?>
                     <tr>
-                        <td><?=$tbl[1]?></td>
-                        <td><?=$tbl[2]?></td>
-                        <td><?=$tbl[3]?></td>
-                        <td><?=$tbl[4]?></td>
-                        <td><?= $check = ($tbl[5] == "s") ? "Ativo" : "Inativo" ?></td>
+                        <td><?=$tbl['apa_nome']?></td>
+                        <td><?=$tbl['apa_categoria']?></td>
+                        <td><?=$tbl['apa_nivel']?></td>
+                        <td><?=$tbl['apa_quantidade']?></td>
+                        <td><?= $check = ($tbl['apa_status'] == "s") ? "Ativo" : "Inativo" ?></td>
                         <td class="tools">
                             <a href="alteraaparelho.php?id=<?=$tbl[0]?>"><i class="bi bi-pencil-square"></i></a>
                         </td>

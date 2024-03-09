@@ -87,15 +87,15 @@ if(isset($_POST['searchbtn'])){
                     while ($tbl = mysqli_fetch_array($resultado)){
                     ?>
                     <tr>
-                        <td><?=$tbl[1]?> <?=$tbl[2]?></td>
-                        <td><?=$tbl[3]?></td>
-                        <td><?=$tbl[9]?></td>
-                        <td><?=$tbl[10]?></td>
-                        <td><?=$tbl[12]?></td>
+                        <td><?=$tbl['usu_nome']?> <?=$tbl['usu_sobrenome']?></td>
+                        <td><?=$tbl['usu_email']?></td>
+                        <td><?=$tbl['al_dataNasc']?></td>
+                        <td><?=$tbl['al_sexo']?></td>
+                        <td><?=$tbl['al_telefone']?></td>
                         <td>
                             <?php 
-                            if(isset($tbl[17])){
-                                $instr_id = $tbl[17];
+                            if(isset($tbl['fk_instr_id'])){
+                                $instr_id = $tbl['fk_instr_id'];
                                 $sql = "SELECT usuarios.usu_nome
                                         FROM usuarios
                                         INNER JOIN instrutores ON usuarios.usu_id = instrutores.fk_usu_id
@@ -103,7 +103,7 @@ if(isset($_POST['searchbtn'])){
                                         WHERE alunos.fk_instr_id = '" . $instr_id . "'";
                                 $retorno = mysqli_query($link, $sql);
                                 while ($tbl2 = mysqli_fetch_array($retorno)){
-                                    $instr = $tbl2[0];
+                                    $instr = $tbl2['usu_nome'];
                                 }
                                 echo $instr;
                             }
@@ -112,10 +112,9 @@ if(isset($_POST['searchbtn'])){
                             }
                             ?>
                         </td>
-                        <td><?= $check = ($tbl[18] == "s") ? "Ativo" : "Inativo" ?></td>
+                        <td><?= $check = ($tbl['al_status'] == "s") ? "Ativo" : "Inativo" ?></td>
                         <td class="tools">
                             <a href="alteraaluno.php?id=<?=$tbl[0]?>"><i class="bi bi-pencil-square"></i></a>
-                            <!-- <a href="alterausuario.php?id=<?=$tbl[0]?>"><button class="btn-alterar"><p class="text">Alterar</p></button></a> -->
                         </td>
                     </tr>
                     <?php

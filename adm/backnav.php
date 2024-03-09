@@ -4,11 +4,12 @@ session_start();
 
 $id = $_SESSION['idadmin'];
 $nome = $_SESSION['nomeadmin'];
+$sobrenome = $_SESSION['sobrenomeadmin'];
 $email = $_SESSION['emailadmin'];
 ?>
-
+<link rel="icon" type="image/png" href="../img/logo.png">
 <header class="user-header">
-    <a href="index.php" class="logo">
+    <a href="" class="logo">
         <img src="../img/logo.png" width="50">
         <span class="logo-text">
             FlexFit

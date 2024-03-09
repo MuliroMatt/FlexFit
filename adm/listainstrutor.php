@@ -80,12 +80,12 @@ if(isset($_POST['searchbtn'])){
                     while ($tbl = mysqli_fetch_array($resultado)){
                     ?>
                     <tr>
-                        <td><?=$tbl[1]?> <?=$tbl[2]?></td>
-                        <td><?=$tbl[3]?></td>
-                        <td><?=$tbl[10]?></td>
-                        <td><?=$tbl[11]?></td>
-                        <td><?=$tbl[9]?></td>
-                        <td><?= $check = ($tbl[12] == "s") ? "Ativo" : "Inativo" ?></td>
+                        <td><?=$tbl['usu_nome']?> <?=$tbl['usu_sobrenome']?></td>
+                        <td><?=$tbl['usu_email']?></td>
+                        <td><?=$tbl['instr_turno']?></td>
+                        <td><?=$tbl['instr_sexo']?></td>
+                        <td><?=$tbl['instr_telefone']?></td>
+                        <td><?= $check = ($tbl['instr_status'] == "s") ? "Ativo" : "Inativo" ?></td>
                         <td class="tools">
                             <a href="alterainstrutor.php?id=<?=$tbl[0]?>"><i class="bi bi-pencil-square"></i></a>
                         </td>

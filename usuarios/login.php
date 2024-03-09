@@ -16,11 +16,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $result = mysqli_query($link, $sql);
 
         while ($tbl = mysqli_fetch_array($result)) {
-            $_SESSION['idusuario'] = $tbl[0];
-            $_SESSION['nomeusuario'] = $tbl[1];
-            $_SESSION['sobrenomeusuario'] = $tbl[2];
-            $_SESSION['emailusuario'] = $tbl[3];
-            $_SESSION['funcaousuario'] = $tbl[5];
+            $_SESSION['idusuario'] = $tbl['usu_id'];
+            $_SESSION['nomeusuario'] = $tbl['usu_nome'];
+            $_SESSION['sobrenomeusuario'] = $tbl['usu_sobrenome'];
+            $_SESSION['emailusuario'] = $tbl['usu_email'];
+            $_SESSION['funcaousuario'] = $tbl['usu_funcao'];
         }
         echo "<script>window.location.href='../index.php';</script>";
 

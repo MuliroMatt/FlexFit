@@ -17,6 +17,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         while ($tbl = mysqli_fetch_array($result)) {
             $_SESSION['idadmin'] = $tbl[0];
             $_SESSION['nomeadmin'] = $tbl[1];
+            $_SESSION['sobrenomeadmin'] = $tbl[1];
             $_SESSION['emailadmin'] = $tbl[2];
         }
         echo "<script>window.location.href='backoffice.php';</script>";

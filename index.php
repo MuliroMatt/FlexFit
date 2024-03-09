@@ -4,7 +4,6 @@ include("conectaDB.php");
 session_start();
 
 if(isset($_SESSION['idusuario'])){
-    // echo "<script>window.location.href='usuario.php';</script>";
     $nome = $_SESSION['nomeusuario'];
 }
 ?>
@@ -17,6 +16,7 @@ if(isset($_SESSION['idusuario'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/logo.png">
     <script src="https://kit.fontawesome.com/fc1c840fda.js" crossorigin="anonymous"></script>
     <title>FlexFit</title>
 </head>
@@ -42,16 +42,16 @@ if(isset($_SESSION['idusuario'])){
                     <li><a href="#inicio">Início</a>
                         <hr>
                     </li>
-                    <li><a href="./usuarios/instrutor.php">Trabalhe conosco</a>
+                    <li><a href="./usuarios/trabalhe_conosco.php">Trabalhe conosco</a>
                         <hr>
                     </li>
-                    <li><a href="./usuarios/aluno.php">Seja nosso aluno</a>
+                    <li><a href="./usuarios/seja_nosso_aluno.php">Seja nosso aluno</a>
                         <hr>
                     </li>
                     <?php if(!isset($nome)){?>
                     <li><a class="nav-btn" href="./usuarios/loginusuario.php">entrar | Cadastrar-se</a></li>
                     <?php }else{?>
-                    <li><a href="./usuarios/usuario.php">meu perfil</a>
+                    <li><a href="./usuarios/dashboard.php">meu perfil</a>
                         <hr>
                     </li>
                     <li><a class="nav-btn" href="logout.php">sair</a></li>

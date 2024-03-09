@@ -71,10 +71,10 @@ if(isset($_POST['searchbtn'])){
                     while ($tbl = mysqli_fetch_array($resultado)){
                     ?>
                     <tr>
-                        <td><?=$tbl[1]?></td>
-                        <td><?=$tbl[2]?></td>
-                        <td><?=$tbl[3]?></td>
-                        <td><?= $check = ($tbl[5] == "s") ? "Ativo" : "Inativo" ?></td>
+                        <td><?=$tbl['adm_nome']?></td>
+                        <td><?=$tbl['adm_sobrenome']?></td>
+                        <td><?=$tbl['adm_email']?></td>
+                        <td><?= $check = ($tbl['adm_status'] == "s") ? "Ativo" : "Inativo" ?></td>
                         <td class="tools">
                             <a href="alteraadm.php?id=<?=$tbl[0]?>"><i class="bi bi-pencil-square"></i></a>
                         </td>
