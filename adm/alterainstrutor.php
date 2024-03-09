@@ -4,8 +4,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //* Obtém os dados do formulário 
     $id = $_POST['id'];
     $nome = $_POST['nome'];
+    $nome = ucwords(strtolower($nome));
     $sobrenome = $_POST['sobrenome'];
+    $sobrenome = ucwords(strtolower($sobrenome));
     $email = $_POST['email'];
+    $email = strtolower($email);
     $senha = $_POST['senha'];
     $funcao = $_POST['funcao'];
     $img = $_POST['img'];

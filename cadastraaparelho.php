@@ -5,6 +5,7 @@ include("conectaDB.php");
  
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $nome = mysqli_real_escape_string($link, $_POST['nome']);
+    $nome = ucfirst(strtolower($nome));
     $categoria = mysqli_real_escape_string($link, $_POST['categoria']);
     $nivel = mysqli_real_escape_string($link, $_POST['nivel']);
     $quantidade = mysqli_real_escape_string($link, $_POST['qtd']);

@@ -7,6 +7,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $sobrenome = mysqli_real_escape_string($link, $_POST['sobrenome']);
     $sobrenome = ucwords(strtolower($sobrenome));
     $email = mysqli_real_escape_string($link, $_POST['email']);
+    $email = strtolower($email);
     $senha = mysqli_real_escape_string($link, $_POST['senha']);
 
     $sql = "SELECT COUNT(adm_id) FROM administradores WHERE adm_email = '$email'";

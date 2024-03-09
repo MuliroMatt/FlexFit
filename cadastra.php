@@ -3,12 +3,11 @@ include("conectaDB.php");
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $nome = mysqli_real_escape_string($link, $_POST['nome']);
-    $nome = strtolower($nome);
-    $nome = ucwords($nome);
+    $nome = ucwords(strtolower($nome));
     $sobrenome = mysqli_real_escape_string($link, $_POST['sobrenome']);
-    $sobrenome = strtolower($sobrenome);
-    $sobrenome = ucwords($sobrenome);
+    $sobrenome = ucwords(strtolower($sobrenome));
     $email = mysqli_real_escape_string($link, $_POST['email']);
+    $email = strtolower($email);
     $senha = mysqli_real_escape_string($link, $_POST['senha']);
 
     $sql = "SELECT COUNT(usu_id) FROM usuarios WHERE usu_email = '$email'";

@@ -9,6 +9,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $sobrenome = strtolower($sobrenome);
     $sobrenome = ucwords($sobrenome);
     $email = mysqli_real_escape_string($link, $_POST['email']);
+    $email = strtolower($email);
     $senha = mysqli_real_escape_string($link, $_POST['senha']);
     $cpf = mysqli_real_escape_string($link, $_POST['cpf']);
     $dataNascimento = mysqli_real_escape_string($link, $_POST['nasc']);
@@ -70,7 +71,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             </div>
         </header>
         <div class="cadastra-container">
-            <form action="alteraaluno.php" method="post" class="cadastra-form">
+            <form action="novoaluno.php" method="post" class="cadastra-form">
                 <div class="input-box">
                     <label>Nome</label>
                     <input type="text" name="nome" required>

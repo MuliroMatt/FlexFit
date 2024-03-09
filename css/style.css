@@ -1195,8 +1195,31 @@ body {
 .main-lista .lista-header a {
   color: #000;
 }
-.main-lista .lista-header i {
+.main-lista .lista-header .right i {
   font-size: 25px;
+}
+.main-lista .lista-header .middle .search-form .input-box {
+  display: flex;
+  width: 600px;
+  height: 40px;
+  border: 1px solid #dbdad9;
+}
+.main-lista .lista-header .middle .search-form .input-box input {
+  width: 100%;
+  border: none;
+  background: none;
+  padding: 0 15px;
+  outline: none;
+  font-size: 16px;
+}
+.main-lista .lista-header .middle .search-form .input-box .search-btn {
+  padding: 0 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.main-lista .lista-header .middle .search-form .input-box .search-btn i {
+  font-size: 18px;
 }
 .main-lista .lista-container table {
   width: 100%;

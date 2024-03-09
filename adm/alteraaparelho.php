@@ -4,6 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //* Obtém os dados do formulário 
     $id = $_POST['id'];
     $nome = $_POST['nome'];
+    $nome = ucwords(strtolower($nome));
     $categoria = $_POST['categoria'];
     $nivel = $_POST['nivel'];
     $quantidade = $_POST['quantidade'];

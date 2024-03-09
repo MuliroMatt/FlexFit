@@ -9,6 +9,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $sobrenome = strtolower($sobrenome);
     $sobrenome = ucwords($sobrenome);
     $email = mysqli_real_escape_string($link, $_POST['email']);
+    $email = strtolower($email);
     $senha = mysqli_real_escape_string($link, $_POST['senha']);
     $cpf = mysqli_real_escape_string($link, $_POST['cpf']);
     $genero = mysqli_real_escape_string($link, $_POST['genero']);

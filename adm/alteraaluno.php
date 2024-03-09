@@ -4,11 +4,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //* Obtém os dados do formulário 
     $id = $_POST['id'];
     $nome = $_POST['nome'];
+    $nome = ucwords(strtolower($nome));
     $sobrenome = $_POST['sobrenome'];
+    $sobrenome = ucwords(strtolower($sobrenome));
     $email = $_POST['email'];
+    $email = strtolower($email);
     $senha = $_POST['senha'];
     $funcao = $_POST['funcao'];
-    $img = $_POST['img'];
+    // $img = $_POST['img'];
     $cpf = $_POST['cpf'];
     $nasc = $_POST['nasc'];
     $genero = $_POST['genero'];
@@ -45,7 +48,7 @@ while($tbl = mysqli_fetch_array($return)){
     $email = $tbl['usu_email'];
     $senha = $tbl['usu_senha'];
     $funcao = $tbl['usu_funcao'];
-    $img = $tbl['usu_img'];
+    // $img = $tbl['usu_img'];
     $cpf = $tbl['al_cpf'];
     $nasc = $tbl['al_dataNasc'];
     $genero = $tbl['al_sexo'];
@@ -136,10 +139,10 @@ while($tbl = mysqli_fetch_array($return)){
                         $retorno = mysqli_query($link, $sql);
 
                         while($tbl = mysqli_fetch_array($retorno)){
-                            $instrutor = $tbl[0];
+                            $instrutornome = $tbl[0];
                         }
                     ?>
-                        <option value="<?=$instrutor?>"><?=$instrutor?></option>
+                        <option value="<?=$instrutor?>"><?=$instrutornome?></option>
                     <?php
                         //* Consulta SQL para obter os registros da tabela 'fornecedores'
                         $sql = "SELECT usuarios.usu_nome, instrutores.instr_id
@@ -170,7 +173,7 @@ while($tbl = mysqli_fetch_array($return)){
                     <label>Senha</label>
                     <input type="password" name="senha" value="<?=$senha?>" required>
                 </div>
-                <button class="cadastrar-btn" type="submit" name="submit">Cadastrar</button>
+                <button class="cadastrar-btn" type="submit" name="submit">Alterar</button>
             </form>
         </div>
     </main>

@@ -29,6 +29,16 @@ $resultado = mysqli_query($link, $sql);
 
 //     $resultado = mysqli_query($link , $sql); 
 // }
+
+if(isset($_POST['searchbtn'])){
+    $search = $_POST['search'];
+    $search = ucwords(strtolower($search));
+
+    $sql = "SELECT * FROM usuarios AS u
+            INNER JOIN alunos AS a ON u.usu_id = a.fk_usu_id
+            WHERE u.usu_funcao = 'a' AND u.usu_nome = '$search';";
+    $resultado = mysqli_query($link, $sql);
+}
 ?>
 
 <!DOCTYPE html>
@@ -43,21 +53,18 @@ $resultado = mysqli_query($link, $sql);
 <body>
     <main class="main-lista">
         <header class="lista-header">
-            <div class="right">
+            <div class="left">
                 <h3>Alunos</h3>
             </div>
-            <!-- <form action="listaaluno.php" method="post">
-                <input type="radio" name="ativo" class="radio" value="s" id="radioativo"
-                required onclick="submit()" <?= $ativo == 's' ? "checked" : "" ?>>
-                <label class="radio-label" for="radioativo">Ativo</label>
-                <input type="radio" name="ativo" class="radio" value="n" id="radioinativo"
-                required onclick="submit()" <?= $ativo == 'n' ? "checked" : "" ?>>
-                <label class="radio-label" for="radioinativo">Inativo</label>
-                <input type="radio" name="ativo" class="radio" value="todos" id="radiotodos"
-                required onclick="submit()" <?= $ativo == 'todos' ? "checked" : "" ?>>
-                <label class="radio-label" for="radiotodos">Todos</label>
-            </form> -->
-            <div class="left">
+            <div class="middle">
+                <form action="listaaluno.php" method="post" class="search-form">
+                    <div class="input-box">
+                        <input type="text" name="search">
+                        <button type="submit" class="search-btn" name="searchbtn"><i class="bi bi-search"></i></button>
+                    </div>
+                </form> 
+            </div>
+            <div class="right">
                 <a href="novoaluno.php"><i class="bi bi-plus-square-fill"></i></a>
             </div>
         </header>
@@ -72,7 +79,7 @@ $resultado = mysqli_query($link, $sql);
                         <th>Telefone</th>
                         <th>Instrutor</th>
                         <th>Status</th>
-                        <th class="tools">Ferramentas</th>
+                        <th class="tools">Editar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -108,7 +115,6 @@ $resultado = mysqli_query($link, $sql);
                         <td><?= $check = ($tbl[18] == "s") ? "Ativo" : "Inativo" ?></td>
                         <td class="tools">
                             <a href="alteraaluno.php?id=<?=$tbl[0]?>"><i class="bi bi-pencil-square"></i></a>
-                            <a href=""><i class="bi bi-trash-fill"></i></a>
                             <!-- <a href="alterausuario.php?id=<?=$tbl[0]?>"><button class="btn-alterar"><p class="text">Alterar</p></button></a> -->
                         </td>
                     </tr>

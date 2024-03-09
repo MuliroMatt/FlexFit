@@ -20,8 +20,40 @@
         a{
             color: $black;
         }
-        i{
-            font-size: 25px;
+        .right{
+            i{
+                font-size: 25px;
+            }
+        }
+        .middle{
+            // background-color: red;
+            .search-form{
+                // background-color: blue;
+                .input-box{
+                    display: flex;
+                    width: 600px;
+                    height: 40px;
+                    // background-color: red;
+                    border: 1px solid #dbdad9;
+                    input{
+                        width: 100%;
+                        border: none;
+                        background: none;
+                        padding: 0 15px;
+                        outline: none;
+                        font-size: 16px;
+                    }
+                    .search-btn{
+                        padding: 0 10px;
+                        border: none;
+                        background: none;
+                        cursor: pointer;
+                        i{
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
         }
     }
     .lista-container{

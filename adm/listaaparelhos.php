@@ -15,6 +15,14 @@ $resultado = mysqli_query($link, $sql);
 //         $sql = "SELECT * FROM aparelhos";
 //     }
 // }
+
+if(isset($_POST['searchbtn'])){
+    $search = $_POST['search'];
+    $search = ucwords(strtolower($search));
+
+    $sql = "SELECT * FROM aparelhos WHERE apa_nome = '$search'";
+    $resultado = mysqli_query($link, $sql);
+}
 ?>
 
 <!DOCTYPE html>
@@ -29,10 +37,18 @@ $resultado = mysqli_query($link, $sql);
 <body>
     <main class="main-lista">
         <header class="lista-header">
-            <div class="right">
+            <div class="left">
                 <h3>Aparelhos</h3>
             </div>
-            <div class="left">
+            <div class="middle">
+                <form action="listaaparelhos.php" method="post" class="search-form">
+                    <div class="input-box">
+                        <input type="text" name="search">
+                        <button type="submit" class="search-btn" name="searchbtn"><i class="bi bi-search"></i></button>
+                    </div>
+                </form> 
+            </div>
+            <div class="right">
                 <a href="novoaparelho.php"><i class="bi bi-plus-square-fill"></i></a>
             </div>
         </header>
@@ -45,7 +61,7 @@ $resultado = mysqli_query($link, $sql);
                         <th>Nivel</th>
                         <th>Quantidade</th>
                         <th>Status</th>
-                        <th class="tools">Ferramentas</th>
+                        <th class="tools">Editar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -60,7 +76,6 @@ $resultado = mysqli_query($link, $sql);
                         <td><?= $check = ($tbl[5] == "s") ? "Ativo" : "Inativo" ?></td>
                         <td class="tools">
                             <a href="alteraaparelho.php?id=<?=$tbl[0]?>"><i class="bi bi-pencil-square"></i></a>
-                            <a href=""><i class="bi bi-trash-fill"></i></a>
                         </td>
                     </tr>
                     <?php
