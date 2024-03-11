@@ -1,5 +1,16 @@
 <?php 
 include('usernav.php');
+
+$sql = "SELECT * FROM instrutores WHERE fk_usu_id = $id";
+$return = mysqli_query($link, $sql);
+while($tbl = mysqli_fetch_array($return)){
+    $instr_id = $tbl['instr_id'];
+}
+
+$sql = "SELECT * FROM usuarios AS u
+        INNER JOIN alunos AS a ON u.usu_id = a.fk_usu_id
+        WHERE u.usu_funcao = 'a' AND a.fk_instr_id = $instr_id;";
+$resultado = mysqli_query($link, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -24,14 +35,28 @@ include('usernav.php');
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <th>Editar Treino</th>
+                        <th>Experiencia</th>
+                        <th>Gênero</th>
+                        <th>Telefone</th>
+                        <th class="tools">Editar Treino</th>
                     </tr>
                 </thead>
                 <tbody>
+                <?php 
+                    while ($tbl = mysqli_fetch_array($resultado)){
+                    ?>
                     <tr>
-                        <td>Murilo Amorim Mattiuzzi</td>
-                        <td><i class="bi bi-pencil-square"></i></td>
+                        <td><?=$tbl['usu_nome']?> <?=$tbl['usu_sobrenome']?></td>
+                        <td><?=$tbl['al_experiencia']?></td>
+                        <td><?=$tbl['al_sexo']?></td>
+                        <td><?=$tbl['al_telefone']?></td>
+                        <td class="tools">
+                            <a href="editartreino.php?id=<?=$tbl[0]?>"><i class="bi bi-pencil-square"></i></a>
+                        </td>
                     </tr>
+                    <?php
+                    }
+                    ?>
                 </tbody>
             </table>
             </div>

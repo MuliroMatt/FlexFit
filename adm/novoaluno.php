@@ -110,8 +110,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     </div>
                     <div class="input-box">
                         <label>Instrutor</label>
-                        <select name="instrutor" id="instrutor" required>
-                            <option value="A definir">A definir</option>
+                        <select name="instrutor" id="instrutor">
+                            <option value="0">A definir</option>
                         <?php
                             //* Consulta SQL para obter os registros da tabela 'fornecedores'
                             $sql = "SELECT usuarios.usu_nome, instrutores.instr_id

@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if($resultado >= 1){
         echo "<script>window.alert('Instrutor já cadastrado!');</script>";
-        echo "<script>window.location.href='instrutor.php';</script>";
+        echo "<script>window.location.href='./usuarios/trabalhe_conosco.php';</script>";
     } else{
         $sql = "INSERT INTO instrutores (instr_cpf, instr_telefone, instr_turno, instr_sexo, instr_status, fk_usu_id) 
                 VALUES('$cpf', '$telefone', '$turno', '$sexo', 's', $usu_id)";

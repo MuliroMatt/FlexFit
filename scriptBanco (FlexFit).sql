@@ -59,17 +59,22 @@ CREATE TABLE aparelhos(
 );
 
 CREATE TABLE treinos(
-    treino_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    treino_dia ENUM('Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo'),
-    -- treino_tempo TIME,
-    -- treino_series INT,
-    -- treino_repeticao INT,
-    fk_instr_id INT,
+    tr_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    tr_dia ENUM('Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo'),
+    fk_instr_id INT NOT NULL,
     fk_al_id INT NOT NULL,
-    fk_apa_id INT NOT NULL,
-    FOREIGN KEY (fk_apa_id) REFERENCES aparelhos (apa_id),
     FOREIGN KEY (fk_instr_id) REFERENCES instrutores(instr_id),
     FOREIGN KEY (fk_al_id) REFERENCES alunos(al_id)
 );
 
-
+CREATE TABLE exercicios_treino(
+    et_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    et_nome VARCHAR(100) NOT NULL,
+    et_tempo TIME,
+    et_series INT,
+    et_repeticao INT,
+    fk_apa_id INT NOT NULL,
+    fk_tr_id INT NOT NULL,
+    FOREIGN KEY (fk_tr_id) REFERENCES treinos (tr_id),
+    FOREIGN KEY (fk_apa_id) REFERENCES aparelhos (apa_id)
+)

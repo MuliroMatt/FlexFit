@@ -1,0 +1,181 @@
+@import './variaveis';
+
+.main-editartreino {
+    background-color: blue;
+    height: calc(100vh - 70px);
+    width: calc(100% - 300px);
+    float: right;
+    .treinos-container{
+        background-color: $white;
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-rows: 80px 1fr;
+        .page-header{
+            padding: 0 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #dbdad9;
+            h3{
+                font-size: 32px;
+                font-weight: 600;
+            }
+            a{
+                color: $black;
+            }
+            .right{
+                i{
+                    font-size: 25px;
+                }
+            }
+            .middle{
+                // background-color: red;
+                .search-form{
+                    // background-color: blue;
+                    .input-box{
+                        display: flex;
+                        width: 600px;
+                        height: 40px;
+                        // background-color: red;
+                        border: 1px solid #dbdad9;
+                        input{
+                            width: 100%;
+                            border: none;
+                            background: none;
+                            padding: 0 15px;
+                            outline: none;
+                            font-size: 16px;
+                        }
+                        .search-btn{
+                            padding: 0 10px;
+                            border: none;
+                            background: none;
+                            cursor: pointer;
+                            i{
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .workout-container{
+            // background-color: blue;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 100px);
+            gap: 45px;
+            padding: 25px 50px;
+            .workout-card{
+                // background-color: red;
+                height: fit-content;
+                border-radius: 3px;
+                border: 1px solid #b1b1b1;
+                padding: 15px;
+                .card-infos{
+                    // background-color: red;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    .title{
+                        font-size: 20px;
+                        font-weight: 500;
+                        line-height: 100%;
+                        // background-color: olive;
+                    }
+                    .level{
+                        color: #b1b1b1;
+                    }
+                    .btns{
+                        // background-color: mediumaquamarine;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        .btn{
+                            width: 100%;
+                            background: none;
+                            border: none;
+                            padding: 8px 10px;
+                            font-size: 12px;
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            // border-radius: 5px;
+                            cursor: pointer;
+                            &.see{
+                                border: 1px solid $red;
+                                color: $red;
+                                &:hover{
+                                    transition: ease-out .3s;
+                                    box-shadow: inset 350px 0 0 0 $lightgrey;
+                                }
+                            }
+                            &.complete{
+                                background-color: $red;
+                                color: $white;
+                                &:hover{
+                                    transition: ease-out .3s;
+                                    box-shadow: inset 350px 0 0 0 $lightred;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .new-btn{
+                // background-color: blue;
+                border: none;
+                background: none;
+                cursor: pointer;
+                border-radius: 3px;
+                border: 1px solid #b1b1b1;
+                padding: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                i{
+                    font-size: 35px;
+                }
+            }   
+        }
+        .workout-list{
+            background-color: $userbg;
+            position: absolute;
+            right: 0;
+            height: calc(100vh - 70px);
+            width: 0;
+            overflow: hidden;
+            transition: .3s;
+            &.open{
+                width: 400px;
+            }
+            .exercise-card{
+                // background-color: blue;
+                color: $white;
+                margin: 25px 35px;
+                border: 1px solid #333333;
+                border-radius: 3px;
+                padding: 10px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .left{
+                    // background-color: hotpink;
+                    display: flex;
+                    flex-direction: column;
+                    .exe-name{
+                        font-size: 20px;
+                    }
+                    .exe-reps{
+                        font-size: 14px;
+                        font-weight: 100;
+                        color: $text;
+                    }
+                }
+                .right{
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}

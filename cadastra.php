@@ -16,6 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if($result >= 1){
         echo "<script>window.alert('Usuário já cadastrado');</script>";
+        echo "<script>window.location.href='./usuarios/loginusuario.php';</script>";
     }
     else{
         $sql = "INSERT INTO usuarios(usu_nome, usu_sobrenome, usu_email, usu_senha) 
@@ -23,7 +24,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $resultado = mysqli_query($link, $sql);
 
         echo "<script>window.alert('Usuário cadastrado com sucesso!');</script>";
-        echo "<script>window.location.href='index.php';</script>";
+        echo "<script>window.location.href='./usuarios/loginusuario.php';</script>";
     }
 
 }
