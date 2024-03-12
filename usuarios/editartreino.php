@@ -166,7 +166,7 @@ $return = mysqli_query($link, $sql);
                 </div>
                 
                 <?php 
-                $sql = "SELECT * FROM exericios_treino WHERE fk_tr_id = 1";
+                $sql = "SELECT * FROM exercicios_treino WHERE fk_tr_id = 1";
                 $return = mysqli_query($link, $sql);
 
                 while($tbl = mysqli_fetch_array($return)){
