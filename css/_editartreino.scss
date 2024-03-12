@@ -122,21 +122,69 @@
                     }
                 }
             }
-            .new-btn{
+            .newworkout-container{
                 // background-color: blue;
-                border: none;
-                background: none;
-                cursor: pointer;
-                border-radius: 3px;
-                border: 1px solid #b1b1b1;
-                padding: 15px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                i{
-                    font-size: 35px;
+                    // height: fit-content;
+                    border-radius: 3px;
+                    border: 1px solid #b1b1b1;
+                    padding: 15px;
+                .new-btn{
+                    // background-color: blue;
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                    background: none;
+                    cursor: pointer;
+                    // border-radius: 3px;
+                    // border: 1px solid #b1b1b1;
+                    padding: 15px;
+                    display: none;
+                    align-items: center;
+                    justify-content: center;
+                    i{
+                        font-size: 35px;
+                    }
+                }   
+                .newworkout{
+                    // background-color: blue;
+                    // width: 100%;
+                    // height: 100%;
+                    .workout-form{
+                        // background-color: blue;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        
+                        .btn{
+                            width: 100%;
+                            background: none;
+                            border: none;
+                            padding: 8px 10px;
+                            font-size: 12px;
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            // border-radius: 5px;
+                            cursor: pointer;
+                            border: 1px solid $red;
+                            color: $white;
+                            background-color: $red;
+                            &:hover{
+                                transition: ease-out .3s;
+                                box-shadow: inset 350px 0 0 0 $lightred;
+                            }
+                        }
+                        select{
+                            font-size: 16px;
+                            font-weight: 500;
+                            line-height: 100%;
+                            background: none;
+                            border: none;
+                            outline: none;
+                        }
+                    }
                 }
-            }   
+            }
         }
         .workout-list{
             background-color: $userbg;
@@ -173,7 +221,91 @@
                     }
                 }
                 .right{
-                    font-size: 24px;
+                    // background-color: blue;
+                    font-size: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    a{
+                        color: $white;
+                    }
+                }
+                .exercise-form{
+                    display: flex;
+                    justify-content: space-between;
+                    // background-color: blue;
+                    width: 100%;
+                    input, select{
+                        background:none;
+                        border: none;
+                        outline: none;
+                    }
+                    .left{
+                        .top{
+                            .exe-name{
+                                border-bottom: 1px solid #333333;
+                                caret-color: $white;
+                                color: $white;
+                                font-size: 20px;
+                                // padding: 5px;
+                            }
+                        }
+                        .bottom{
+                            display: flex;
+                            // background-color: blue;
+                            padding: 5px 0;
+                            .input-box{
+                                // background-color: pink;
+                                display: flex;
+                                align-items: center;
+                                gap: 5px;
+                                select{
+                                    color: $white;
+                                    option{
+                                        color: $black;
+                                    }
+                                }
+                                i{
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+                    }
+                    .right{
+                        button{
+                            background-color: #101212;
+                            border: none;
+                            border-radius: 3px;
+                            color: $white;
+                            padding: 10px;
+                            height: 100%;
+                            cursor: pointer;
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+            .btn-div{
+                // background-color: blue;
+                padding: 15px 35px 0;    
+                .btn{
+                    background-color: #101212;
+                    border: none;
+                    color: $white;
+                    cursor: pointer;
+                    // margin: 15px 35px 0;
+                    // border: 1px solid #333333;
+                    border-radius: 3px;
+                    padding: 10px;
+                    width: 100%;
+                    font-size: 16px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    i{
+                        font-size: 20px;
+                        // margin-left: 10px;
+                    }    
                 }
             }
         }

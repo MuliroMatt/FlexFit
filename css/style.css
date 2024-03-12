@@ -1521,19 +1521,55 @@ body {
   transition: ease-out 0.3s;
   box-shadow: inset 350px 0 0 0 #ff4f51;
 }
-.main-editartreino .treinos-container .workout-container .new-btn {
-  border: none;
-  background: none;
-  cursor: pointer;
+.main-editartreino .treinos-container .workout-container .newworkout-container {
   border-radius: 3px;
   border: 1px solid #b1b1b1;
   padding: 15px;
-  display: flex;
+}
+.main-editartreino .treinos-container .workout-container .newworkout-container .new-btn {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 15px;
+  display: none;
   align-items: center;
   justify-content: center;
 }
-.main-editartreino .treinos-container .workout-container .new-btn i {
+.main-editartreino .treinos-container .workout-container .newworkout-container .new-btn i {
   font-size: 35px;
+}
+.main-editartreino .treinos-container .workout-container .newworkout-container .newworkout .workout-form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main-editartreino .treinos-container .workout-container .newworkout-container .newworkout .workout-form .btn {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 1px solid #E73539;
+  color: #FFF;
+  background-color: #E73539;
+}
+.main-editartreino .treinos-container .workout-container .newworkout-container .newworkout .workout-form .btn:hover {
+  transition: ease-out 0.3s;
+  box-shadow: inset 350px 0 0 0 #ff4f51;
+}
+.main-editartreino .treinos-container .workout-container .newworkout-container .newworkout .workout-form select {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  background: none;
+  border: none;
+  outline: none;
 }
 .main-editartreino .treinos-container .workout-list {
   background-color: #181b1b;
@@ -1570,5 +1606,74 @@ body {
   color: #b6b6b6;
 }
 .main-editartreino .treinos-container .workout-list .exercise-card .right {
-  font-size: 24px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.main-editartreino .treinos-container .workout-list .exercise-card .right a {
+  color: #FFF;
+}
+.main-editartreino .treinos-container .workout-list .exercise-card .exercise-form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.main-editartreino .treinos-container .workout-list .exercise-card .exercise-form input, .main-editartreino .treinos-container .workout-list .exercise-card .exercise-form select {
+  background: none;
+  border: none;
+  outline: none;
+}
+.main-editartreino .treinos-container .workout-list .exercise-card .exercise-form .left .top .exe-name {
+  border-bottom: 1px solid #333333;
+  caret-color: #FFF;
+  color: #FFF;
+  font-size: 20px;
+}
+.main-editartreino .treinos-container .workout-list .exercise-card .exercise-form .left .bottom {
+  display: flex;
+  padding: 5px 0;
+}
+.main-editartreino .treinos-container .workout-list .exercise-card .exercise-form .left .bottom .input-box {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.main-editartreino .treinos-container .workout-list .exercise-card .exercise-form .left .bottom .input-box select {
+  color: #FFF;
+}
+.main-editartreino .treinos-container .workout-list .exercise-card .exercise-form .left .bottom .input-box select option {
+  color: #000;
+}
+.main-editartreino .treinos-container .workout-list .exercise-card .exercise-form .left .bottom .input-box i {
+  font-size: 20px;
+}
+.main-editartreino .treinos-container .workout-list .exercise-card .exercise-form .right button {
+  background-color: #101212;
+  border: none;
+  border-radius: 3px;
+  color: #FFF;
+  padding: 10px;
+  height: 100%;
+  cursor: pointer;
+  font-size: 20px;
+}
+.main-editartreino .treinos-container .workout-list .btn-div {
+  padding: 15px 35px 0;
+}
+.main-editartreino .treinos-container .workout-list .btn-div .btn {
+  background-color: #101212;
+  border: none;
+  color: #FFF;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-editartreino .treinos-container .workout-list .btn-div .btn i {
+  font-size: 20px;
 }/*# sourceMappingURL=style.css.map */

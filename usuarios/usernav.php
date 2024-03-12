@@ -13,6 +13,7 @@ if ($funcao == 'a'){
     $return = mysqli_query($link, $sql);
     
     while($tbl = mysqli_fetch_array($return)){
+        $al_id = $tbl['al_id'];
         $cpf = $tbl['al_cpf'];
         $nasc = $tbl['al_dataNasc'];
         $genero = $tbl['al_sexo'];
@@ -26,6 +27,7 @@ elseif ($funcao == 'i'){
     $return = mysqli_query($link, $sql);
 
     while($tbl = mysqli_fetch_array($return)){
+        $instr_id = $tbl['instr_id'];
         $cpf = $tbl['instr_cpf'];
         $telefone = $tbl['instr_telefone'];
         $turno = $tbl['instr_turno'];

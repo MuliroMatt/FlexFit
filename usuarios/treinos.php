@@ -1,5 +1,11 @@
 <?php 
 include('usernav.php');
+
+$sql = "SELECT * FROM treinos 
+        WHERE fk_al_id = $al_id
+        ORDER BY FIELD(tr_dia, 'Domingo','Segunda-feira', 'Terça-feira', 'Quarta-feira', 
+        'Quinta-feira', 'Sexta-feira', 'Sábado' );";
+$return = mysqli_query($link, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -20,10 +26,13 @@ include('usernav.php');
                 <span class="page-title">Treinos</span>
             </header>
             <div class="workout-container">
+                <?php 
+                while($tbl = mysqli_fetch_array($return)){
+                ?>
                 <div class="workout-card">
                     <div class="card-infos">
-                        <h3 class="title">Segunda-Feira</h3>
-                        <span class="level"><i class="bi bi-1-square"></i> Iniciante</span>
+                        <h3 class="title"><?=$tbl['tr_dia']?></h3>
+                        <!-- <span class="level"><i class="bi bi-1-square"></i> Iniciante</span> -->
                         <div class="btns">
                             <button class="btn see" onclick="openWorkoutList()">Ver Treino</button>
                             <form action="" method="post">
@@ -32,48 +41,26 @@ include('usernav.php');
                         </div>
                     </div>
                 </div>
+                <?php }?>
             </div>
             <div class="workout-list" id="workoutlist">
+                <?php 
+
+                $sql = "SELECT * FROM exericios_treino WHERE fk_tr_id = 1";
+                $return = mysqli_query($link, $sql);
+
+                while($tbl = mysqli_fetch_array($return)){
+                ?>
                 <div class="exercise-card">
                     <div class="left">
-                        <!-- <div class="img"></div> -->
-                        <span class="exe-name">Supino Reto</span>
-                        <span class="exe-reps">8-10 Repetições 4x</span>
+                        <span class="exe-name"><?=$tbl['et_nome']?></span>
+                        <span class="exe-reps"><?=$tbl['et_repeticao']?> Repetições <?=$tbl['et_series']?>x</span>
                     </div>
                     <div class="right">
                         <i class="bi bi-chevron-compact-right"></i>
                     </div>
                 </div>
-                <div class="exercise-card">
-                    <div class="left">
-                        <!-- <div class="img"></div> -->
-                        <span class="exe-name">Supino inclinado com halteres</span>
-                        <span class="exe-reps">10-12 Repetições 3x</span>
-                    </div>
-                    <div class="right">
-                        <i class="bi bi-chevron-compact-right"></i>
-                    </div>
-                </div>
-                <div class="exercise-card">
-                    <div class="left">
-                        <!-- <div class="img"></div> -->
-                        <span class="exe-name">Crucifixo na máquina</span>
-                        <span class="exe-reps">12-15 Repetições 3x</span>
-                    </div>
-                    <div class="right">
-                        <i class="bi bi-chevron-compact-right"></i>
-                    </div>
-                </div>
-                <div class="exercise-card">
-                    <div class="left">
-                        <!-- <div class="img"></div> -->
-                        <span class="exe-name">Pulley tríceps</span>
-                        <span class="exe-reps">8-10 Repetições 4x</span>
-                    </div>
-                    <div class="right">
-                        <i class="bi bi-chevron-compact-right"></i>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </main>

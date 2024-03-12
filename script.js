@@ -47,3 +47,7 @@ function openDropdown() {
     arrow.style.transform = 'rotate(-180deg)' 
   }
 }
+
+function createExe(){
+  document.getElementById('newCard').style.display = 'flex'
+}
