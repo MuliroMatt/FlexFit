@@ -62,7 +62,32 @@ include('usernav.php');
                     <span class="category"></span>
                 </div>
             </div>
+            <?php 
+            if($funcao == "a"){
+            ?>
             <div class="workout-card">
+                <?php 
+
+                //! FAZER COM QUE MOSTRE APENAS OS TREINOS DO DIA CORRESPONDENTE AO DIA ATUAL
+                $diasemana = date('l');
+                // echo $diasemana;
+
+                if($diasemana == 'Thursday'){
+                    // echo $al_id;
+                    $sql = "SELECT tr_id FROM  treinos WHERE tr_dia = 'Quinta-feira' AND fk_al_id = $al_id";
+                    $return = mysqli_query($link, $sql);
+                    while($tbl = mysqli_fetch_array($return)){
+                        $tr_id = $tbl[0];
+                    }
+                    // echo $tr_id;
+                    $sql = "SELECT * FROM exercicios_treino WHERE fk_tr_id = $tr_id";
+                    $return = mysqli_query($link, $sql);
+                    while($tbl = mysqli_fetch_array($return)){
+                        
+                    }
+                }
+
+                ?>
                 <h1 class="title">Segunda-Feira</h1>
                 <hr>
                 <div class="exercise-card">
@@ -106,7 +131,8 @@ include('usernav.php');
                 </div>
                 <hr>
             </div>
-            <div class="progress-card"></div>
+            <!-- <div class="progress-card"></div> -->
+            <?php }?>
         </div>
     </main>
 </body>

@@ -64,17 +64,18 @@ elseif ($funcao == 'i'){
     <div class="nav-options">
         <h3 class="title">Minha conta</h3>
         <ul class="nav-list">
-            <li><a href="dashboard.php"><i class="bi bi-columns"></i> Meu Painel</a></li>
-            <li><a href="perfil.php"><i class="bi bi-person-fill"></i> Perfil</a></li>
             <?php 
             if($funcao == 'a'){
             ?>
+            <li><a href="dashboard.php"><i class="bi bi-columns"></i> Meu Painel</a></li>       
+            <li><a href="perfil.php"><i class="bi bi-person-fill"></i> Perfil</a></li>
             <li><a href="treinos.php"><i class="bi bi-calendar-week"></i> Cronograma</a></li>
-            <li><a href=""><i class="bi bi-bullseye"></i> Objetivos</a></li>
+            <!-- <li><a href=""><i class="bi bi-bullseye"></i> Objetivos</a></li> -->
             <?php 
             }
             elseif ($funcao == 'i'){
             ?>
+            <li><a href="perfil.php"><i class="bi bi-person-fill"></i> Perfil</a></li>
             <li><a href="meusalunos.php"><i class="bi bi-people-fill"></i> Alunos</a></li>
             <?php }?>
         </ul>

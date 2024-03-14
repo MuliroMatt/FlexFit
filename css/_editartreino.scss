@@ -105,6 +105,7 @@
                             &.see{
                                 border: 1px solid $red;
                                 color: $red;
+                                text-align: center;
                                 &:hover{
                                     transition: ease-out .3s;
                                     box-shadow: inset 350px 0 0 0 $lightgrey;
@@ -194,118 +195,167 @@
             width: 0;
             overflow: hidden;
             transition: .3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0 0 40px 0;
             &.open{
+                transition: .3s;
                 width: 400px;
             }
-            .exercise-card{
-                // background-color: blue;
-                color: $white;
-                margin: 25px 35px;
-                border: 1px solid #333333;
-                border-radius: 3px;
-                padding: 10px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                .left{
-                    // background-color: hotpink;
-                    display: flex;
-                    flex-direction: column;
-                    .exe-name{
-                        font-size: 20px;
-                    }
-                    .exe-reps{
-                        font-size: 14px;
-                        font-weight: 100;
-                        color: $text;
-                    }
-                }
-                .right{
+            
+            .top{
+                // background-color: orangered;
+                height: 100%;
+                overflow: hidden;
+                // scrollbar-width: none;
+                // scrollbar-color: #101010 #101010;
+                .exercise-card{
                     // background-color: blue;
-                    font-size: 20px;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 10px;
-                    a{
-                        color: $white;
-                    }
-                }
-                .exercise-form{
+                    color: $white;
+                    margin: 25px 35px;
+                    border: 1px solid #333333;
+                    border-radius: 3px;
+                    padding: 10px;
                     display: flex;
                     justify-content: space-between;
-                    // background-color: blue;
-                    width: 100%;
-                    input, select{
-                        background:none;
-                        border: none;
-                        outline: none;
-                    }
+                    align-items: center;
                     .left{
-                        .top{
-                            .exe-name{
-                                border-bottom: 1px solid #333333;
-                                caret-color: $white;
-                                color: $white;
-                                font-size: 20px;
-                                // padding: 5px;
-                            }
+                        // background-color: hotpink;
+                        display: flex;
+                        flex-direction: column;
+                        .exe-name{
+                            font-size: 20px;
                         }
-                        .bottom{
-                            display: flex;
-                            // background-color: blue;
-                            padding: 5px 0;
-                            .input-box{
-                                // background-color: pink;
-                                display: flex;
-                                align-items: center;
-                                gap: 5px;
-                                select{
-                                    color: $white;
-                                    option{
-                                        color: $black;
-                                    }
-                                }
-                                i{
-                                    font-size: 20px;
-                                }
-                            }
+                        .exe-reps{
+                            font-size: 14px;
+                            font-weight: 100;
+                            color: $text;
                         }
                     }
                     .right{
-                        button{
-                            background-color: #101212;
-                            border: none;
-                            border-radius: 3px;
+                        // background-color: blue;
+                        font-size: 20px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        a{
                             color: $white;
-                            padding: 10px;
-                            height: 100%;
-                            cursor: pointer;
-                            font-size: 20px;
+                        }
+                    }
+                    .exercise-form{
+                        display: flex;
+                        justify-content: space-between;
+                        // background-color: blue;
+                        width: 100%;
+                        input, select{
+                            background:none;
+                            border: none;
+                            outline: none;
+                        }
+                        .left{
+                            .top{
+                                .exe-name{
+                                    border-bottom: 1px solid #333333;
+                                    caret-color: $white;
+                                    color: $white;
+                                    font-size: 20px;
+                                    // padding: 5px;
+                                }
+                            }
+                            .bottom{
+                                display: flex;
+                                // background-color: blue;
+                                padding: 5px 0;
+                                .input-box{
+                                    // background-color: pink;
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 5px;
+                                    select{
+                                        color: $white;
+                                        option{
+                                            color: $black;
+                                        }
+                                    }
+                                    i{
+                                        font-size: 20px;
+                                    }
+                                }
+                            }
+                        }
+                        .right{
+                            button{
+                                background-color: #101212;
+                                border: none;
+                                border-radius: 3px;
+                                color: $white;
+                                padding: 10px;
+                                height: 100%;
+                                cursor: pointer;
+                                font-size: 20px;
+                            }
                         }
                     }
                 }
+                .btn-div{
+                    // background-color: blue; 
+                    padding: 15px 35px 0;  
+                    margin-bottom: 10px;  
+                    .btn{
+                        background-color: #101212;
+                        border: none;
+                        color: $white;
+                        cursor: pointer;
+                        // margin: 15px 35px 0;
+                        // border: 1px solid #333333;
+                        border-radius: 3px;
+                        padding: 10px;
+                        width: 100%;
+                        font-size: 16px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        i{
+                            font-size: 20px;
+                            // margin-left: 10px;
+                        }    
+                    }
+                }
+                .exercises{
+                    height: 100%;
+                    overflow-y: scroll;
+                    scrollbar-width: none;
+                    // background-color: blue;
+                }
             }
-            .btn-div{
+            .bottom{
                 // background-color: blue;
-                padding: 15px 35px 0;    
-                .btn{
-                    background-color: #101212;
+                // position: absolute;
+                // bottom: 0;
+                // box-shadow: 10px 10px 10px 10px $black;
+                padding: 0 50px;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                hr{
                     border: none;
-                    color: $white;
-                    cursor: pointer;
-                    // margin: 15px 35px 0;
-                    // border: 1px solid #333333;
-                    border-radius: 3px;
-                    padding: 10px;
-                    width: 100%;
-                    font-size: 16px;
+                    background-color: #b8b8b8;
+                    height: 1px;
+                    margin: 10px 0;
+                }
+                a{
+                }
+                .btns{
                     display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    i{
-                        font-size: 20px;
-                        // margin-left: 10px;
-                    }    
+                    justify-content: space-around;
+                    .btn{
+                        color: $white;
+                        background-color: #101212;
+                        padding: 10px 15px;
+                        font-size: 18px;
+                        border-radius: 3px;
+                    }
                 }
             }
         }

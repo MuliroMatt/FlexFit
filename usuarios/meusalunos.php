@@ -35,7 +35,7 @@ $resultado = mysqli_query($link, $sql);
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <th>Experiencia</th>
+                        <!-- <th>Experiencia</th> -->
                         <th>Gênero</th>
                         <th>Telefone</th>
                         <th class="tools">Editar Treino</th>
@@ -47,7 +47,7 @@ $resultado = mysqli_query($link, $sql);
                     ?>
                     <tr>
                         <td><?=$tbl['usu_nome']?> <?=$tbl['usu_sobrenome']?></td>
-                        <td><?=$tbl['al_experiencia']?></td>
+                        <!-- <td><?=$tbl['al_experiencia']?></td> -->
                         <td><?=$tbl['al_sexo']?></td>
                         <td><?=$tbl['al_telefone']?></td>
                         <td class="tools">

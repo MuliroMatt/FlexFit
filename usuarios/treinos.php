@@ -6,6 +6,17 @@ $sql = "SELECT * FROM treinos
         ORDER BY FIELD(tr_dia, 'Domingo','Segunda-feira', 'Terça-feira', 'Quarta-feira', 
         'Quinta-feira', 'Sexta-feira', 'Sábado' );";
 $return = mysqli_query($link, $sql);
+
+if(isset($_GET['dia'])){
+    $treino_id = $_GET['dia'];
+    $_SESSION['treino_id'] = $treino_id;
+    echo '<script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Your function code here
+                openWorkoutList();
+            });
+         </script>';
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,13 +39,14 @@ $return = mysqli_query($link, $sql);
             <div class="workout-container">
                 <?php 
                 while($tbl = mysqli_fetch_array($return)){
+                    $tr_id = $tbl[0];
                 ?>
                 <div class="workout-card">
                     <div class="card-infos">
                         <h3 class="title"><?=$tbl['tr_dia']?></h3>
                         <!-- <span class="level"><i class="bi bi-1-square"></i> Iniciante</span> -->
                         <div class="btns">
-                            <button class="btn see" onclick="openWorkoutList()">Ver Treino</button>
+                            <a class="btn see" href="treinos.php?dia=<?=$tr_id?>">ver treino</a>
                             <form action="" method="post">
                                 <button class="btn complete">Concluir Treino</button>
                             </form>
@@ -46,7 +58,7 @@ $return = mysqli_query($link, $sql);
             <div class="workout-list" id="workoutlist">
                 <?php 
 
-                $sql = "SELECT * FROM exericios_treino WHERE fk_tr_id = 1";
+                $sql = "SELECT * FROM exercicios_treino WHERE fk_tr_id = '$treino_id'";
                 $return = mysqli_query($link, $sql);
 
                 while($tbl = mysqli_fetch_array($return)){

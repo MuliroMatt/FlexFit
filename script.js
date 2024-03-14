@@ -22,8 +22,7 @@ function openWorkoutList() {
        sidenav.classList.add("open");
        document.getElementById('closebtn').style.display = "flex"
    }
-   
- }
+}
  
  function closeWorkoutList() {
    var sidenav = document.getElementById("workoutlist");
