@@ -5,6 +5,7 @@ session_start();
 
 if(isset($_SESSION['idusuario'])){
     $nome = $_SESSION['nomeusuario'];
+    $funcao = $_SESSION['funcaousuario'];
 }
 ?>
 
@@ -50,9 +51,19 @@ if(isset($_SESSION['idusuario'])){
                     </li>
                     <?php if(!isset($nome)){?>
                     <li><a class="nav-btn" href="./usuarios/loginusuario.php">entrar | Cadastrar-se</a></li>
-                    <?php }else{?>
+                    <?php 
+                        }else {
+                            if($funcao == 'a'){
+                    ?>
                     <li><a href="./usuarios/dashboard.php">meu perfil</a>
                         <hr>
+                    <?php 
+                            }
+                            else if($funcao == 'i'){
+                    ?>
+                    <li><a href="./usuarios/perfil.php">meu perfil</a>
+                        <hr>
+                    <?php }?>
                     </li>
                     <li><a class="nav-btn" href="logout.php">sair</a></li>
                     <?php }?>

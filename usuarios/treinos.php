@@ -56,6 +56,11 @@ if(isset($_GET['dia'])){
                 <?php }?>
             </div>
             <div class="workout-list" id="workoutlist">
+                <!-- <?php 
+                
+                ?>
+                
+                <h1><?=$diasemana?></h1> -->
                 <?php 
 
                 $sql = "SELECT * FROM exercicios_treino WHERE fk_tr_id = '$treino_id'";

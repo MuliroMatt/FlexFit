@@ -67,69 +67,52 @@ include('usernav.php');
             ?>
             <div class="workout-card">
                 <?php 
-
-                //! FAZER COM QUE MOSTRE APENAS OS TREINOS DO DIA CORRESPONDENTE AO DIA ATUAL
-                $diasemana = date('l');
-                // echo $diasemana;
-
-                if($diasemana == 'Thursday'){
-                    // echo $al_id;
-                    $sql = "SELECT tr_id FROM  treinos WHERE tr_dia = 'Quinta-feira' AND fk_al_id = $al_id";
-                    $return = mysqli_query($link, $sql);
-                    while($tbl = mysqli_fetch_array($return)){
-                        $tr_id = $tbl[0];
-                    }
-                    // echo $tr_id;
-                    $sql = "SELECT * FROM exercicios_treino WHERE fk_tr_id = $tr_id";
-                    $return = mysqli_query($link, $sql);
-                    while($tbl = mysqli_fetch_array($return)){
-                        
-                    }
+                $sql = "SELECT *
+                        FROM treinos
+                        WHERE tr_dia = (
+                            CASE
+                                WHEN DAYOFWEEK(NOW()) = 1 THEN 'Domingo'
+                                WHEN DAYOFWEEK(NOW()) = 2 THEN 'Segunda-feira'
+                                WHEN DAYOFWEEK(NOW()) = 3 THEN 'Terça-feira'
+                                WHEN DAYOFWEEK(NOW()) = 4 THEN 'Quarta-feira'
+                                WHEN DAYOFWEEK(NOW()) = 5 THEN 'Quinta-feira'
+                                WHEN DAYOFWEEK(NOW()) = 6 THEN 'Sexta-feira'
+                                WHEN DAYOFWEEK(NOW()) = 7 THEN 'Sábado'
+                            END
+                        ) AND fk_al_id = $al_id;";
+                $result = mysqli_query($link, $sql);
+                while($tbl = mysqli_fetch_array($result)){
+                    $tr_id = $tbl['tr_id'];
+                    $dia = $tbl['tr_dia'];  
                 }
-
+                if(isset($tr_id)){
                 ?>
-                <h1 class="title">Segunda-Feira</h1>
-                <hr>
-                <div class="exercise-card">
-                    <div class="left">
-                        <div class="img"></div>
-                        <span class="exe-name">Supino Reto</span>
+                    <h1 class="title"><?=$dia?></h1>
+                    <hr>
+                    <?php 
+                    $sql = "SELECT * FROM exercicios_treino WHERE fk_tr_id = $tr_id";
+                    $result = mysqli_query($link, $sql);
+                    while($tbl = mysqli_fetch_array($result)){
+                    ?>
+                    <div class="exercise-card">
+                        <div class="left">
+                            <div class="img"></div>
+                            <span class="exe-name"><?=$tbl['et_nome']?></span>
+                        </div>
+                        <div class="right">
+                            <p><span class="exe-reps"><?=$tbl['et_repeticao']?> Repetições <?=$tbl['et_series']?>x</span></p>
+                        </div>
                     </div>
-                    <div class="right">
-                        <p><span class="exe-reps">8-10 Repetições 4x</span></p>
-                    </div>
-                </div>
-                <hr>
-                <div class="exercise-card">
-                    <div class="left">
-                        <div class="img"></div>
-                        <span class="exe-name">Supino inclinado com halteres</span>
-                    </div>
-                    <div class="right">
-                        <p><span class="exe-reps">10-12 Repetições 3x</span></p>
-                    </div>
-                </div>
-                <hr>
-                <div class="exercise-card">
-                    <div class="left">
-                        <div class="img"></div>
-                        <span class="exe-name">Crucifixo na máquina</span>
-                    </div>
-                    <div class="right">
-                        <p><span class="exe-reps">12-15 Repetições 3x</span></p>
-                    </div>
-                </div>
-                <hr>
-                <div class="exercise-card">
-                    <div class="left">
-                        <div class="img"></div>
-                        <span class="exe-name">Pulley tríceps</span>
-                    </div>
-                    <div class="right">
-                        <p><span class="exe-reps">8-10 Repetições 4x</span></p>
-                    </div>
-                </div>
-                <hr>
+                    <hr>
+                <?php   
+                    } 
+                }
+                else{
+                ?>
+                <h1>Dia de descanso</h1>
+                <?php
+                }
+                ?>
             </div>
             <!-- <div class="progress-card"></div> -->
             <?php }?>
