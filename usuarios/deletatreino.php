@@ -3,7 +3,7 @@ include("../conectaDB.php");
 session_start();
 $tr_id = $_GET['id'];
 
-// Check if the user confirmed the deletion
+//Check if the user confirmed the deletion
 if (isset($_GET['confirm']) && $_GET['confirm'] == 'yes') {
     $sql = "DELETE FROM exercicios_treino WHERE fk_tr_id = '$tr_id'";
     $return = mysqli_query($link, $sql);

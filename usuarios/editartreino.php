@@ -31,14 +31,14 @@ $sql = "SELECT * FROM treinos
 $return = mysqli_query($link, $sql);
 
 if(isset($_POST['new-exe'])){
-    echo "asdlfasdlkflsdhlkjgkladvmkaç";
-    $exe_nome = $_POST['exe_nome'];
+    // echo "asdlfasdlkflsdhlkjgkladvmkaç";
+    $exe_id = $_POST['exe_id'];
     $reps = $_POST['reps'];
     $sets = $_POST['sets'];
     $time = $_POST['time'];
     
-    $sql = "INSERT INTO exercicios_treino (et_nome, et_tempo, et_series, et_repeticao, fk_tr_id)
-            VALUES ('$exe_nome', '$time', '$sets', '$reps', '{$_SESSION['treino_id']}')";
+    $sql = "INSERT INTO exercicios_treino (et_tempo, et_series, et_repeticao, fk_tr_id, fk_ex_id)
+            VALUES ('$time', '$sets', '$reps', '{$_SESSION['treino_id']}', '$exe_id')";
 
     $return2 = mysqli_query($link, $sql);
     echo "<script>window.location.href='editartreino.php?id={$_SESSION['usu_id']}&dia={$_SESSION['treino_id']}';</script>";
@@ -98,13 +98,22 @@ if(isset($_POST['new-exe'])){
                             <input type="hidden" name="instr_id" value="<?=$id?>">
                             <input type="hidden" name="al_id" value="<?=$al_id?>">
                             <select name="novotreino">
-                                <option value="Domingo">Domingo</option>
-                                <option value="Segunda-feira">Segunda</option>
-                                <option value="Terça-feira">Terça</option>
-                                <option value="Quarta-feira">Quarta</option>
-                                <option value="Quinta-feira">Quinta</option>
-                                <option value="Sexta-feira">Sexta</option>
-                                <option value="Sábado">Sábado</option>
+                                <?php 
+                                $sql = "SELECT tr_dia FROM treinos WHERE fk_al_id = '$al_id'";
+                                $return = mysqli_query($link, $sql);
+                                $days = array(); // Array to store the days fetched from the database
+                                while($tbl = mysqli_fetch_array($return)) {
+                                    $days[] = $tbl[0]; // Store the fetched day in the array
+                                }
+                                
+                                // Loop through each option and check if it should be displayed
+                                $options = array("Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado");
+                                foreach ($options as $option) {
+                                    if (!in_array($option, $days)) { // Check if the option is not in the fetched days
+                                        echo '<option value="' . $option . '">' . $option . '</option>';
+                                    }
+                                }
+                                ?>
                             </select>
                             <button name="newworkout" class="btn" type="submit">Adicionar</button>
                         </form>
@@ -125,7 +134,16 @@ if(isset($_POST['new-exe'])){
                             <form action="editartreino.php?id=<?=$usu_id?>&dia=<?=$treino_id?>" method="post" class="exercise-form">
                                 <div class="left">
                                     <div class="top">
-                                        <input placeholder="Exercício" type="text" name="exe_nome" class="exe-name">
+                                        <!-- <input placeholder="Exercício" type="text" name="exe_nome" class="exe-name"> -->
+                                        <select class="exe-name" name="exe_id">
+                                            <?php 
+                                            $sql = "SELECT * FROM exercicios";
+                                            $return = mysqli_query($link, $sql);
+                                            while($tbl = mysqli_fetch_array($return)){
+                                            ?>
+                                            <option value="<?=$tbl['ex_id']?>"><?=$tbl['ex_nome']?></option>
+                                            <?php }?>
+                                        </select>
                                     </div>
                                     <div class="bottom">
                                         <div class="input-box">        
@@ -201,7 +219,10 @@ if(isset($_POST['new-exe'])){
                     </div>
                     <div class="exercises">
                         <?php 
-                        $sql = "SELECT * FROM exercicios_treino WHERE fk_tr_id = '$treino_id' ";
+                        $sql = "SELECT *
+                        FROM exercicios AS e
+                        JOIN exercicios_treino AS et ON e.ex_id = et.fk_ex_id
+                        WHERE fk_tr_id = $treino_id;";
                         
                         $return = mysqli_query($link, $sql);
         
@@ -210,12 +231,12 @@ if(isset($_POST['new-exe'])){
                         <!--//* CARD DE EXERCÍCIOS -->
                         <div class="exercise-card">
                             <div class="left">
-                                <span class="exe-name"><?=$tbl['et_nome']?></span>
+                                <span class="exe-name"><?=$tbl['ex_nome']?></span>
                                 <span class="exe-reps"><?=$tbl['et_repeticao']?> Repetições <?=$tbl['et_series']?>x</span>
                             </div>
                             <div class="right">
                                 <!--//* BOTÃO DE EDITAR EXERCÍCIO -->
-                                <a href=""><i class="bi bi-pencil-square"></i></a>
+                                <!-- <button onclick="alterExe()"><i class="bi bi-pencil-square"></i></button> -->
                                 <!--//* BOTÃO DE DELETAR EXERCÍCIO -->
                                 <a href="deletaexercicio.php?id=<?=$tbl['et_id']?>"><i class="bi bi-trash"></i></a>                        
                             </div>
@@ -227,7 +248,7 @@ if(isset($_POST['new-exe'])){
                     <hr>
                     <!--//* BOTÃO PARA DELETAR O TREINO -->
                     <div class="btns">
-                        <a class="btn delete" href="deletatreino.php?id=<?=$tr_id?>"><i class="bi bi-trash"></i> Deletar Treino</a> 
+                        <a class="btn delete" href="deletatreino.php?id=<?=$treino_id?>"><i class="bi bi-trash"></i> Deletar Treino</a> 
                     </div>
                 </div>
             </div>

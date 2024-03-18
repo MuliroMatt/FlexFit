@@ -1615,6 +1615,9 @@ body {
   font-weight: 100;
   color: #b6b6b6;
 }
+.main-editartreino .treinos-container .workout-list .top .exercise-card .left .exe-name option {
+  color: #000;
+}
 .main-editartreino .treinos-container .workout-list .top .exercise-card .right {
   font-size: 20px;
   display: flex;
@@ -1623,6 +1626,13 @@ body {
 }
 .main-editartreino .treinos-container .workout-list .top .exercise-card .right a {
   color: #FFF;
+}
+.main-editartreino .treinos-container .workout-list .top .exercise-card .right button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #FFF;
+  cursor: pointer;
 }
 .main-editartreino .treinos-container .workout-list .top .exercise-card .exercise-form {
   display: flex;
@@ -1715,4 +1725,14 @@ body {
   padding: 10px 15px;
   font-size: 18px;
   border-radius: 3px;
+}
+
+.verexercicio-main {
+  height: calc(100vh - 70px);
+  width: calc(100% - 300px);
+  float: right;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=style.css.map */

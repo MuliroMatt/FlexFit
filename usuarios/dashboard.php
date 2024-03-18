@@ -90,14 +90,17 @@ include('usernav.php');
                     <h1 class="title"><?=$dia?></h1>
                     <hr>
                     <?php 
-                    $sql = "SELECT * FROM exercicios_treino WHERE fk_tr_id = $tr_id";
+                    $sql = "SELECT *
+                    FROM exercicios AS e
+                    JOIN exercicios_treino AS et ON e.ex_id = et.fk_ex_id
+                    WHERE fk_tr_id = $tr_id";
                     $result = mysqli_query($link, $sql);
                     while($tbl = mysqli_fetch_array($result)){
                     ?>
                     <div class="exercise-card">
                         <div class="left">
                             <div class="img"></div>
-                            <span class="exe-name"><?=$tbl['et_nome']?></span>
+                            <span class="exe-name"><?=$tbl['ex_nome']?></span>
                         </div>
                         <div class="right">
                             <p><span class="exe-reps"><?=$tbl['et_repeticao']?> Repetições <?=$tbl['et_series']?>x</span></p>

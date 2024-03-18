@@ -67,14 +67,31 @@ CREATE TABLE treinos(
     FOREIGN KEY (fk_al_id) REFERENCES alunos(al_id)
 );
 
+CREATE TABLE exercicios(
+    ex_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    ex_nome VARCHAR(30) NOT NULL,
+    ex_video TEXT,
+    fk_apa_id INT NOT NULL,
+    FOREIGN KEY(fk_apa_id) REFERENCES aparelhos(apa_id)
+);
+
 CREATE TABLE exercicios_treino(
     et_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    et_nome VARCHAR(100) NOT NULL,
+    -- et_nome VARCHAR(100) NOT NULL,
     et_tempo TIME,
     et_series INT,
     et_repeticao INT,
-    fk_apa_id INT NOT NULL,
+    -- fk_apa_id INT NOT NULL,
     fk_tr_id INT NOT NULL,
+    fk_ex_id INT NOT NULL,
     FOREIGN KEY (fk_tr_id) REFERENCES treinos (tr_id),
-    FOREIGN KEY (fk_apa_id) REFERENCES aparelhos (apa_id)
-)
+    FOREIGN KEY (fk_ex_id) REFERENCES exercicios (ex_id)
+    -- FOREIGN KEY (fk_apa_id) REFERENCES aparelhos (apa_id)
+);
+
+
+
+
+INSERT INTO administradores (adm_nome, adm_sobrenome, adm_email, adm_senha, adm_status)
+VALUES ('Admin', 'FlexFit', 'admin@flexfit', '123', 's');
+

@@ -232,6 +232,11 @@
                             font-weight: 100;
                             color: $text;
                         }
+                        .exe-name{
+                            option{
+                                color: $black;
+                            }
+                        }
                     }
                     .right{
                         // background-color: blue;
@@ -241,6 +246,13 @@
                         gap: 10px;
                         a{
                             color: $white;
+                        }
+                        button{
+                            background: none;
+                            border: none;
+                            font-size: 20px;
+                            color: $white;
+                            cursor: pointer;
                         }
                     }
                     .exercise-form{
@@ -344,8 +356,8 @@
                     height: 1px;
                     margin: 10px 0;
                 }
-                a{
-                }
+                // a{
+                // }
                 .btns{
                     display: flex;
                     justify-content: space-around;

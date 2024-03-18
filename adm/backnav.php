@@ -38,6 +38,7 @@ $email = $_SESSION['emailadmin'];
             <li><a href="listaaluno.php"><i class="bi bi-person-lines-fill"></i>Alunos</a></li>
             <li><a href="listainstrutor.php"><i class="bi bi-person-lines-fill"></i>Instrutores</a></li>
             <li><a href="listaaparelhos.php"><i class="bi bi-person-lines-fill"></i>Aparelhos</a></li>
+            <li><a href="listaexercicio.php"><i class="bi bi-person-lines-fill"></i>Exercícios</a></li>
         </ul>
     </div>
     <div class="nav-bottom">

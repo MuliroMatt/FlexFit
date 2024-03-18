@@ -1,0 +1,9 @@
+.verexercicio-main {
+  height: calc(100vh - 70px);
+  width: calc(100% - 300px);
+  float: right;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=verexercicio.css.map */
