@@ -210,6 +210,21 @@
                 overflow: hidden;
                 // scrollbar-width: none;
                 // scrollbar-color: #101010 #101010;
+                .weekday{
+                    padding: 0 35px;
+                    hr{
+                        border: none;
+                        background-color: #b8b8b8;
+                        height: 1px;
+                        margin: 10px 0;
+                    }
+                    h1{
+                        color: $white;
+                        font-weight: 600;
+                        font-size: 24px;
+                        text-transform: uppercase;
+                    }
+                }
                 .exercise-card{
                     // background-color: blue;
                     color: $white;
@@ -226,6 +241,11 @@
                         flex-direction: column;
                         .exe-name{
                             font-size: 20px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            max-width: 270px;
+                            // background-color: blue;
                         }
                         .exe-reps{
                             font-size: 14px;
@@ -335,7 +355,7 @@
                     }
                 }
                 .exercises{
-                    height: 100%;
+                    height: calc(100vh - 308px);
                     overflow-y: scroll;
                     scrollbar-width: none;
                     // background-color: blue;

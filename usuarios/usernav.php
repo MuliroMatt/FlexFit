@@ -2,6 +2,9 @@
 include('../conectaDB.php');
 session_start();
 
+
+
+
 $id = $_SESSION['idusuario'];
 $nome = $_SESSION['nomeusuario'];
 $sobrenome = $_SESSION['sobrenomeusuario'];
@@ -57,6 +60,13 @@ elseif ($funcao == 'i'){
                 </ul>
             </div>
         </li>
+        <?php 
+        if(isset($_GET['treino'])){
+            // $treino = $_GET['treino'];
+            // // echo $treino
+        ?>
+        <li class="close-btn on" id="closebtn"><a href="treinos.php"><i class="bi bi-x-lg"></i></a></li>
+        <?php }?>
         <li class="close-btn" id="closebtn" onclick="closeWorkoutList()"><button><i class="bi bi-x-lg"></i></button></li>
     </ul>
 </header>

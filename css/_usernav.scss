@@ -102,6 +102,24 @@
                 border-radius: 5px;
                 cursor: pointer;
             }
+            &.on{
+                display: flex;
+                align-items: center;
+                position: relative;
+                width: 46px;
+                a{
+                    color: $white;
+                    // background-color: blue;
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 5px;
+                }
+            }
         }
     }
     

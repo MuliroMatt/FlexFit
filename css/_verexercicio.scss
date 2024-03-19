@@ -1,0 +1,94 @@
+@import './variaveis';
+
+.verexercicio-main{
+    // background-color: red;
+    height: calc(100vh - 70px);
+    width: calc(100% - 300px);
+    float: right;
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 400px;
+    column-gap: 15px;
+    // padding: 50px;
+    // justify-content: center;
+    // align-items: center;
+    .video-container{
+        // background-color: blue;
+        // margin-right: 400px;
+        padding: 25px 50px;
+        iframe{
+            border: none;
+            // height: 360px;
+            width:  100%;
+            aspect-ratio: 16/9;
+            margin: 15px 0;
+        }
+    }
+    .workout-list{
+        background-color: $userbg;
+        // position: absolute;
+        // right: 0;
+        height: calc(100vh - 70px);
+        width: 400px;
+        overflow: hidden;
+        transition: .3s;
+        &.open{
+            width: 400px;
+        }
+        .top{
+            // background-color: blue;
+            padding: 0 35px;
+            h1{
+                color: $white;
+                font-weight: 600;
+                font-size: 24px;
+                text-transform: uppercase;
+            }
+            hr{
+                border: none;
+                background-color: #b8b8b8;
+                height: 1px;
+                margin: 10px 0;
+            }
+        }
+        .exercises{
+            // background-color: blue;
+            overflow: scroll;
+            scrollbar-width: none;
+            height: calc(100vh - 129px);
+            .exercise-card{
+                // background-color: blue;
+                color: $white;
+                margin: 25px 35px;
+                border: 1px solid #333333;
+                border-radius: 3px;
+                padding: 10px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                
+                .left{
+                    // background-color: hotpink;
+                    display: flex;
+                    flex-direction: column;
+                    .exe-name{
+                        font-size: 20px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        max-width: 270px;
+                        // background-color: blue;
+                    }
+                    .exe-reps{
+                        font-size: 14px;
+                        font-weight: 100;
+                        color: $text;
+                    }
+                }
+                .right{
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}

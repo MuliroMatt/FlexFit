@@ -824,6 +824,23 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
+.user-header .user-header-list .close-btn.on {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 46px;
+}
+.user-header .user-header-list .close-btn.on a {
+  color: #FFF;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
 .user-header .logo {
   display: flex;
   align-items: center;
@@ -1146,7 +1163,27 @@ body {
 .main-treinos .treinos-container .workout-list.open {
   width: 400px;
 }
-.main-treinos .treinos-container .workout-list .exercise-card {
+.main-treinos .treinos-container .workout-list .top {
+  padding: 0 35px;
+}
+.main-treinos .treinos-container .workout-list .top h1 {
+  color: #FFF;
+  font-weight: 600;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.main-treinos .treinos-container .workout-list .top hr {
+  border: none;
+  background-color: #b8b8b8;
+  height: 1px;
+  margin: 10px 0;
+}
+.main-treinos .treinos-container .workout-list .exercises {
+  overflow: scroll;
+  scrollbar-width: none;
+  height: calc(100vh - 129px);
+}
+.main-treinos .treinos-container .workout-list .exercises .exercise-card {
   color: #FFF;
   margin: 25px 35px;
   border: 1px solid #333333;
@@ -1156,19 +1193,23 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.main-treinos .treinos-container .workout-list .exercise-card .left {
+.main-treinos .treinos-container .workout-list .exercises .exercise-card .left {
   display: flex;
   flex-direction: column;
 }
-.main-treinos .treinos-container .workout-list .exercise-card .left .exe-name {
+.main-treinos .treinos-container .workout-list .exercises .exercise-card .left .exe-name {
   font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 270px;
 }
-.main-treinos .treinos-container .workout-list .exercise-card .left .exe-reps {
+.main-treinos .treinos-container .workout-list .exercises .exercise-card .left .exe-reps {
   font-size: 14px;
   font-weight: 100;
   color: #b6b6b6;
 }
-.main-treinos .treinos-container .workout-list .exercise-card .right {
+.main-treinos .treinos-container .workout-list .exercises .exercise-card .right {
   font-size: 24px;
 }
 
@@ -1593,6 +1634,21 @@ body {
   height: 100%;
   overflow: hidden;
 }
+.main-editartreino .treinos-container .workout-list .top .weekday {
+  padding: 0 35px;
+}
+.main-editartreino .treinos-container .workout-list .top .weekday hr {
+  border: none;
+  background-color: #b8b8b8;
+  height: 1px;
+  margin: 10px 0;
+}
+.main-editartreino .treinos-container .workout-list .top .weekday h1 {
+  color: #FFF;
+  font-weight: 600;
+  font-size: 24px;
+  text-transform: uppercase;
+}
 .main-editartreino .treinos-container .workout-list .top .exercise-card {
   color: #FFF;
   margin: 25px 35px;
@@ -1609,6 +1665,10 @@ body {
 }
 .main-editartreino .treinos-container .workout-list .top .exercise-card .left .exe-name {
   font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 270px;
 }
 .main-editartreino .treinos-container .workout-list .top .exercise-card .left .exe-reps {
   font-size: 14px;
@@ -1699,7 +1759,7 @@ body {
   font-size: 20px;
 }
 .main-editartreino .treinos-container .workout-list .top .exercises {
-  height: 100%;
+  height: calc(100vh - 308px);
   overflow-y: scroll;
   scrollbar-width: none;
 }
@@ -1732,7 +1792,76 @@ body {
   width: calc(100% - 300px);
   float: right;
   position: relative;
+  display: grid;
+  grid-template-columns: auto 400px;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+}
+.verexercicio-main .video-container {
+  padding: 25px 50px;
+}
+.verexercicio-main .video-container iframe {
+  border: none;
+  width: 100%;
+  aspect-ratio: 16/9;
+  margin: 15px 0;
+}
+.verexercicio-main .workout-list {
+  background-color: #181b1b;
+  height: calc(100vh - 70px);
+  width: 400px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.verexercicio-main .workout-list.open {
+  width: 400px;
+}
+.verexercicio-main .workout-list .top {
+  padding: 0 35px;
+}
+.verexercicio-main .workout-list .top h1 {
+  color: #FFF;
+  font-weight: 600;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.verexercicio-main .workout-list .top hr {
+  border: none;
+  background-color: #b8b8b8;
+  height: 1px;
+  margin: 10px 0;
+}
+.verexercicio-main .workout-list .exercises {
+  overflow: scroll;
+  scrollbar-width: none;
+  height: calc(100vh - 129px);
+}
+.verexercicio-main .workout-list .exercises .exercise-card {
+  color: #FFF;
+  margin: 25px 35px;
+  border: 1px solid #333333;
+  border-radius: 3px;
+  padding: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+}
+.verexercicio-main .workout-list .exercises .exercise-card .left {
+  display: flex;
+  flex-direction: column;
+}
+.verexercicio-main .workout-list .exercises .exercise-card .left .exe-name {
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 270px;
+}
+.verexercicio-main .workout-list .exercises .exercise-card .left .exe-reps {
+  font-size: 14px;
+  font-weight: 100;
+  color: #b6b6b6;
+}
+.verexercicio-main .workout-list .exercises .exercise-card .right {
+  font-size: 24px;
 }/*# sourceMappingURL=style.css.map */

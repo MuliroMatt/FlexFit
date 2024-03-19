@@ -126,7 +126,17 @@ if(isset($_POST['new-exe'])){
             <div class="workout-list" id="workoutlist">
                 <div class="top">
                     <!--//* BOTÃO PARA ADICIONAR NOVO EXERCÍCIO -->
-                    
+                    <div class="weekday">
+                        <?php 
+                        $sql = "SELECT tr_dia FROM treinos WHERE tr_id = $treino_id";
+                        $return = mysqli_query($link, $sql);
+                        while($tbl = mysqli_fetch_array($return)){
+                            $dia = $tbl[0];
+                        }
+                        ?>
+                        <h1><?=$dia?></h1>
+                        <hr>
+                    </div>
                     <div class="btn-div">
                         <button class="btn" id="newWk" onclick="createExe()"><i class="bi bi-plus"></i>Adicionar Exercício</button>
                     </div>

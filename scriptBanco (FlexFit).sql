@@ -70,7 +70,8 @@ CREATE TABLE treinos(
 CREATE TABLE exercicios(
     ex_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     ex_nome VARCHAR(30) NOT NULL,
-    ex_video TEXT,
+    ex_video VARCHAR(255),
+    ex_desc TEXT,
     fk_apa_id INT NOT NULL,
     FOREIGN KEY(fk_apa_id) REFERENCES aparelhos(apa_id)
 );

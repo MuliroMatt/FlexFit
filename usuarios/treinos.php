@@ -56,26 +56,39 @@ if(isset($_GET['dia'])){
                 <?php }?>
             </div>
             <div class="workout-list" id="workoutlist">
-                <?php 
-
-                $sql = "SELECT *
-                        FROM exercicios AS e
-                        JOIN exercicios_treino AS et ON e.ex_id = et.fk_ex_id
-                        WHERE fk_tr_id = $treino_id;";
-                $return = mysqli_query($link, $sql);
-
-                while($tbl = mysqli_fetch_array($return)){
-                ?>
-                <a href="verexercicio.php?id=<?=$tbl['ex_id']?>" class="exercise-card">
-                    <div class="left">
-                        <span class="exe-name"><?=$tbl['ex_nome']?></span>
-                        <span class="exe-reps"><?=$tbl['et_repeticao']?> Repetições <?=$tbl['et_series']?>x</span>
-                    </div>
-                    <div class="right">
-                        <i class="bi bi-chevron-compact-right"></i>
-                    </div>
-                </a>
-                <?php } ?>
+                <div class="top">
+                    <?php 
+                    $sql = "SELECT tr_dia FROM treinos WHERE tr_id = $treino_id";
+                    $return = mysqli_query($link, $sql);
+                    while($tbl = mysqli_fetch_array($return)){
+                        $dia = $tbl[0];
+                    }
+                    ?>
+                    <h1><?=$dia?></h1>
+                    <hr>
+                </div>
+                <div class="exercises">
+                    <?php 
+    
+                    $sql = "SELECT *
+                            FROM exercicios AS e
+                            JOIN exercicios_treino AS et ON e.ex_id = et.fk_ex_id
+                            WHERE fk_tr_id = $treino_id;";
+                    $return = mysqli_query($link, $sql);
+    
+                    while($tbl = mysqli_fetch_array($return)){
+                    ?>
+                    <a href="verexercicio.php?id=<?=$tbl['ex_id']?>&treino=<?=$treino_id?>" class="exercise-card">
+                        <div class="left">
+                            <span class="exe-name"><?=$tbl['ex_nome']?></span>
+                            <span class="exe-reps"><?=$tbl['et_repeticao']?> Repetições <?=$tbl['et_series']?>x</span>
+                        </div>
+                        <div class="right">
+                            <i class="bi bi-chevron-compact-right"></i>
+                        </div>
+                    </a>
+                    <?php } ?>
+                </div>
             </div>
         </div>
     </main>
