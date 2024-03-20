@@ -48,7 +48,7 @@ if(isset($_GET['dia'])){
                         <div class="btns">
                             <a class="btn see" href="treinos.php?dia=<?=$tr_id?>">ver treino</a>
                             <form action="" method="post">
-                                <button class="btn complete">Concluir Treino</button>
+                                <!-- <button class="btn complete">Concluir Treino</button> -->
                             </form>
                         </div>
                     </div>
