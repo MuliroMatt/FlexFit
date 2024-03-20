@@ -9,6 +9,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $email = mysqli_real_escape_string($link, $_POST['email']);
     $email = strtolower($email);
     $senha = mysqli_real_escape_string($link, $_POST['senha']);
+    $senha_md5 = md5($senha);
 
     $sql = "SELECT COUNT(usu_id) FROM usuarios WHERE usu_email = '$email'";
     $result = mysqli_query($link, $sql);
@@ -20,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
     else{
         $sql = "INSERT INTO usuarios(usu_nome, usu_sobrenome, usu_email, usu_senha) 
-                VALUES('$nome', '$sobrenome', '$email', '$senha')";
+                VALUES('$nome', '$sobrenome', '$email', '$senha_md5')";
         $resultado = mysqli_query($link, $sql);
 
         echo "<script>window.alert('Usuário cadastrado com sucesso!');</script>";

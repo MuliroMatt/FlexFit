@@ -11,6 +11,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $email = mysqli_real_escape_string($link, $_POST['email']);
     $email = strtolower($email);
     $senha = mysqli_real_escape_string($link, $_POST['senha']);
+    $senha_md5 = md5($senha);
     $cpf = mysqli_real_escape_string($link, $_POST['cpf']);
     $genero = mysqli_real_escape_string($link, $_POST['genero']);
     $turno = mysqli_real_escape_string($link, $_POST['turno']);
@@ -29,7 +30,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         echo "<script>window.location.href='novoinstrutor.php';</script>";
     } else {
         $sql = "INSERT INTO usuarios(usu_nome, usu_sobrenome, usu_email, usu_senha, usu_funcao) 
-                VALUES('$nome', '$sobrenome', '$email', '$senha', 'i')";
+                VALUES('$nome', '$sobrenome', '$email', '$senha_md5', 'i')";
         $resultado = mysqli_query($link, $sql);
 
         $sql = "SELECT usu_id FROM usuarios WHERE usu_email = '$email'";

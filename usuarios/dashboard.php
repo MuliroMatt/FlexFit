@@ -46,7 +46,9 @@ include('usernav.php');
             </header>
             <div class="profile-card">
                 <div class="top">
-                    <div class="user-pic"></div>
+                    <div class="user-pic">
+                        <img src="data:image/jpg;base64,<?=$img?>">
+                    </div>
                     <div class="user-info">
                         <span class="name">
                             <?=$nome?> <br>

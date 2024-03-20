@@ -242,7 +242,16 @@ if(isset($_POST['new-exe'])){
                         <div class="exercise-card">
                             <div class="left">
                                 <span class="exe-name"><?=$tbl['ex_nome']?></span>
+                                <?php 
+                                if($tbl['et_series'] > 0 or $tbl['et_repeticao'] > 0){
+                                ?>
                                 <span class="exe-reps"><?=$tbl['et_repeticao']?> Repetições <?=$tbl['et_series']?>x</span>
+                                <?php 
+                                }
+                                else{
+                                ?>
+                                <span class="exe-reps"><?=$tbl['et_tempo']?> <i class="bi bi-stopwatch" style="font-size: 12px;"></i></span>
+                                <?php } ?>
                             </div>
                             <div class="right">
                                 <!--//* BOTÃO DE EDITAR EXERCÍCIO -->

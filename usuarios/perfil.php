@@ -1,29 +1,30 @@
 <?php 
 include('usernav.php');
+if(isset($_POST['img-btn'])){
+    $imagem = $_POST['imagem'];
+    if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK){
+        $tipo = exif_imagetype($_FILES['imagem']['tmp_name']);
+    
+        if ($tipo !== false){
+            // O arquivo é uma imagem
+            $imagem_temp = $_FILES['imagem']['tmp_name'];
+            $imagem = file_get_contents($imagem_temp);
+            $imagem_base64 = base64_encode($imagem);
+        } else{
+            // O arquivo não é uma imagem
+            $imagem = file_get_contents ("..\\img\\alert.png");
+            $imagem_base64 = base64_encode($imagem);
+        }
+    } else{
+        // O arquivo não foi enviado
+        $imagem = file_get_contents ("..\\img\\alert.png");
+        $imagem_base64 = base64_encode($imagem);
+    } 
+    $sql = "UPDATE usuarios SET usu_img = '$imagem_base64' WHERE usu_id = '$id'";
+    $return = mysqli_query($link, $sql);
+}
 
-// if (isset($_SESSION['idusuario'])){
-    // $id = $_SESSION['idusuario'];
-    // $nome = $_SESSION['nomeusuario'];
-    // $sobrenome = $_SESSION['sobrenomeusuario'];
-    // $email = $_SESSION['emailusuario'];
-    // $funcao = $_SESSION['funcaousuario'];
 
-    // $sql = "SELECT * FROM usuarios WHERE usu_id = '$id';";
-    // $return = mysqli_query($link, $sql);
-    // while($tbl = mysqli_fetch_array($return)){
-    //     $nome = $tbl[1];    
-    //     $sobrenome = $tbl[2];
-    //     $email = $tbl[3];
-    //     $funcao = $tbl[5];
-    // } 
-
-    // if ($funcao == 'a'){
-    //     $funcao2 = 'Aluno';
-    // }
-    // elseif ($funcao == 'i'){
-    //     $funcao2 = 'Instrutor';
-    // }
-// }
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +49,13 @@ include('usernav.php');
             </header>
             <div class="profile-card">
                 <div class="top">
-                    <div class="user-pic"></div>
+                    <div class="user-pic">
+                        <img src="data:image/jpg;base64,<?=$img?>">
+                    </div>
+                    <form action="perfil.php" method="post">
+                        <input type="file" accept="*" name="imagem" id="imagem">
+                        <input type="submit" name="img-btn">
+                    </form>
                     <div class="user-info">
                         <span class="name">
                             <?=$nome?> <br>
@@ -108,6 +115,7 @@ include('usernav.php');
                         <input class="readonly" type="text" name="genero" placeholder="masculino" value="<?=$genero?>" readonly>
                         <!-- <hr> -->
                     </div>
+                    
                     <hr id="last-hr">
                     <div class="form-btns">
                         <button type="reset" class="btn discard">Descartar</button>
@@ -126,7 +134,8 @@ include('usernav.php');
             </header>
             <div class="profile-card">
                 <div class="top">
-                    <div class="user-pic"></div>
+                    <div class="user-pic">
+                    </div>
                     <div class="user-info">
                         <span class="name">
                             <?=$nome?> <br>

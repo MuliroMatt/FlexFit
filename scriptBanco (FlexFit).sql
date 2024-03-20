@@ -6,7 +6,7 @@ CREATE TABLE administradores(
     adm_nome VARCHAR(20) NOT NULL,
     adm_sobrenome VARCHAR(50) NOT NULL,
     adm_email VARCHAR(50) NOT NULL,
-    adm_senha VARCHAR(30) NOT NULL,
+    adm_senha VARCHAR(255) NOT NULL,
     adm_status CHAR(1) NOT NULL
 );
 
@@ -15,7 +15,7 @@ CREATE TABLE usuarios(
     usu_nome VARCHAR(20) NOT NULL,
     usu_sobrenome VARCHAR(50) NOT NULL,
     usu_email VARCHAR(60) NOT NULL,
-    usu_senha VARCHAR(30) NOT NULL,
+    usu_senha VARCHAR(255) NOT NULL,
     usu_funcao CHAR(1),
     usu_img LONGBLOB
 );
@@ -94,5 +94,5 @@ CREATE TABLE exercicios_treino(
 
 
 INSERT INTO administradores (adm_nome, adm_sobrenome, adm_email, adm_senha, adm_status)
-VALUES ('Admin', 'FlexFit', 'admin@flexfit', '123', 's');
+VALUES ('Admin', 'FlexFit', 'admin@flexfit', '202cb962ac59075b964b07152d234b70', 's');
 

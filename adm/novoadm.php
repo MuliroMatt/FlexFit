@@ -9,6 +9,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $email = mysqli_real_escape_string($link, $_POST['email']);
     $email = strtolower($email);
     $senha = mysqli_real_escape_string($link, $_POST['senha']);
+    $senha_md5 = md5($senha);
 
     $sql = "SELECT COUNT(adm_id) FROM administradores WHERE adm_email = '$email'";
     $result = mysqli_query($link, $sql);
@@ -20,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
     else{
         $sql = "INSERT INTO administradores(adm_nome, adm_sobrenome, adm_email, adm_senha, adm_status) 
-                VALUES('$nome', '$sobrenome','$email', '$senha', 's')";
+                VALUES('$nome', '$sobrenome','$email', '$senha_md5', 's')";
         $resultado = mysqli_query($link, $sql);
 
         echo "<script>window.alert('Usuário cadastrado com sucesso!');</script>";

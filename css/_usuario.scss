@@ -54,6 +54,10 @@
                     width: 125px;
                     height: 125px;
                     border-radius: 50%;
+                    overflow: hidden;
+                    img{
+                        width: 125px;
+                    }
                 }
                 .user-info{
                     // background-color: mediumblue;

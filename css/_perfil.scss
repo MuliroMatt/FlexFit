@@ -1,4 +1,10 @@
 @import "./variaveis";
+// img{
+//     background-color: blue;
+//     width: 100px;
+//     height: 100px;
+// }
+
 .main-profile{
     background-color: $lightgrey;
     height: calc(100vh - 70px);
@@ -53,6 +59,10 @@
                     width: 125px;
                     height: 125px;
                     border-radius: 50%;
+                    overflow: hidden;
+                    img{
+                        width: 125px;
+                    }
                 }
                 .user-info{
                     // background-color: mediumblue;

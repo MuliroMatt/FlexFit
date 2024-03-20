@@ -11,6 +11,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $email = mysqli_real_escape_string($link, $_POST['email']);
     $email = strtolower($email);
     $senha = mysqli_real_escape_string($link, $_POST['senha']);
+    $senha_md5 = md5($senha);
     $cpf = mysqli_real_escape_string($link, $_POST['cpf']);
     $dataNascimento = mysqli_real_escape_string($link, $_POST['nasc']);
     $genero = mysqli_real_escape_string($link, $_POST['genero']);
@@ -31,7 +32,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         echo "<script>window.location.href='listaaluno.php';</script>";
     } else {
         $sql = "INSERT INTO usuarios(usu_nome, usu_sobrenome, usu_email, usu_senha, usu_funcao) 
-                VALUES('$nome', '$sobrenome', '$email', '$senha', 'a')";
+                VALUES('$nome', '$sobrenome', '$email', '$senha_md5', 'a')";
         $resultado = mysqli_query($link, $sql);
 
         $sql = "SELECT * FROM usuarios WHERE usu_email = '$email'";

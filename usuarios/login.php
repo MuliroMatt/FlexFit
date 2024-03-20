@@ -6,13 +6,15 @@ session_start();
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $email = $_POST['email'];
     $senha = $_POST['senha'];
+    $senha_md5 = md5($senha);
+    // echo $senha_md5;
 
-    $sql = "SELECT COUNT(usu_id) FROM usuarios WHERE usu_email = '$email' AND usu_senha = '$senha'";
+    $sql = "SELECT COUNT(usu_id) FROM usuarios WHERE usu_email = '$email' AND usu_senha = '$senha_md5'";
     $result = mysqli_query($link, $sql);
     $result = mysqli_fetch_array($result) [0];
 
     if ($result == 1){
-        $sql = "SELECT * FROM usuarios WHERE usu_email = '$email' AND usu_senha = '$senha'";
+        $sql = "SELECT * FROM usuarios WHERE usu_email = '$email' AND usu_senha = '$senha_md5'";
         $result = mysqli_query($link, $sql);
 
         while ($tbl = mysqli_fetch_array($result)) {
@@ -21,6 +23,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_SESSION['sobrenomeusuario'] = $tbl['usu_sobrenome'];
             $_SESSION['emailusuario'] = $tbl['usu_email'];
             $_SESSION['funcaousuario'] = $tbl['usu_funcao'];
+            $_SESSION['imgusuario'] = $tbl['usu_img'];
         }
         echo "<script>window.location.href='../index.php';</script>";
 

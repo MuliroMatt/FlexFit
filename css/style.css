@@ -635,6 +635,10 @@ body {
   width: 125px;
   height: 125px;
   border-radius: 50%;
+  overflow: hidden;
+}
+.main-user .dashboard .profile-card .top .user-pic img {
+  width: 125px;
 }
 .main-user .dashboard .profile-card .top .user-info {
   display: flex;
@@ -781,6 +785,10 @@ body {
   width: 30px;
   background-color: #434343;
   border-radius: 5px;
+  overflow: hidden;
+}
+.user-header .user-header-list .dropdown .top .img img {
+  width: 30px;
 }
 .user-header .user-header-list .dropdown .top i {
   transition: 0.3s;
@@ -960,6 +968,10 @@ body {
   width: 125px;
   height: 125px;
   border-radius: 50%;
+  overflow: hidden;
+}
+.main-profile .perfil-container .profile-card .top .user-pic img {
+  width: 125px;
 }
 .main-profile .perfil-container .profile-card .top .user-info {
   display: flex;

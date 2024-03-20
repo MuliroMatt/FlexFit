@@ -54,6 +54,10 @@
                     width: 30px;
                     background-color: $grey;
                     border-radius: 5px;
+                    overflow: hidden;
+                    img{
+                        width: 30px;
+                    }
                 }
                 i{
                     transition: .3s;

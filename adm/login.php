@@ -5,13 +5,14 @@ session_start();
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $email = $_POST['email'];
     $senha = $_POST['senha'];
+    $senha_md5 = md5($senha);
 
-    $sql = "SELECT COUNT(adm_id) FROM administradores WHERE adm_email = '$email' AND adm_senha = '$senha'";
+    $sql = "SELECT COUNT(adm_id) FROM administradores WHERE adm_email = '$email' AND adm_senha = '$senha_md5'";
     $result = mysqli_query($link, $sql);
     $result = mysqli_fetch_array($result) [0];
 
     if ($result == 1){
-        $sql = "SELECT * FROM administradores WHERE adm_email = '$email' AND adm_senha = '$senha' AND adm_status = 's'";
+        $sql = "SELECT * FROM administradores WHERE adm_email = '$email' AND adm_senha = '$senha_md5' AND adm_status = 's'";
         $result = mysqli_query($link, $sql);
 
         while ($tbl = mysqli_fetch_array($result)) {
@@ -26,6 +27,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     else {
     //* Exibe uma mensagem de alerta se as credenciais do usuário forem inválidas
     echo "<script>window.alert('USUÁRIO OU SENHA INCORRETOS');</script>";
+    echo "<script>window.location.href='loginadm.php';</script>";
 }
 
 }

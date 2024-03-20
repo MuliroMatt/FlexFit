@@ -81,7 +81,16 @@ if(isset($_GET['dia'])){
                     <a href="verexercicio.php?id=<?=$tbl['ex_id']?>&treino=<?=$treino_id?>" class="exercise-card">
                         <div class="left">
                             <span class="exe-name"><?=$tbl['ex_nome']?></span>
+                            <?php 
+                            if($tbl['et_series'] > 0){
+                            ?>
                             <span class="exe-reps"><?=$tbl['et_repeticao']?> Repetições <?=$tbl['et_series']?>x</span>
+                            <?php 
+                            }
+                            else{
+                            ?>
+                            <span class="exe-reps"><?=$tbl['et_tempo']?> <i class="bi bi-stopwatch" style="font-size: 12px;"></i></span>
+                            <?php } ?>
                         </div>
                         <div class="right">
                             <i class="bi bi-chevron-compact-right"></i>
