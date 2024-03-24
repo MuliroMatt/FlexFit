@@ -38,9 +38,6 @@ CREATE TABLE alunos(
     al_sexo ENUM ('Masculino', 'Feminino', 'Outro') NULL,
     al_endereco VARCHAR(100) NOT NULL,
     al_telefone VARCHAR(14) NOT NULL,
-    al_peso DECIMAL(8,2),
-    al_altura DECIMAL(7,2),
-    al_experiencia VARCHAR(20),
     fk_usu_id INT NOT NULL,
     fk_instr_id INT,
     al_status CHAR(1),
@@ -95,4 +92,59 @@ CREATE TABLE exercicios_treino(
 
 INSERT INTO administradores (adm_nome, adm_sobrenome, adm_email, adm_senha, adm_status)
 VALUES ('Admin', 'FlexFit', 'admin@flexfit', '202cb962ac59075b964b07152d234b70', 's');
+
+INSERT INTO usuarios (usu_nome, usu_sobrenome, usu_email, usu_senha, usu_funcao, usu_img) 
+VALUES ('John', 'Doe', 'john@example.com', '202cb962ac59075b964b07152d234b70', 'i', NULL);
+
+INSERT INTO usuarios (usu_nome, usu_sobrenome, usu_email, usu_senha, usu_funcao, usu_img) 
+VALUES ('Jane', 'Smith', 'jane@example.com', '202cb962ac59075b964b07152d234b70', 'i', NULL);
+
+INSERT INTO usuarios (usu_nome, usu_sobrenome, usu_email, usu_senha, usu_funcao, usu_img) 
+VALUES ('Alice', 'Johnson', 'alice@example.com', '202cb962ac59075b964b07152d234b70', 'a', NULL);
+
+INSERT INTO usuarios (usu_nome, usu_sobrenome, usu_email, usu_senha, usu_funcao, usu_img) 
+VALUES ('Bob', 'Brown', 'bob@example.com', '202cb962ac59075b964b07152d234b70', 'a', NULL);
+
+INSERT INTO instrutores (instr_cpf, instr_telefone, instr_turno, instr_sexo, instr_status, fk_usu_id) 
+VALUES ('123.456.789-10', '(123) 456-7890', 'Manhã', 'Masculino', 's', 1);
+
+INSERT INTO instrutores (instr_cpf, instr_telefone, instr_turno, instr_sexo, instr_status, fk_usu_id) 
+VALUES ('987.654.321-00', '(987) 654-3210', 'Tarde', 'Feminino', 's', 2);
+
+INSERT INTO alunos (al_cpf, al_dataNasc, al_sexo, al_endereco, al_telefone, fk_usu_id, fk_instr_id, al_status) 
+VALUES ('111.222.333-44', '2000-05-15', 'Masculino', '123 Main Street, City, Country', '(111) 222-3333', 3, 1, 's');
+
+INSERT INTO alunos (al_cpf, al_dataNasc, al_sexo, al_endereco, al_telefone, fk_usu_id, fk_instr_id, al_status) 
+VALUES ('555.666.777-88', '1998-10-20', 'Feminino', '456 Elm Street, City, Country', '(555) 666-7777', 4, 2, 's');
+
+INSERT INTO aparelhos (apa_nome, apa_categoria, apa_nivel, apa_quantidade, apa_status) 
+VALUES ('Esteira', 'Cardio', 'Básico', 5, 's'),
+       ('Bicicleta Ergométrica', 'Cardio', 'Intermediário', 3, 's');
+
+INSERT INTO aparelhos (apa_nome, apa_categoria, apa_nivel, apa_quantidade, apa_status) 
+VALUES ('Roda Abdominal', 'Abdômen e Lombar', 'Básico', 4, 's'),
+       ('Prancha Abdominal', 'Abdômen e Lombar', 'Intermediário', 2, 's');
+
+INSERT INTO aparelhos (apa_nome, apa_categoria, apa_nivel, apa_quantidade, apa_status) 
+VALUES ('Haltere', 'Superiores', 'Intermediário', 6, 's'),
+       ('Barra Fixa', 'Superiores', 'Avançado', 3, 's');
+
+INSERT INTO aparelhos (apa_nome, apa_categoria, apa_nivel, apa_quantidade, apa_status) 
+VALUES ('Leg Press', 'Inferiores', 'Intermediário', 4, 's'),
+       ('Cadeira Extensora', 'Inferiores', 'Avançado', 2, 's');
+
+INSERT INTO exercicios (ex_nome, ex_video, ex_desc, fk_apa_id)
+VALUES ('Supino com Barra', 'https://www.youtube.com/embed/WwXS2TeFmeg?si=R3OmD9x3THUuwlyG', NULL, 6);
+
+INSERT INTO exercicios (ex_nome, ex_video, ex_desc, fk_apa_id)
+VALUES ('Barra Fixa ou Puxada na Polia Alta', 'https://www.youtube.com/embed/7cCiQUdIXWw?si=_ntBwy0QvcEFFeKr', NULL, 6);
+
+INSERT INTO exercicios (ex_nome, ex_video, ex_desc, fk_apa_id)
+VALUES ('Desenvolvimento de Ombros com Halteres', 'https://www.youtube.com/embed/Nu1lKrS-Vvw?si=q0rgW-R9SXSGm98U', NULL, 5);
+
+INSERT INTO exercicios (ex_nome, ex_video, ex_desc, fk_apa_id)
+VALUES ('Rosca Direta com Barra ou Halteres', 'https://www.youtube.com/embed/c__3LAiXYOk?si=Or-o_gHTZQ4BAUqv', NULL, 5);
+
+INSERT INTO exercicios (ex_nome, ex_video, ex_desc, fk_apa_id)
+VALUES ('Tríceps Pulley ou Tríceps Francês com Halteres', 'https://www.youtube.com/embed/U9REU8VoNww?si=mVxYBgDybzKyKeLK', NULL, 5);
 

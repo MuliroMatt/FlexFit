@@ -1,30 +1,5 @@
 <?php 
 include('usernav.php');
-if(isset($_POST['img-btn'])){
-    $imagem = $_POST['imagem'];
-    if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK){
-        $tipo = exif_imagetype($_FILES['imagem']['tmp_name']);
-    
-        if ($tipo !== false){
-            // O arquivo é uma imagem
-            $imagem_temp = $_FILES['imagem']['tmp_name'];
-            $imagem = file_get_contents($imagem_temp);
-            $imagem_base64 = base64_encode($imagem);
-        } else{
-            // O arquivo não é uma imagem
-            $imagem = file_get_contents ("..\\img\\alert.png");
-            $imagem_base64 = base64_encode($imagem);
-        }
-    } else{
-        // O arquivo não foi enviado
-        $imagem = file_get_contents ("..\\img\\alert.png");
-        $imagem_base64 = base64_encode($imagem);
-    } 
-    $sql = "UPDATE usuarios SET usu_img = '$imagem_base64' WHERE usu_id = '$id'";
-    $return = mysqli_query($link, $sql);
-}
-
-
 ?>
 
 <!DOCTYPE html>
@@ -50,10 +25,10 @@ if(isset($_POST['img-btn'])){
             <div class="profile-card">
                 <div class="top">
                     <div class="user-pic">
-                        <img src="data:image/jpg;base64,<?=$img?>">
+                        <img src="data:image/jpg;base64,<?=$_SESSION['imgusuario']?>">
                     </div>
-                    <form action="perfil.php" method="post">
-                        <input type="file" accept="*" name="imagem" id="imagem">
+                    <form action="alterausu.php" method="post" enctype="multipart/form-data">
+                        <input type="file" accept="*" name="imagem" id="imagem" required>
                         <input type="submit" name="img-btn">
                     </form>
                     <div class="user-info">
@@ -119,7 +94,7 @@ if(isset($_POST['img-btn'])){
                     <hr id="last-hr">
                     <div class="form-btns">
                         <button type="reset" class="btn discard">Descartar</button>
-                        <button type="submit" class="btn save">Salvar Alterações</button>
+                        <button type="submit" name="alter" class="btn save">Salvar Alterações</button>
                     </div>
                 </form>
             </div>

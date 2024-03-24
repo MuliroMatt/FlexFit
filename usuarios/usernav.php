@@ -51,9 +51,9 @@ elseif ($funcao == 'i'){
     <ul class="user-header-list">
         <li class="navigation"><a href="../index.php"><i class="bi bi-house"></i> Inicio</a></li>
         <li class="dropdown" id="dropdown">
-            <div class="top" onclick="openDropdown()">
+            <div class="top" >
                 <div class="img">
-                    <img src="data:image/jpg;base64,<?=$img?>">
+                    <!-- <img src="data:image/jpg;base64,<?=$img?>"> -->
                 </div>
                 <?=$nome?> <?=$sobrenome?><i class="bi bi-chevron-compact-down" id="arrow"></i>
             </div>
