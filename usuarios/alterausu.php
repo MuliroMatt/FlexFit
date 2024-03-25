@@ -57,9 +57,7 @@ if(isset($_POST['img-btn'])){
     } 
     $sql = "UPDATE usuarios SET usu_img = '$imagem_base64' WHERE usu_id = '$id'";
     $return = mysqli_query($link, $sql);
-    echo "<script>window.location.href='perfil.php';</script>";
-
-
+    // echo "<script>window.location.href='perfil.php';</script>";
 }
 
 ?>

@@ -27,10 +27,7 @@ include('usernav.php');
                     <div class="user-pic">
                         <img src="data:image/jpg;base64,<?=$_SESSION['imgusuario']?>">
                     </div>
-                    <form action="alterausu.php" method="post" enctype="multipart/form-data">
-                        <input type="file" accept="*" name="imagem" id="imagem" required>
-                        <input type="submit" name="img-btn">
-                    </form>
+                    
                     <div class="user-info">
                         <span class="name">
                             <?=$nome?> <br>

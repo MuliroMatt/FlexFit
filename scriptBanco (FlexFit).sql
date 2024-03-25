@@ -58,9 +58,9 @@ CREATE TABLE aparelhos(
 CREATE TABLE treinos(
     tr_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     tr_dia ENUM('Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo'),
-    fk_instr_id INT NOT NULL,
+    -- fk_instr_id INT NOT NULL,
     fk_al_id INT NOT NULL,
-    FOREIGN KEY (fk_instr_id) REFERENCES instrutores(instr_id),
+    -- FOREIGN KEY (fk_instr_id) REFERENCES instrutores(instr_id),
     FOREIGN KEY (fk_al_id) REFERENCES alunos(al_id)
 );
 

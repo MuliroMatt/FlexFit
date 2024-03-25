@@ -1,3 +1,9 @@
+<?php
+    include('cabecalho.php');
+    if(!isset($nome)){
+        echo "<script>window.location.href='loginusuario.php';</script>";
+    } 
+?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -8,8 +14,7 @@
     <link rel="icon" type="image/png" href="../img/logo.png">
     <title>Document</title>
 </head>
-<body>
-    <?php include('cabecalho.php'); ?>  
+<body> 
     <main class="main-cadastraaluno">
         <div class="wrapper">
             <section class="cadastra-container">

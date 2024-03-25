@@ -1,3 +1,10 @@
+<?php
+    include('cabecalho.php');
+    if(!isset($nome)){
+        echo "<script>window.location.href='loginusuario.php';</script>";
+    } 
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -9,7 +16,7 @@
     <title>FlexFit</title>
 </head>
 <body>
-    <?php include('cabecalho.php'); ?>
+   
     <main class="main-cadastraaluno">
         <div class="wrapper">
             <section class="cadastra-container">
